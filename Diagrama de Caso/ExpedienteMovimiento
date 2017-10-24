@@ -1,0 +1,33 @@
+import java.util.Vector;
+
+public class ExpedienteMovimiento extends Expediente, ExamenPaciente, Medicamento, Empleado {
+
+  public Integer ExpedienteID;
+
+  public Integer PAcienteHospitalID;
+
+  public String MovimientoID;
+
+  public DateTime MovimientoHoraInicio;
+
+  public DateTime MovimientoHoraFin;
+
+  public String MovimientoDescripcion;
+
+  public String EmpleadoRemitenteNombre;
+
+  public Integer EmpeladoRemitenteID;
+
+  public String EmpleadoRemitenteApellido;
+
+  public String ExamenID;
+
+    public Vector  myEmpleado;
+
+  public void Agregar() {
+  }
+
+  public void Actualizar() {
+  }
+
+}

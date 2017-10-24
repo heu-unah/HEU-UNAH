@@ -1,0 +1,22 @@
+import java.util.Vector;
+
+public class EdificioHabitacion extends Expediente {
+
+  public Integer EdificioID;
+
+  public Integer HAbitacionID;
+
+  public String HAbitacionDescripcion;
+
+        public Vector  myEdificio;
+
+  public void AgregarVisita() {
+  }
+
+  public void Actualizar() {
+  }
+
+  public void Eliminar() {
+  }
+
+}
