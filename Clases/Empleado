@@ -1,0 +1,17 @@
+import java.util.Vector;
+
+public class Empleado extends CargoEmpleado {
+
+  public Integer EmpleadoID;
+
+  public Integer CargoEmpleadoID;
+
+    public Vector  myPersona;
+    
+  public void Agregar() {
+  }
+
+  public void Eliminar() {
+  }
+
+}
