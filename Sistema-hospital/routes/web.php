@@ -7,6 +7,9 @@ Route::get('/inicio', function () {
     return view('inicio');
 });
 
+Route::get('/pacientes/crear', 'PacienteController@index');
+Route::post('/pacientes/crear', 'PacienteController@crear');
+
 
 
 Auth::routes();

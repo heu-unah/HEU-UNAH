@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Iniciaste sesión de manera exitosa 
+                    <a href="{{url('pacientes/crear')}}">Ingresar nuevo paciente</a>
                 </div>
             </div>
         </div>
