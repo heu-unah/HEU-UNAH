@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTablaEmpleados extends Migration
+class CreateHabitacionesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateTablaEmpleados extends Migration
      */
     public function up()
     {
-        Schema::create('empleados', function (Blueprint $table) {
+        Schema::create('habitaciones', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
+            $table->integer('habitacion_numero');
+            $table->string('habitacion_area',100);
+            $table->boolean('disponible')->nullable();
             $table->timestamps();
-            $table->rememberToken();
         });
     }
 
@@ -28,6 +29,6 @@ class CreateTablaEmpleados extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empleados');
+        Schema::dropIfExists('habitaciones');
     }
 }

@@ -10,7 +10,8 @@ Route::get('/inicio', function () {
 Route::get('/pacientes/crear', 'PacienteController@index');
 Route::post('/pacientes/crear', 'PacienteController@crear');
 
-
+Route::get('/habitaciones/crear', 'HabitacionController@index');
+Route::post('/habitaciones/crear', 'HabitacionController@crear');
 
 Auth::routes();
 
