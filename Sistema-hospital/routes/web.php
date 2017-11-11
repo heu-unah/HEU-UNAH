@@ -17,9 +17,16 @@ Route::get('personas/crear', 'PersonaController@index');
 Route::post('personas/crear', 'PersonaController@crear');
 
 
-Route::get('empleados/crear', 'PersonaController@index');
-Route::post('empleados/crear', 'PersonaController@crear');
+Route::get('empleados/crear', 'EmpleadoController@index');
+Route::post('empleados/crear', 'EmpleadoController@crear');
 
+
+Route::get('fichas/crear', 'FichaController@index');
+Route::post('fichas/crear', 'FichaController@crear');
+
+
+Route::get('movimientos/crear', 'MovimientoController@index');
+Route::post('movimientos/crear', 'MovimientoController@crear');
 
 Auth::routes();
 

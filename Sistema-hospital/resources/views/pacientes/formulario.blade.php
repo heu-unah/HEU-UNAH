@@ -6,51 +6,88 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Registro de paciente</div>
+                <div class="panel-heading">Registro de Empleado</div>
 
                 <div class="panel-body">
+                   
                     <form class="form-horizontal" method="POST" action="{{ url('pacientes/crear') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">
-                            <label for="nombre" class="col-md-4 control-label">Nombre</label>
+                           <div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">
+                            <label for="idPersona" class="col-md-4 control-label">Identificacion</label>
 
                             <div class="col-md-6">
-                                <input id="nombre" type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" required autofocus>
+                                <input id="idPersona" type="text" class="form-control" name="idPersona" value="{{ old('idPersona') }}" required autofocus>
 
-                                @if ($errors->has('nombre'))
+                                @if ($errors->has('idPersona'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('nombre') }}</strong>
+                                        <strong>{{ $errors->first('idPersona') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
+                        <div class="form-group{{ $errors->has('Persona_Nombre') ? ' has-error' : '' }}">
+                            <label for="Persona_Nombre" class="col-md-4 control-label">Persona_Nombre</label>
+
+                            <div class="col-md-6">
+                                <input id="Persona_Nombre" type="text" class="form-control" name="Persona_Nombre" value="{{ old('Persona_Nombre') }}" disabled>
+
+                                @if ($errors->has('Persona_Nombre'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Persona_Nombre') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
+                        
+                         <div class="form-group{{ $errors->has('Persona_Apellido') ? ' has-error' : '' }}">
+                            <label for="Persona_Apellido" class="col-md-4 control-label">Persona_Apellido</label>
+
+                            <div class="col-md-6">
+                                <input id="Persona_Apellido" type="text" class="form-control" name="Persona_Apellido" value="{{ old('Persona_Apellido') }}" disabled>
+
+                                @if ($errors->has('Persona_Apellido'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Persona_Apellido') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('tes') ? ' has-error' : '' }}">
-                            <label for="tes" class="col-md-4 control-label">Tes</label>
+
+                        
+                        <div class="form-group{{ $errors->has('Condicion_Llegada') ? ' has-error' : '' }}">
+                            <label for="Condicion_Llegada" class="col-md-4 control-label">Condicion</label>
 
                             <div class="col-md-6">
-                                <input id="tes" type="text" class="form-control" name="tes" value="{{ old('tes') }}" required autofocus>
+                                <input id="Condicion_Llegada" type="textarea" class="form-control" name="Condicion_Llegada" value="{{ old('Condicion_Llegada') }}" required autofocus>
 
-                                @if ($errors->has('tes'))
+                                @if ($errors->has('Condicion_Llegada'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('tes') }}</strong>
+                                        <strong>{{ $errors->first('Condicion_Llegada') }}</strong>
                                     </span>
                                 @endif
-                            </div>
+                            </div> 
+                             
                         </div>
-                        <div class="form-group{{ $errors->has('domicilio') ? ' has-error' : '' }}">
-                            <label for="dom" class="col-md-4 control-label">Domicilio</label>
+
+                        
+                        
+                        <div class="form-group{{ $errors->has('ubicacion') ? ' has-error' : '' }}">
+                            <label for="ubicacion" class="col-md-4 control-label">ubicacion</label>
 
                             <div class="col-md-6">
-                                <input id="dom" type="text" class="form-control" name="domicilio" value="{{ old('domicilio') }}" required autofocus>
+                                <input id="ubicacion" type="textarea" class="form-control" name="ubicacion" value="{{ old('ubicacion') }}" required autofocus>
 
-                                @if ($errors->has('domicilio'))
+                                @if ($errors->has('ubicacion'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('domicilio') }}</strong>
+                                        <strong>{{ $errors->first('ubicacion') }}</strong>
                                     </span>
                                 @endif
-                            </div>
+                            </div> 
+                             
                         </div>
 
                         <div class="form-group">

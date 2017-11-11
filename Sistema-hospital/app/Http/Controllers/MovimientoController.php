@@ -9,4 +9,17 @@ use App\Movimiento;
 class MovimientoController extends Controller
 {
     //
+    
+    public function index()
+    {
+    	return view('movimientos.formulario');
+    }
+
+    public function crear()
+    {
+	    $data = request()->all();
+	    Movimiento::create($data);
+	    return Redirect::to('/home');
+	} 
+    
 }
