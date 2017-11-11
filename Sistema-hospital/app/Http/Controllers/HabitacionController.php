@@ -9,15 +9,9 @@ use App\Habitacion;
 
 class HabitacionController extends Controller
 {
-    //$this->middleware('auth');
     //
-     public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
     public function index(){
-        return view('Habitaciones.formulario');
+        return view('Habitaciones.crear');
     }
     
     public function crear(){

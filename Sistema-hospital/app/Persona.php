@@ -9,8 +9,8 @@ class Persona extends Model
     //se ingresan los datos necesarios 
     protected $table = 'personas';
     protected $fillable = [
-       'idPersona', 'Persona_Nombre', 'Persona_Apellido', 'Persona_Genero','Persona_Estatura','Persona_Edad','Persona_Descripcion',
-        'Persona_Tes','Tipo_Sangre','Observaciones'
+        'Persona_Nombre', 'Persona_Apellido', 'Persona_Genero','Persona_Estatura','Persona_Edad','Persona_Descripcion',
+        'Persona_Tes','Tipo_Sangre','Observacion'
     ];
     
     public function Empleado(){
