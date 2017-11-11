@@ -10,4 +10,16 @@ use App\Empleado;
 class EmpleadoController extends Controller
 {
     //
+    
+    public function index()
+    {
+    	return view('empleados.formulario');
+    }
+    
+    public function crear()
+    {
+	    $data = request()->all();
+	    Empleado::create($data);
+	    return Redirect::to('/home');
+	} 
 }
