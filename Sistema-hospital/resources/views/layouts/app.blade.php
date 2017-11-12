@@ -49,7 +49,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}">Iniciar sesión</a></li>
+                            <li><a href="{{ route('login') }}">Inicio de sesion</a></li>
                             <li><a href="{{ route('register') }}">Registrar</a></li>
                         @else
                             <li class="dropdown">

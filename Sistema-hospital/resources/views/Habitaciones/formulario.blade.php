@@ -10,45 +10,46 @@
                 <div class="panel-heading">Registro de paciente</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ url('pacientes/crear') }}">
+                   
+                    <form class="form-horizontal" method="POST" action="{{ url('habitaciones/crear') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">
-                            <label for="nombre" class="col-md-4 control-label">Nombre</label>
+                        <div class="form-group{{ $errors->has('Habitacion_Numero') ? ' has-error' : '' }}">
+                            <label for="Habiracion_Area" class="col-md-4 control-label">Numero de habitacion</label>
 
                             <div class="col-md-6">
-                                <input id="nombre" type="text" class="form-control" name="nombre" value="{{ old('nombre') }}" required autofocus>
+                                <input id="Habitacion_numero" type="text" pattern="[0-9]+" class="form-control" name="Habitacion_Numero" value="{{ old('Habitacion_Numero') }}" required autofocus>
 
-                                @if ($errors->has('nombre'))
+                                @if ($errors->has('Habitacion_Numero'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('nombre') }}</strong>
+                                        <strong>{{ $errors->first('habitacion_Numero') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('tes') ? ' has-error' : '' }}">
-                            <label for="tes" class="col-md-4 control-label">Tes</label>
+                        <div class="form-group{{ $errors->has('Habitacion_Area') ? ' has-error' : '' }}">
+                            <label for="Habiracion_Area" class="col-md-4 control-label">Area de habitacion</label>
 
                             <div class="col-md-6">
-                                <input id="tes" type="text" class="form-control" name="tes" value="{{ old('tes') }}" required autofocus>
+                                <input id="Habitacion_Area" type="textarea" class="form-control" name="Habitacion_Area" value="{{ old('Habitacion_Area') }}" required autofocus>
 
-                                @if ($errors->has('tes'))
+                                @if ($errors->has('Habitacion_Area'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('tes') }}</strong>
+                                        <strong>{{ $errors->first('Habitacion_Area') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('domicilio') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('Disponible') ? ' has-error' : '' }}">
                             <label for="dom" class="col-md-4 control-label">Domicilio</label>
 
                             <div class="col-md-6">
-                                <input id="dom" type="text" class="form-control" name="domicilio" value="{{ old('domicilio') }}" required autofocus>
+                                <input id="Disponible" type="checkbox" class="form-control" name="Disponible" value="{{ old('Disponible') }}">
 
-                                @if ($errors->has('domicilio'))
+                                @if ($errors->has('Disponible'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('domicilio') }}</strong>
+                                        <strong>{{ $errors->first('Disponible') }}</strong>
                                     </span>
                                 @endif
                             </div>

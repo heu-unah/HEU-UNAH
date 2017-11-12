@@ -1,0 +1,1 @@
+<!--aqui va la tabla de las habitaciones-->

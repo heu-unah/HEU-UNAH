@@ -18,7 +18,7 @@ class PacienteController extends Controller
     }
     public function mostrarFormCrear()
     {
-    	return view('pacientes.crear');
+    	return view('pacientes.formulario');
     }
 
     public function crear()

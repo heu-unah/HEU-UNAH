@@ -17,7 +17,23 @@ Route::get('api/pacientes', function(){
 Route::get('/pacientes/crear', 'PacienteController@mostrarFormCrear');
 Route::post('/pacientes/crear', 'PacienteController@crear');
 
+Route::get('/habitaciones/crear', 'HabitacionController@index');
+Route::post('/habitaciones/crear', 'HabitacionController@crear');
 
+Route::get('personas/crear', 'PersonaController@index');
+Route::post('personas/crear', 'PersonaController@crear');
+
+
+Route::get('empleados/crear', 'EmpleadoController@index');
+Route::post('empleados/crear', 'EmpleadoController@crear');
+
+
+Route::get('fichas/crear', 'FichaController@index');
+Route::post('fichas/crear', 'FichaController@crear');
+
+
+Route::get('movimientos/crear', 'MovimientoController@index');
+Route::post('movimientos/crear', 'MovimientoController@crear');
 
 Auth::routes();
 
