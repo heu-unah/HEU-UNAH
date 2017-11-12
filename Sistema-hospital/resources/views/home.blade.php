@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('titulo',"Home")
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -13,8 +15,16 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    <a href="{{url('pacientes/crear')}}">Ingresar nuevo paciente</a>
+                    <ul>
+                        <li>
+                           <a href="{{url('pacientes/home')}}">Pacientes</a> 
+                        </li>
+                        <li>
+                            <a href="{{url('pacientes/crear')}}">Empleados</a>
+                        </li>
+                    </ul>
+                    
+                    
                 </div>
             </div>
         </div>
