@@ -28,7 +28,7 @@
                         </div>
                         
                         <div class="form-group{{ $errors->has('Persona_Nombre') ? ' has-error' : '' }}">
-                            <label for="Persona_Nombre" class="col-md-4 control-label">Persona_Nombre</label>
+                            <label for="Persona_Nombre" class="col-md-4 control-label">Nombre</label>
 
                             <div class="col-md-6">
                                 <input id="Persona_Nombre" type="text" class="form-control" name="Persona_Nombre" value="{{ old('Persona_Nombre') }}" required autofocus>
@@ -43,7 +43,7 @@
                         
                         
                          <div class="form-group{{ $errors->has('Persona_Apellido') ? ' has-error' : '' }}">
-                            <label for="Persona_Apellido" class="col-md-4 control-label">Persona_Apellido</label>
+                            <label for="Persona_Apellido" class="col-md-4 control-label">Apellido</label>
 
                             <div class="col-md-6">
                                 <input id="Persona_Apellido" type="text" class="form-control" name="Persona_Apellido" value="{{ old('Persona_Apellido') }}" required autofocus>
@@ -57,7 +57,7 @@
                         </div>
                         
                          <div class="form-group{{ $errors->has('Persona_Genero') ? ' has-error' : '' }}">
-                            <label for="Persona_Genero" class="col-md-4 control-label">Persona_Genero</label>
+                            <label for="Persona_Genero" class="col-md-4 control-label">Genero</label>
 
                             <div class="col-md-6">
                                 <select name="Persona_Genero" id="Persona_Genero" class="form-control" value="{{ old('Persona_Genero') }}" required autofocus>
@@ -133,7 +133,7 @@
                         </div>
                         
                         <div class="form-group{{ $errors->has('Tipo_Sangre') ? ' has-error' : '' }}">
-                            <label for="Tipo_Sangre" class="col-md-4 control-label">Tipo Sangre</label>
+                            <label for="Tipo_Sangre" class="col-md-4 control-label">Tipo de Sangre</label>
 
                             <div class="col-md-6">
                                 <select name="Tipo_Sangre" id="Tipo_Sangre" class="form-control" value="{{ old('Tipo_Sangre') }}"                  required autofocus>

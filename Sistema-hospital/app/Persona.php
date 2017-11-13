@@ -8,17 +8,20 @@ class Persona extends Model
 {
     //se ingresan los datos necesarios 
     protected $table = 'personas';
+    protected $primaryKey = 'idPersona';
+    public $auto_increment = false;
+    public $incrementing = false;
     protected $fillable = [
-       'idPersona', 'Persona_Nombre', 'Persona_Apellido', 'Persona_Genero','Persona_Estatura','Persona_Edad','Persona_Descripcion',
+       'idPersona','Persona_Nombre', 'Persona_Apellido', 'Persona_Genero','Persona_Estatura','Persona_Edad','Persona_Descripcion',
         'Persona_Tes','Tipo_Sangre','Observaciones'
     ];
     
-    public function Empleado(){
-        return $this->hasOne('App\Empleado','foreign_key','local_key');
+    public function empleado(){
+        return $this->hasOne('App\Empleado','idPersona');
     }
     
     
-    public function Paciente(){
-        return $this->hasOne('App\Paciente','foreign_key','local_key');
+    public function paciente(){
+        return $this->hasOne('App\Paciente', 'idPersona');
     }
 }

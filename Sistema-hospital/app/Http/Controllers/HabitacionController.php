@@ -16,8 +16,14 @@ class HabitacionController extends Controller
         $this->middleware('auth');
     }
     
-    public function index(){
-        return view('Habitaciones.formulario');
+    public function home(){
+        $Habitaciones = Habitacion::all()->take(10);
+        return view('Habitaciones.index')->with('Habitaciones', $Habitaciones);
+    }
+
+    public function mostrarFormCrear()
+    {
+        return view('habitaciones.formulario');
     }
     
     public function crear(){

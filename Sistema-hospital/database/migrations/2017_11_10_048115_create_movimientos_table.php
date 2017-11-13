@@ -14,6 +14,7 @@ class CreateMovimientosTable extends Migration
     public function up()
     {
         Schema::create('movimientos', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->integer('idMovimiento'); //como es una llave compuesta no puede ser autonumerico
             $table->integer('idFicha')->unsigned();
             $table->integer('idPaciente')->unsigned();

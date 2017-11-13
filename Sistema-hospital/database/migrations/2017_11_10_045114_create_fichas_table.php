@@ -14,6 +14,7 @@ class CreateFichasTable extends Migration
     public function up()
     {
         Schema::create('fichas', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->integer('idFicha');
             $table->integer('idPaciente')->unsigned();
             $table->integer('idEmpleado')->unsigned();

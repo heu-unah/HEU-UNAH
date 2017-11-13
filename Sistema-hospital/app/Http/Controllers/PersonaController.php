@@ -10,9 +10,16 @@ use App\Persona;
 class PersonaController extends Controller
 {
     //
-    public function index()
+    public function home()
     {
-    	return view('personas.formulario');
+        $Personas = Persona::all()->take(10);
+        //dd($Personas);
+    	return view('personas.index')->with('Personas', $Personas);
+    }
+
+    public function mostrarFormCrear()
+    {
+        return view('personas.formulario');
     }
     
     public function crear()

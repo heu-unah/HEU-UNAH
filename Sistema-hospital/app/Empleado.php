@@ -7,13 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Empleado extends Model
 {
     //
+    protected $primary_key = 'idEmpleado';
     protected $table = 'empleados';
     protected $fillable = [
-        'idPersona', 'Empleado_Cargo', 
+        'Empleado_Cargo', 
     ];
     
     public function persona(){
-        return $this->belongsTo('App\Persona','foreign_key');
+        return $this->belongsTo('App\Persona','idPersona', 'idEmpleado');
     }
     
     public function fichas(){

@@ -10,9 +10,15 @@ class MovimientoController extends Controller
 {
     //
     
-    public function index()
+    public function home()
     {
-    	return view('movimientos.formulario');
+        $Movimientos = Movimiento::all()->take(10);
+    	return view('movimientos.index')->with('Movimientos', $Movimientos);
+    }
+
+    public function mostrarFormCrear()
+    {
+        return view('movimientos.formulario');
     }
 
     public function crear()

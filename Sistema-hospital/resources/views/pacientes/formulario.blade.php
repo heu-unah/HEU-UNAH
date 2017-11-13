@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Registro de Empleado</div>
+                <div class="panel-heading">Registro de Paciente</div>
 
                 <div class="panel-body">
                    
@@ -14,7 +14,7 @@
                         {{ csrf_field() }}
 
                            <div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">
-                            <label for="idPersona" class="col-md-4 control-label">Identificacion</label>
+                            <label for="idPersona" class="col-md-4 control-label">Identificación</label>
 
                             <div class="col-md-6">
                                 <input id="idPersona" type="text" class="form-control" name="idPersona" value="{{ old('idPersona') }}" required autofocus>
@@ -28,7 +28,7 @@
                         </div>
                         
                         <div class="form-group{{ $errors->has('Persona_Nombre') ? ' has-error' : '' }}">
-                            <label for="Persona_Nombre" class="col-md-4 control-label">Persona_Nombre</label>
+                            <label for="Persona_Nombre" class="col-md-4 control-label">Nombre de la persona</label>
 
                             <div class="col-md-6">
                                 <input id="Persona_Nombre" type="text" class="form-control" name="Persona_Nombre" value="{{ old('Persona_Nombre') }}" disabled>
@@ -43,7 +43,7 @@
                         
                         
                          <div class="form-group{{ $errors->has('Persona_Apellido') ? ' has-error' : '' }}">
-                            <label for="Persona_Apellido" class="col-md-4 control-label">Persona_Apellido</label>
+                            <label for="Persona_Apellido" class="col-md-4 control-label">Apellido de la persona</label>
 
                             <div class="col-md-6">
                                 <input id="Persona_Apellido" type="text" class="form-control" name="Persona_Apellido" value="{{ old('Persona_Apellido') }}" disabled>
@@ -59,7 +59,7 @@
 
                         
                         <div class="form-group{{ $errors->has('Condicion_Llegada') ? ' has-error' : '' }}">
-                            <label for="Condicion_Llegada" class="col-md-4 control-label">Condicion</label>
+                            <label for="Condicion_Llegada" class="col-md-4 control-label">Condición</label>
 
                             <div class="col-md-6">
                                 <input id="Condicion_Llegada" type="textarea" class="form-control" name="Condicion_Llegada" value="{{ old('Condicion_Llegada') }}" required autofocus>
@@ -76,7 +76,7 @@
                         
                         
                         <div class="form-group{{ $errors->has('ubicacion') ? ' has-error' : '' }}">
-                            <label for="ubicacion" class="col-md-4 control-label">ubicacion</label>
+                            <label for="ubicacion" class="col-md-4 control-label">Ubicación</label>
 
                             <div class="col-md-6">
                                 <input id="ubicacion" type="textarea" class="form-control" name="ubicacion" value="{{ old('ubicacion') }}" required autofocus>

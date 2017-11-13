@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Registro de Empleado</div>
+                <div class="panel-heading">Registro de Ficha</div>
 
                 <div class="panel-body">
                    
@@ -14,7 +14,7 @@
                         {{ csrf_field() }}
 
                      <div class="form-group{{ $errors->has('idFicha') ? ' has-error' : '' }}">
-                            <label for="idFicha" class="col-md-4 control-label">idFicha</label>
+                            <label for="idFicha" class="col-md-4 control-label">Id Ficha</label>
 
                             <div class="col-md-6">
                                 <input id="idFicha" type="text" pattern="[0-9]+" class="form-control" name="idFicha" value="{{ old('idFicha') }}" value="0" required autofocus>
@@ -29,7 +29,7 @@
                           
                           
                            <div class="form-group{{ $errors->has('idPaciente') ? ' has-error' : '' }}">
-                            <label for="idPaciente" class="col-md-4 control-label">idPaciente</label>
+                            <label for="idPaciente" class="col-md-4 control-label">Id Paciente</label>
 
                             <div class="col-md-6">
                                 <input id="idPaciente" type="text" pattern="[0-9]+" class="form-control" name="idPaciente" value="{{ old('idPaciente') }}" required autofocus>
@@ -43,7 +43,7 @@
                         </div>
                         
                         <div class="form-group{{ $errors->has('Persona_Nombre') ? ' has-error' : '' }}">
-                            <label for="Persona_Nombre" class="col-md-4 control-label">Persona_Nombre</label>
+                            <label for="Persona_Nombre" class="col-md-4 control-label">Nombre de la Persona</label>
 
                             <div class="col-md-6">
                                 <input id="Persona_Nombre" type="text" class="form-control" name="Persona_Nombre" value="{{ old('Persona_Nombre') }}" disabled>
@@ -58,7 +58,7 @@
                         
                         
                          <div class="form-group{{ $errors->has('Persona_Apellido') ? ' has-error' : '' }}">
-                            <label for="Persona_Apellido" class="col-md-4 control-label">Persona_Apellido</label>
+                            <label for="Persona_Apellido" class="col-md-4 control-label">Apellido de la Persona</label>
 
                             <div class="col-md-6">
                                 <input id="Persona_Apellido" type="text" class="form-control" name="Persona_Apellido" value="{{ old('Persona_Apellido') }}" disabled>
@@ -77,7 +77,7 @@
                        
                        
                         <div class="form-group{{ $errors->has('idEmpleado') ? ' has-error' : '' }}">
-                            <label for="idPacidEmpleadoiente" class="col-md-4 control-label">idEmpleado</label>
+                            <label for="idPacidEmpleadoiente" class="col-md-4 control-label">Id Empleado</label>
 
                             <div class="col-md-6">
                                 <input id="idEmpleado" type="text" pattern="[0-9]+" class="form-control" name="idEmpleado" value="{{ old('idEmpleado') }}" required autofocus>
@@ -91,7 +91,7 @@
                         </div>
                         
                         <div class="form-group{{ $errors->has('Empleado_Nombre') ? ' has-error' : '' }}">
-                            <label for="Empleado_Nombre" class="col-md-4 control-label">Empleado Nombre</label>
+                            <label for="Empleado_Nombre" class="col-md-4 control-label">Nombre del Empleado</label>
 
                             <div class="col-md-6">
                                 <input id="Empleado_Nombre" type="text" class="form-control" name="Empleado_Nombre" value="{{ old('Empleado_Nombre') }}" disabled>
@@ -106,7 +106,7 @@
                         
                         
                          <div class="form-group{{ $errors->has('Empleado_Apellido') ? ' has-error' : '' }}">
-                            <label for="Empleado_Apellido" class="col-md-4 control-label">Empleado Apellido</label>
+                            <label for="Empleado_Apellido" class="col-md-4 control-label">Apellido del Empleado</label>
 
                             <div class="col-md-6">
                                 <input id="Empleado_Apellido" type="text" class="form-control" name="Empleado_Apellido" value="{{ old('Empleado_Apellido') }}" disabled>
@@ -142,7 +142,7 @@
                         
                         
                         <div class="form-group{{ $errors->has('Estado_Paciente') ? ' has-error' : '' }}">
-                            <label for="Estado_Paciente" class="col-md-4 control-label">Estado</label>
+                            <label for="Estado_Paciente" class="col-md-4 control-label">Estado del paciente</label>
 
                             <div class="col-md-6">
                                 <input id="Estado_Paciente" type="textarea" class="form-control" name="Estado_Paciente" value="{{ old('Estado_Paciente') }}" required autofocus>

@@ -10,9 +10,15 @@ use App\Ficha;
 class FichaController extends Controller
 {
     //
-      public function index()
+      public function home()
     {
-    	return view('fichas.formulario');
+        $Fichas = Ficha::all()->take(10);
+    	return view('fichas.index')->with('Fichas', $Fichas);
+    }
+
+    public function mostrarFormCrear()
+    {
+        return view('fichas.formulario');
     }
 
     public function crear()
