@@ -1,5 +1,6 @@
 <?php
 
+
 Route::get('/', function () {
     return view('inicio');
 });
@@ -7,25 +8,52 @@ Route::get('/inicio', function () {
     return view('inicio');
 });
 
-Route::get('/pacientes/crear', 'PacienteController@index');
+
+
+/*Route::get('api/pacientes', function(){
+	return datatables()->eloquent(App\Paciente::query())->toJson();
+});*/
+Route::get('api/pacientes', 'PacienteController@getJoinData');
+Route::get('api/empleados', function(){
+	return datatables()->eloquent(App\Empleado::query())->toJson();
+});
+Route::get('api/habitaciones', function(){
+	return datatables()->eloquent(App\Habitacion::query())->toJson();
+});
+Route::get('api/personas', function(){
+	return datatables()->eloquent(App\Persona::query())->toJson();
+});
+Route::get('api/movimientos', function(){
+	return datatables()->eloquent(App\Movimiento::query())->toJson();
+});
+Route::get('api/fichas', function(){
+	return datatables()->eloquent(App\Ficha::query())->toJson();
+});
+
+Route::get('pacientes/home', 'PacienteController@home');
+Route::get('/pacientes/crear', 'PacienteController@mostrarFormCrear');
 Route::post('/pacientes/crear', 'PacienteController@crear');
 
-Route::get('/habitaciones/crear', 'HabitacionController@index');
+Route::get('/habitaciones/home', 'HabitacionController@home');
+Route::get('/habitaciones/crear', 'HabitacionController@mostrarFormCrear');
 Route::post('/habitaciones/crear', 'HabitacionController@crear');
 
-Route::get('personas/crear', 'PersonaController@index');
+Route::get('personas/home', 'PersonaController@home');
+Route::get('personas/crear', 'PersonaController@mostrarFormCrear');
 Route::post('personas/crear', 'PersonaController@crear');
 
-
-Route::get('empleados/crear', 'EmpleadoController@index');
+Route::get('empleados/home', 'EmpleadoController@home');
+Route::get('empleados/crear', 'EmpleadoController@mostrarFormCrear');
 Route::post('empleados/crear', 'EmpleadoController@crear');
 
 
-Route::get('fichas/crear', 'FichaController@index');
+Route::get('fichas/home', 'FichaController@home');
+Route::get('fichas/crear', 'FichaController@mostrarFormCrear');
 Route::post('fichas/crear', 'FichaController@crear');
 
 
-Route::get('movimientos/crear', 'MovimientoController@index');
+Route::get('movimientos/home', 'MovimientoController@home');
+Route::get('movimientos/crear', 'MovimientoController@mostrarFormCrear');
 Route::post('movimientos/crear', 'MovimientoController@crear');
 
 Auth::routes();

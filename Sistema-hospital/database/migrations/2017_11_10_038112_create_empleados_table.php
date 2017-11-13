@@ -14,11 +14,13 @@ class CreateEmpleadosTable extends Migration
     public function up()
     {
         Schema::create('empleados', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('idEmpleado');
-            $table->string('idPersona',20)->unique();
+            $table->string('idPersona',20);
             $table->string('Empleado_Cargo',40)->nullable();
             $table->timestamps();
             $table->rememberToken();
+            $table->foreign('idPersona')->references('idPersona')->on('personas');
             
            // $table->foreign('idPersona')->references('id')->on('personas');
         });

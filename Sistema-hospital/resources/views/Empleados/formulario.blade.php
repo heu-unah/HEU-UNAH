@@ -14,7 +14,7 @@
                         {{ csrf_field() }}
 
                            <div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">
-                            <label for="idPersona" class="col-md-4 control-label">Identificacion</label>
+                            <label for="idPersona" class="col-md-4 control-label">Identificación</label>
 
                             <div class="col-md-6">
                                 <input id="idPersona" type="text" class="form-control" name="idPersona" value="{{ old('idPersona') }}" required autofocus>
@@ -28,7 +28,7 @@
                         </div>
                         
                         <div class="form-group{{ $errors->has('Persona_Nombre') ? ' has-error' : '' }}">
-                            <label for="Persona_Nombre" class="col-md-4 control-label">Persona_Nombre</label>
+                            <label for="Persona_Nombre" class="col-md-4 control-label">Nombre de la persona</label>
 
                             <div class="col-md-6">
                                 <input id="Persona_Nombre" type="text" class="form-control" name="Persona_Nombre" value="{{ old('Persona_Nombre') }}" disabled>
@@ -43,7 +43,7 @@
                         
                         
                          <div class="form-group{{ $errors->has('Persona_Apellido') ? ' has-error' : '' }}">
-                            <label for="Persona_Apellido" class="col-md-4 control-label">Persona_Apellido</label>
+                            <label for="Persona_Apellido" class="col-md-4 control-label">Apellido de la persona</label>
 
                             <div class="col-md-6">
                                 <input id="Persona_Apellido" type="text" class="form-control" name="Persona_Apellido" value="{{ old('Persona_Apellido') }}" disabled>

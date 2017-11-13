@@ -7,20 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 class Paciente extends Model
 {
     protected $table = 'pacientes';
+    protected $primary_key = 'idPaciente';
     /*
     protected $fillable = [
         'nombre', 'tes', 'domicilio',
     ];*/
     protected $fillable = [
-        'idPersona','Condicion_Llegada','Ubicacion'
+        'Condicion_Llegada','Ubicacion'
     ];
     
     //protected $hidden = ['idEmpleado' ,'createt_at'];
     public function persona(){
-        return $this->belongsTo('App\Persona','foreign_key');
+        return $this->belongsTo('App\Persona','idPersona', 'idPaciente');
     }
 
     public function fichas(){
-        return $this->hasMany('App\Ficha','foreign_key','local_key');
+        return $this->hasMany('App\Ficha');
     }
 }

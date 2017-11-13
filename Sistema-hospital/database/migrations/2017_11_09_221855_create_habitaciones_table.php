@@ -14,6 +14,7 @@ class CreateHabitacionesTable extends Migration
     public function up()
     {
         Schema::create('habitaciones', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('habitacion_numero');
             $table->string('habitacion_area',100);

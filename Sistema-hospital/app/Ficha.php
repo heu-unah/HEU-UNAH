@@ -11,11 +11,11 @@ class Ficha extends Model
     protected $fillable = ['idPaciente','idEmpleado','Ficha_Fecha','Estado_Paciente'];
     
     public function paciente(){
-        return $this->belongsTo('App\Paciente','foreign_key','other_key');
+        return $this->belongsTo('App\Paciente','idPaciente');
     }
     
     public function empleado(){
-        return $this->belongsTo('App\Empleado','foreign_key','other_key');
+        return $this->belongsTo('App\Empleado','idEmpleado');
     }
     
 }
