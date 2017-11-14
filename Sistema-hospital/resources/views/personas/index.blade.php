@@ -21,7 +21,7 @@
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Nombre de la persona" id="NombrePersona" name="NombrePersona">
                         </div>
-                        <button type="submit" class="btn btn-default">Buscar</button>
+                        <button type="submit" id="busqueda" class="btn btn-default">Buscar</button>
                     </form>
                         
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
@@ -55,7 +55,7 @@
                                     <td>{{$Persona->Observaciones}}</td>
                                     <td>
 
-                                        <a href="{{route('personas.edit',$Persona->idPersona)}}"><button type="button" class="btn btn-info">Editar</button></a>
+                                        <a href="{{route('personas.edit',$Persona->idPersona)}}"><button type="button" id="actualizar" class="btn btn-info">Editar</button></a>
                                     </td>
                                     <td>
                                         {{ Form::open(array('url' => 'personas/' . $Persona->idPersona, 'class' => 'pull-right')) }}

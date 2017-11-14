@@ -45,31 +45,14 @@ Route::get('/habitaciones/crear', 'HabitacionController@mostrarFormCrear');
 Route::post('/habitaciones/crear', 'HabitacionController@crear');
 
 
-Route::get('personas/home', 'PersonaController@home');
-Route::get('personas/crear', 'PersonaController@mostrarFormCrear');
-Route::post('personas/crear', 'PersonaController@crear');
-Route::get('personas/editar/{id}','PersonaController@editar');
+Route::get('personas/home', 'Persona3Controller@home');
+//Route::get('personas/crear', 'PersonaController@mostrarFormCrear');
+//Route::post('personas/crear', 'PersonaController@crear');
+//Route::get('personas/editar/{id}','PersonaController@editar');
 
-
-Route::get('personas/editar/{id}',function($id){
-    return $id;
-});
-
-
-Route::PUT('personas/update', 'PersonaController@update');
-
-Route::resource('personas/actualizar/', 'PersonaController@update');
-/*
-Route::get('personas/actualizar/{id}', function($id){
-    return $id;
-});
-*/
-
-//Route::post('personas/actualizar/{id}', 'PersonaController@update');
 
 
 Route::resource('personas','Persona3Controller');
-
 Route::resource('pacientes','Paciente2Controller');
 
 

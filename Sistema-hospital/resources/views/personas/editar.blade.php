@@ -13,20 +13,8 @@
                    
                     {!! Form::model($persona, ['route' =>['personas.update',$persona->idPersona], 'method' => 'PUT', 'class' => "form-horizontal"] ) !!}
                  
-                        <!--@include('personas.campos')-->
+                
 
-<<<<<<< HEAD
-                    {!! Form::close() !!} 
-                    -->
-                    
-                    <form class="form-horizontal" method="POST" action="{{ url('personas/update') }}" accept-charset="UTF-8">
-                        <input type="hidden" name="_method" value="PUT">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-=======
-                    
-                    <div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">
-                            <label for="idPersona" class="col-md-4 control-label">Identificacion</label>
->>>>>>> 99ca699b4c131eb6083a9c95b2395487251b9fd2
 
                         <div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">
                             <label for="idPersona" class="col-md-4 control-label">Identificacion</label>
@@ -40,6 +28,7 @@
                                 @endif
                             </div>
                         </div>
+                        
                             
                         <div class="form-group{{ $errors->has('Persona_Nombre') ? ' has-error' : '' }}">
                             <label for="Persona_Nombre" class="col-md-4 control-label">Nombre</label>
@@ -180,15 +169,14 @@
                                 @endif
                             </div>
                         </div>
-<<<<<<< HEAD
 
-                        <div class="form-group">
-=======
-                        
+
+                    
+             
                     
                     
                     <div class="form-group">
->>>>>>> 99ca699b4c131eb6083a9c95b2395487251b9fd2
+
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Actualizar
@@ -196,8 +184,18 @@
                             </div>
                         </div>
 
+
+
                     {!! Form::close() !!} 
                     
+            </div>
+                    <!--
+                    <form class="form-horizontal" method="POST" action="{{ url('personas/update') }}" accept-charset="UTF-8">
+                        <input type="hidden" name="_method" value="PUT">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    -->
+                    
+                 
                     
                 </div>
             </div>

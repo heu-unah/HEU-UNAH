@@ -122,4 +122,20 @@ class Persona3Controller extends Controller
              return redirect()->route('personas.index')->with(['message'=> 'Wrong ID!!']);
         }
     }
+    
+    public function home(Request $request)
+    {
+        if(request()->input('NombrePersona') != null)
+        {
+            $Personas = Persona::nombre(request()->input('NombrePersona'))->paginate(15);
+            return view('personas.index')->with('Personas', $Personas);
+        }
+        else
+        {
+            $Personas = Persona::paginate(15);
+    	   return view('personas.index')->with('Personas', $Personas);
+            
+        }
+    }
+    
 }

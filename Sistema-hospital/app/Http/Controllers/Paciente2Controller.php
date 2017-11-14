@@ -143,4 +143,8 @@ class Paciente2Controller extends Controller
             return redirect()->route('personas.index')->with(['message'=> 'Wrong ID!!']);
         }
     }
+    
+
+
+    
 }
