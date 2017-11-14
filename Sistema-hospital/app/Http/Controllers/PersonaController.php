@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use View;
+use promoapp\Http\Requests;
+use promoapp\Local;
+use Illuminate\Support\Facades\Input;
+use promoapp\Http\Requests\LocalFormRequest;
+use DB;
 
 use App\Persona;
 
@@ -43,10 +48,10 @@ class PersonaController extends Controller
         
         $persona = Persona::findorFail($id);
         return view('personas.editar',compact('persona'));
-       // dd($persona);
-        //return View::make('personas/editar', compact('persona'));
+
     }
     
+<<<<<<< HEAD
     public function update(Request $request){
        // echo "aqui estoy";
         
@@ -56,6 +61,18 @@ class PersonaController extends Controller
         $persona->save();
         
         return Redirect::to('personas.index');
+=======
+    public function update(LocalFormRequest $request, $id){
+       // echo "aqui estoy";
+       
+            $persona = Persona::findOrFail($id);
+          //  dd(persona);
+            $persona->fill(Request()::all());
+            $persona->save();
+            return Redirect::to('personas.index');  
+
+      
+>>>>>>> 99ca699b4c131eb6083a9c95b2395487251b9fd2
     }
     
 }

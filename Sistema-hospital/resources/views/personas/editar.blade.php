@@ -6,28 +6,27 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Informacion de persona: {{$persona->idPersona}} </div>
+                <div class="panel-heading">Informacion de persona: {{$persona->idPersona}}</div>
                  
                 <div class="panel-body">
 
-                 <!--   
-                    {!! Form::model($persona, ['url' =>['personas/update',$persona->idPersona], 'method' => 'PUT']) !!}
+                   
+                    {!! Form::model($persona, ['route' =>['personas.update',$persona->idPersona], 'method' => 'PUT', 'class' => "form-horizontal"] ) !!}
                  
-                        @include('personas.campos')
-                    <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Actualizar
-                                </button>
-                            </div>
-                        </div>
+                        <!--@include('personas.campos')-->
 
+<<<<<<< HEAD
                     {!! Form::close() !!} 
                     -->
                     
                     <form class="form-horizontal" method="POST" action="{{ url('personas/update') }}" accept-charset="UTF-8">
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
+=======
+                    
+                    <div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">
+                            <label for="idPersona" class="col-md-4 control-label">Identificacion</label>
+>>>>>>> 99ca699b4c131eb6083a9c95b2395487251b9fd2
 
                         <div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">
                             <label for="idPersona" class="col-md-4 control-label">Identificacion</label>
@@ -181,15 +180,24 @@
                                 @endif
                             </div>
                         </div>
+<<<<<<< HEAD
 
                         <div class="form-group">
+=======
+                        
+                    
+                    
+                    <div class="form-group">
+>>>>>>> 99ca699b4c131eb6083a9c95b2395487251b9fd2
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Actualizar
                                 </button>
                             </div>
                         </div>
-                    </form>
+
+                    {!! Form::close() !!} 
+                    
                     
                 </div>
             </div>
