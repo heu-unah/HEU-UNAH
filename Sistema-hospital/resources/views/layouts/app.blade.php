@@ -61,6 +61,9 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
+                                        <a href="{{ url('/home') }}">Home</a>
+                                    </li>
+                                    <li>
                                         <a href="{{ url('pacientes/home') }}">Pacientes</a>
                                     </li>
                                     <li>

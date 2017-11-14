@@ -26,7 +26,7 @@
 >>>>>>> 187488ab21d3eb1474a8a8634737cd77f8efd283
                         
 
-                         <form class="navbar-form navbar-left " role="search" action="{{ url('personas/home') }}" method="GET">
+                         <form class="navbar-form navbar-left " role="search" action="{{ url('pacientes/home') }}" method="GET">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Nombre del paciente" id="NombrePaciente" name="NombrePaciente">
                             </div>
