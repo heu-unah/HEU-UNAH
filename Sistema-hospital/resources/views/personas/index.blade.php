@@ -15,7 +15,14 @@
                 <div class="h2 text-center panel-heading text-primary">Listado de personas</div>
                 <div class="panel-body">
                     <div class="table-responsive">
-                        <input id="idPersona" type="text" class="form-control" name="idPersona" placeholder="nombre de persona" style="margin-bottom:10px;">
+                    <h4>Hay {{ $Personas->count() }} registros</h4>
+
+                    <form class="navbar-form navbar-left " role="search" action="{{ url('personas/home') }}" method="GET">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nombre de la persona" id="NombrePersona" name="NombrePersona">
+                        </div>
+                        <button type="submit" class="btn btn-default">Buscar</button>
+                    </form>
                         
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
                             
@@ -47,6 +54,7 @@
                                     <td>{{$Persona->Tipo_Sangre}}</td>
                                     <td>{{$Persona->Observaciones}}</td>
                                     <td>
+<<<<<<< HEAD
                                         <a href="{{route('personas.edit',$Persona->idPersona)}}"><button type="button" class="btn btn-info">Editar</button></a>
                                     </td>
                                     <td>
@@ -55,6 +63,14 @@
                                         {{ Form::submit('Eliminar', array('class' => 'btn btn-warning')) }}
                                     {{ Form::close() }}
                                         
+=======
+<<<<<<< HEAD
+                                        <a href="{{url('personas/editar', $Persona)}}">editar</a>
+=======
+                                        <a href="{{route('personas.edit',$Persona->idPersona)}}">editar</a>
+>>>>>>> 99ca699b4c131eb6083a9c95b2395487251b9fd2
+                                        <a href="">eliminar</a>
+>>>>>>> 187488ab21d3eb1474a8a8634737cd77f8efd283
                                     </td>
                                 </tr>
                             @endforeach

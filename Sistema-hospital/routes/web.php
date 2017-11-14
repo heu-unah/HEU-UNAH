@@ -9,10 +9,11 @@ Route::get('/inicio', function () {
 });
 
 
-
-/*Route::get('api/pacientes', function(){
+/*Route::get('pacientes/buscarNombre', 'PacienteController@buscarNombre');
+Route::get('api/pacientes', function(){
 	return datatables()->eloquent(App\Paciente::query())->toJson();
 });*/
+<<<<<<< HEAD
 Route::get('api/pacientes', 'PacienteController@getJoinData');
 Route::get('api/empleados', function(){
 	return datatables()->eloquent(App\Empleado::query())->toJson();
@@ -31,7 +32,10 @@ Route::get('api/fichas', function(){
 });
 
 /*
+=======
+>>>>>>> 187488ab21d3eb1474a8a8634737cd77f8efd283
 Route::get('pacientes/home', 'PacienteController@home');
+Route::get('pacientes/buscar', 'PacienteController@buscar');
 Route::get('/pacientes/crear', 'PacienteController@mostrarFormCrear');
 Route::post('/pacientes/crear', 'PacienteController@crear');
 */
@@ -51,6 +55,9 @@ Route::get('personas/editar/{id}',function($id){
     return $id;
 });
 
+<<<<<<< HEAD
+Route::PUT('personas/update', 'PersonaController@update');
+=======
 Route::resource('personas/actualizar/', 'PersonaController@update');
 /*
 Route::get('personas/actualizar/{id}', function($id){
@@ -61,7 +68,12 @@ Route::get('personas/actualizar/{id}', function($id){
 //Route::post('personas/actualizar/{id}', 'PersonaController@update');
 
 Route::resource('personas','Persona3Controller' /*['only'=> ['index','create','store','edit']]*/);
+<<<<<<< HEAD
 Route::resource('pacientes','Paciente2Controller');
+=======
+>>>>>>> 99ca699b4c131eb6083a9c95b2395487251b9fd2
+
+>>>>>>> 187488ab21d3eb1474a8a8634737cd77f8efd283
 
 Route::get('empleados/home', 'EmpleadoController@home');
 Route::get('empleados/crear', 'EmpleadoController@mostrarFormCrear');

@@ -13,11 +13,26 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="h2 text-center panel-heading text-primary">Listado de pacientes</div>
+<<<<<<< HEAD
                 <div class="panel-body ">
                     <div class="table-responsive">
                         <h4>Hay {{ $pacientes->count() }} registros</h4>
+=======
+                <div class="panel-body " >
+                
+
+                    <div class="table-responsive" id="txtHint">
+                        <h4>Hay {{ $Pacientes->count() }} registros</h4>
+>>>>>>> 187488ab21d3eb1474a8a8634737cd77f8efd283
                         
-                         <input id="Paciente_Nombre" type="text" class="form-control" name="Persona_Nombre" placeholder="nombre de Persona" style="margin-bottom:10px;">
+
+                         <form class="navbar-form navbar-left " role="search" action="{{ url('personas/home') }}" method="GET">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Nombre del paciente" id="NombrePaciente" name="NombrePaciente">
+                            </div>
+                            <button type="submit" class="btn btn-default">Buscar</button>
+                        </form>
+
                         
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
                             <thead>
@@ -36,6 +51,7 @@
                                     <td>{{$Paciente->Persona_Apellido}}</td>
                                     <td>{{$Paciente->condicion_llegada}}</td>
                                     <td>{{$Paciente->ubicacion}}</td>
+<<<<<<< HEAD
                                     <td><a href="{{route('pacientes.edit', $Paciente->idPaciente)}}"><button type="button" class="btn btn-info">Editar</button></a></td>
                                     <td>
                                         
@@ -45,6 +61,9 @@
                                         {{ Form::close() }}
                                         
                                     </td>
+=======
+                                    <td><a href="#">Editar</a><a href="#">Eliminar</a></td>
+>>>>>>> 187488ab21d3eb1474a8a8634737cd77f8efd283
                                 </tr>
                             @endforeach
                             </tbody>
@@ -61,8 +80,25 @@
     <script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     
     
+    <!--<script>
+    $(document).ready(function(){
+       $("#search").keyup(function(){
+           var str=  $("#search").val();
+           if(str == "") {
+                   $( "#txtHint" ).html("<b>Buscando paciente...</b>"); 
+           }else {
+                   $.get( "{{ url('pacientes/buscarNombre') }}"+str, function( data ) {
+                       $( "#txtHint" ).html( data );  
+                });
+           }
+       });  
+    }); 
+    </script> -->
+
+
 
 @endsection
+
 
 
 
