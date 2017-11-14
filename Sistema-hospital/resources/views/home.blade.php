@@ -20,11 +20,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <a href="{{url('pacientes/home')}}" class="h2">Página de inicio</a>
+                                    <a href="{{route('pacientes.index')}}" class="h2">Página de inicio</a>
                                     <p class="h4">Acceder a la página de inicio de los pacientes</p>
                                 </div>
                                 <div class="col-md-3">
-                                    <a href="{{url('pacientes/crear')}}" class="h2">Agregar paciente</a>
+                                    <a href="{{route('pacientes.create')}}" class="h2">Agregar paciente</a>
                                     <p class="h4">Acceder al formulario de registro de nuevos pacientes</p>
                                 </div>
                                 <div class="col-md-3">

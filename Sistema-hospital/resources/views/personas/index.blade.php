@@ -31,7 +31,7 @@
                                 <th>Tes</th>
                                 <th>Tipo de sangre</th>
                                 <th>Observaciones</th>
-                                <th>Acciones</th>
+                                <th colspan="2">Acciones</th>
                             </thead>
                             <tbody>
                             @foreach($Personas as $Persona)
@@ -47,8 +47,14 @@
                                     <td>{{$Persona->Tipo_Sangre}}</td>
                                     <td>{{$Persona->Observaciones}}</td>
                                     <td>
-                                        <a href="{{route('personas.edit',$Persona->idPersona)}}">editar</a>
-                                        <a href="">eliminar</a>
+                                        <a href="{{route('personas.edit',$Persona->idPersona)}}"><button type="button" class="btn btn-info">Editar</button></a>
+                                    </td>
+                                    <td>
+                                        {{ Form::open(array('url' => 'personas/' . $Persona->idPersona, 'class' => 'pull-right')) }}
+                                        {{ Form::hidden('_method', 'DELETE') }}
+                                        {{ Form::submit('Eliminar', array('class' => 'btn btn-warning')) }}
+                                    {{ Form::close() }}
+                                        
                                     </td>
                                 </tr>
                             @endforeach

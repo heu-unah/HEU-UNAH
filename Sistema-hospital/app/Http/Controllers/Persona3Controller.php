@@ -52,7 +52,8 @@ class Persona3Controller extends Controller
         //
         $data = request()->all();
 	    Persona::create($data);
-	    return Redirect::to('/home');
+	    return Redirect::to('/personas');
+
     }
 
     /**
@@ -97,7 +98,7 @@ class Persona3Controller extends Controller
         $persona = Persona::findOrFail($id);
         $persona->fill(request()->all());
         $persona->save();
-        return Redirect::to('personas.index');  
+        return Redirect::to('/personas');  
         
     }
 
@@ -109,6 +110,16 @@ class Persona3Controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $persona = Persona::find($id);
+        if ($persona != null){
+            
+            $persona->delete();
+
+           // Session::flash('message', 'Successfully deleted the nerd!');
+            return Redirect::to('/personas');
+        
+        }else{
+             return redirect()->route('personas.index')->with(['message'=> 'Wrong ID!!']);
+        }
     }
 }

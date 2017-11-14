@@ -30,9 +30,11 @@ Route::get('api/fichas', function(){
 	return datatables()->eloquent(App\Ficha::query())->toJson();
 });
 
+/*
 Route::get('pacientes/home', 'PacienteController@home');
 Route::get('/pacientes/crear', 'PacienteController@mostrarFormCrear');
 Route::post('/pacientes/crear', 'PacienteController@crear');
+*/
 
 Route::get('/habitaciones/home', 'HabitacionController@home');
 Route::get('/habitaciones/crear', 'HabitacionController@mostrarFormCrear');
@@ -59,7 +61,7 @@ Route::get('personas/actualizar/{id}', function($id){
 //Route::post('personas/actualizar/{id}', 'PersonaController@update');
 
 Route::resource('personas','Persona3Controller' /*['only'=> ['index','create','store','edit']]*/);
-
+Route::resource('pacientes','Paciente2Controller');
 
 Route::get('empleados/home', 'EmpleadoController@home');
 Route::get('empleados/crear', 'EmpleadoController@mostrarFormCrear');

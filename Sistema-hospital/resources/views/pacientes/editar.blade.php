@@ -10,14 +10,15 @@
 
                 <div class="panel-body">
                    
-                    <form class="form-horizontal" method="POST" action="{{ route('pacientes.store') }}">
+                   {{ Form::model($paciente, ['route' =>['pacientes.update',$paciente->idPaciente], 'method' => 'PUT', 'class' => "form-horizontal"] ) }}
+                  
                         {{ csrf_field() }}
 
                            <div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">
                             <label for="idPersona" class="col-md-4 control-label">Identificación</label>
 
                             <div class="col-md-6">
-                                <input id="idPersona" type="text" class="form-control" name="idPersona" value="{{ old('idPersona') }}" required autofocus>
+                                <input id="idPersona" type="text" class="form-control" name="idPersona" value={{$paciente->idPersona}} required autofocus>
 
                                 @if ($errors->has('idPersona'))
                                     <span class="help-block">
@@ -31,7 +32,7 @@
                             <label for="Persona_Nombre" class="col-md-4 control-label">Nombre de la persona</label>
 
                             <div class="col-md-6">
-                                <input id="Persona_Nombre" type="text" class="form-control" name="Persona_Nombre" value="{{ old('Persona_Nombre') }}" disabled>
+                                <input id="Persona_Nombre" type="text" class="form-control" name="Persona_Nombre"  disabled>
 
                                 @if ($errors->has('Persona_Nombre'))
                                     <span class="help-block">
@@ -46,7 +47,7 @@
                             <label for="Persona_Apellido" class="col-md-4 control-label">Apellido de la persona</label>
 
                             <div class="col-md-6">
-                                <input id="Persona_Apellido" type="text" class="form-control" name="Persona_Apellido" value="{{ old('Persona_Apellido') }}" disabled>
+                                <input id="Persona_Apellido" type="text" class="form-control" name="Persona_Apellido"  disabled>
 
                                 @if ($errors->has('Persona_Apellido'))
                                     <span class="help-block">
@@ -62,12 +63,12 @@
                             <label for="Condicion_Llegada" class="col-md-4 control-label">Condición</label>
 
                             <div class="col-md-6">
-                                <input id="Condicion_Llegada" type="textarea" class="form-control" name="Condicion_Llegada" value="{{ old('Condicion_Llegada') }}" required autofocus>
+                                <input id="Condicion_Llegada" type="textarea" class="form-control" name="Condicion_Llegada" value={{$paciente->Condicion_Llegada}} required autofocus>
 
                                 @if ($errors->has('Condicion_Llegada'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('Condicion_Llegada') }}</strong>
-                                    </span>
+                                    </span>value= {{ $paciente->Condicion_Llegada }}
                                 @endif
                             </div> 
                              
@@ -79,7 +80,7 @@
                             <label for="ubicacion" class="col-md-4 control-label">Ubicación</label>
 
                             <div class="col-md-6">
-                                <input id="ubicacion" type="textarea" class="form-control" name="ubicacion" value="{{ old('ubicacion') }}" required autofocus>
+                                <input id="ubicacion" type="textarea" class="form-control" name="ubicacion" value={{$paciente->ubicacion}}  required autofocus>
 
                                 @if ($errors->has('ubicacion'))
                                     <span class="help-block">
@@ -97,7 +98,9 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                        
+                   {{ Form::close() }}
+                   
                 </div>
             </div>
         </div>
