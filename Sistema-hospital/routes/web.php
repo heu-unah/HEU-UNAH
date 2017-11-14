@@ -72,10 +72,6 @@ Route::resource('personas','Persona3Controller');
 
 Route::resource('pacientes','Paciente2Controller');
 
-Route::resource('personas','Persona3Controller' /*['only'=> ['index','create','store','edit']]*/);
-
-Route::resource('pacientes','Paciente2Controller');
-
 
 Route::get('empleados/home', 'EmpleadoController@home');
 Route::get('empleados/crear', 'EmpleadoController@mostrarFormCrear');
