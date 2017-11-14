@@ -10,7 +10,7 @@
 
                 <div class="panel-body">
                    
-                    <form class="form-horizontal" method="POST" action="{{ url('personas/crear') }}">
+                    <form class="form-horizontal" method="POST" action="{{ url('personas/actualizar') }}">
                         {{ csrf_field() }}
 
                            <div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">

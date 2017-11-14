@@ -27,6 +27,29 @@ class PersonaController extends Controller
 	    $data = request()->all();
 	    Persona::create($data);
 	    return Redirect::to('/home');
-	} 
-    
+	}
+
+    /*public function actualizar(Request $request)
+    {
+        $persona = Persona::find($request->id);
+        $persona->idPersona = $request->idPersona;
+        $persona->Persona_Nombre = $request->Persona_Nombre;
+        $persona->Persona_Apellido = $request->Persona_Apellido;
+        $persona->Persona_Genero = $request->Persona_Genero;
+        $persona->Persona_Estatura = $request->Persona_Estatura;
+        $persona->Persona_Edad = $request->Persona_Edad;
+        $persona->Persona_Descripcion = $request->Persona_Descripcion;
+        $persona->Persona_Tes = $request->Persona_Tes;
+        $persona->Tipo_Sangre = $request->Tipo_Sangre;
+        $persona->Observaciones = $request->Observaciones;
+        $persona->save();
+        return Redirect::to('/home');
+    }
+
+        public function editar($id)
+    {
+        $persona = Personas::find($id);
+        return view('personas.editar', compact('persona'));
+    } 
+    */
 }
