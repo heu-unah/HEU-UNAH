@@ -32,7 +32,9 @@
                             <label for="Persona_Nombre" class="col-md-4 control-label">Nombre de la persona</label>
 
                             <div class="col-md-6">
-                                <input id="Persona_Nombre" type="text" class="form-control" name="Persona_Nombre"  disabled>
+                               {{var_dump($paciente->Persona_Nombre)}}<br/>
+                               {{var_dump($datosPaciente["Persona_Nombre"])}}
+                                <input id="Persona_Nombre" type="text" class="form-control"  name="Persona_Nombre" value=""  disabled>
 
                                 @if ($errors->has('Persona_Nombre'))
                                     <span class="help-block">
@@ -47,7 +49,7 @@
                             <label for="Persona_Apellido" class="col-md-4 control-label">Apellido de la persona</label>
 
                             <div class="col-md-6">
-                                <input id="Persona_Apellido" type="text" class="form-control" name="Persona_Apellido"  disabled>
+                                <input id="Persona_Apellido" type="text" class="form-control" name="Persona_Apellido" value="{{ $paciente->Persona_Apellido }}"  disabled>
 
                                 @if ($errors->has('Persona_Apellido'))
                                     <span class="help-block">
@@ -63,7 +65,7 @@
                             <label for="Condicion_Llegada" class="col-md-4 control-label">Condición</label>
 
                             <div class="col-md-6">
-                                <input id="Condicion_Llegada" type="textarea" class="form-control" name="Condicion_Llegada" value={{$paciente->Condicion_Llegada}} required autofocus>
+                                <input id="Condicion_Llegada" type="textarea" class="form-control" name="Condicion_Llegada" value="{{$paciente->Condicion_Llegada}}" required autofocus>
 
                                 @if ($errors->has('Condicion_Llegada'))
                                     <span class="help-block">

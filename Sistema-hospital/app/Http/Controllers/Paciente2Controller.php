@@ -89,12 +89,12 @@ class Paciente2Controller extends Controller
 
         try{
 
-            $p = Paciente::FindOrFail($id);
-            if ($p){
+            $paciente = Paciente::FindOrFail($id);
+            if ($paciente){
               $datosPaciente = DB::table('pacientes as pa')
-                  ->select('pa.idPaciente', 'pa.idPersona','pa.','pa.Condicion_Llegada','pa.Ubicacion','pe.Persona_Nombre','pe.Persona_Apellido')
+                  ->select('pa.idPaciente', 'pa.idPersona','pa.Condicion_Llegada','pa.Ubicacion','pe.Persona_Nombre','pe.Persona_Apellido')
                   ->join('personas as pe', 'pa.idPersona', '=', 'pe.idPersona')->get();
-                
+               // dd($datosPaciente);
                 //return View::make('pacientes.editar')->with('paciente',$paciente);
                return view('pacientes.editar',['datosPaciente'=>$datosPaciente, 'paciente' => $paciente]);
             }

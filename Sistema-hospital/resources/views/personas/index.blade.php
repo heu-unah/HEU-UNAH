@@ -54,7 +54,7 @@
                                     <td>{{$Persona->Tipo_Sangre}}</td>
                                     <td>{{$Persona->Observaciones}}</td>
                                     <td>
-<<<<<<< HEAD
+
                                         <a href="{{route('personas.edit',$Persona->idPersona)}}"><button type="button" class="btn btn-info">Editar</button></a>
                                     </td>
                                     <td>
@@ -63,14 +63,7 @@
                                         {{ Form::submit('Eliminar', array('class' => 'btn btn-warning')) }}
                                     {{ Form::close() }}
                                         
-=======
-<<<<<<< HEAD
-                                        <a href="{{url('personas/editar', $Persona)}}">editar</a>
-=======
-                                        <a href="{{route('personas.edit',$Persona->idPersona)}}">editar</a>
->>>>>>> 99ca699b4c131eb6083a9c95b2395487251b9fd2
-                                        <a href="">eliminar</a>
->>>>>>> 187488ab21d3eb1474a8a8634737cd77f8efd283
+
                                     </td>
                                 </tr>
                             @endforeach

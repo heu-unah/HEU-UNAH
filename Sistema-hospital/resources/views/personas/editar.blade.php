@@ -44,7 +44,7 @@
                         <div class="form-group{{ $errors->has('Persona_Nombre') ? ' has-error' : '' }}">
                             <label for="Persona_Nombre" class="col-md-4 control-label">Nombre</label>
                             <div class="col-md-6">
-                                <input id="Persona_Nombre" type="text" class="form-control" name="Persona_Nombre" value= {{$persona->Persona_Nombre}} required autofocus>
+                                <input id="Persona_Nombre" type="text" class="form-control" name="Persona_Nombre" value= "{{$persona->Persona_Nombre}}" required autofocus>
 
                                 @if ($errors->has('Persona_Nombre'))
                                     <span class="help-block">

@@ -13,18 +13,10 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="h2 text-center panel-heading text-primary">Listado de pacientes</div>
-<<<<<<< HEAD
-                <div class="panel-body ">
-                    <div class="table-responsive">
-                        <h4>Hay {{ $pacientes->count() }} registros</h4>
-=======
-                <div class="panel-body " >
-                
+
+          <h2>hay {{$pacientes->count()}} pacientes</h2>
 
                     <div class="table-responsive" id="txtHint">
-                        <h4>Hay {{ $Pacientes->count() }} registros</h4>
->>>>>>> 187488ab21d3eb1474a8a8634737cd77f8efd283
-                        
 
                          <form class="navbar-form navbar-left " role="search" action="{{ url('personas/home') }}" method="GET">
                             <div class="form-group">
@@ -51,7 +43,7 @@
                                     <td>{{$Paciente->Persona_Apellido}}</td>
                                     <td>{{$Paciente->condicion_llegada}}</td>
                                     <td>{{$Paciente->ubicacion}}</td>
-<<<<<<< HEAD
+
                                     <td><a href="{{route('pacientes.edit', $Paciente->idPaciente)}}"><button type="button" class="btn btn-info">Editar</button></a></td>
                                     <td>
                                         
@@ -61,9 +53,9 @@
                                         {{ Form::close() }}
                                         
                                     </td>
-=======
-                                    <td><a href="#">Editar</a><a href="#">Eliminar</a></td>
->>>>>>> 187488ab21d3eb1474a8a8634737cd77f8efd283
+
+                                   
+
                                 </tr>
                             @endforeach
                             </tbody>
