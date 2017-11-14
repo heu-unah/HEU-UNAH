@@ -13,14 +13,46 @@ use App\Persona;
 
 class PacienteController extends Controller
 {
-    public function home()
+    public function home(Request $request)
     {
-        //Hace el Join de la tabla Pacientes con la tabla Personas
-        $Pacientes = Paciente::Join('personas', 'pacientes.idPersona', '=', 'personas.idPersona')->select(['pacientes.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'pacientes.condicion_llegada', 'pacientes.ubicacion'])->paginate(15);
-        dd($Pacientes);
-        //Devuelve y renderiza la vista, con el resultado delJoin
-        //return view('pacientes.home')->with('Pacientes', $Pacientes);
+        //dd(request()->input('NombrePaciente'));
+        //dd($request->get('NombrePaciente'));
+        if(request()->input('NombrePaciente') != null)
+        {
+
+
+            $Pacientes = Paciente::nombre(request()->input('NombrePaciente'))->paginate(15);
+            return view('pacientes.home')->with('Pacientes', $Pacientes);
+        }
+        else
+        {
+
+
+            //Hace el Join de la tabla Pacientes con la tabla Personas
+            $Pacientes = Paciente::Join('personas', 'pacientes.idPersona', '=', 'personas.idPersona')->select(['pacientes.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'pacientes.condicion_llegada', 'pacientes.ubicacion'])->paginate(15);
+            //Devuelve y renderiza la vista, con el resultado delJoin
+            return view('pacientes.home')->with('Pacientes', $Pacientes);
+        }
     }
+
+    public function buscar(Request $request) 
+    {
+        $Pacientes = Paciente::nombre(request()->input('NombrePaciente'))->paginate(15);
+        return view('pacientes.buscar')->with('Pacientes', $Pacientes);
+    }
+
+    /*public function buscarNombre(Request $request)
+    {
+
+        $data = $request->'Persona_Nombre';
+        dd($request);
+        if(!is_null($data)){
+            dd($data);
+            $Resultados = Paciente::Join('personas', 'pacientes.idPersona', '=', 'personas.idPersona')->select(['pacientes.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'pacientes.condicion_llegada', 'pacientes.ubicacion'])->where('persona.Persona_Nombre', '%{$data}%')->get();
+            return view('pacientes/resultado')->with('Resultados', $Resultados);
+        
+
+    }*/
 
 
     

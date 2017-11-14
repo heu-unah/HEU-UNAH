@@ -12,11 +12,19 @@ class EmpleadoController extends Controller
 {
     //
     
-    public function home()
+    public function home(Request $request)
     {
-        $Empleados = Empleado::Join('personas', 'empleados.idPersona', '=', 'personas.idPersona')->select(['empleados.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'empleados.Empleado_cargo'])->paginate(15);
+        if(request()->input('NombreEmpleado') != null){
+            $Empleados = Empleado::nombre(request()->input('NombreEmpleado'))->paginate(15);
+            return view('empleados.index')->with('Empleados', $Empleados);
+        }
+        else
+        {
+            $Empleados = Empleado::Join('personas', 'empleados.idPersona', '=', 'personas.idPersona')->select(['empleados.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'empleados.Empleado_cargo'])->paginate(15);
         
-    	return view('empleados.index')->with('Empleados', $Empleados);
+            return view('empleados.index')->with('Empleados', $Empleados);
+        }
+        
     }
 
     public function mostrarFormCrear()

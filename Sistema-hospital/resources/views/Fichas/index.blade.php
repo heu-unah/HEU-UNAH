@@ -16,7 +16,7 @@
                 <div class="panel-body">
                     <div class="table-responsive">
 
-                      <input id="Paciente_Nombre" type="text" class="form-control" name="Persona_Nombre" placeholder="nombre de Persona" style="margin-bottom:10px;">
+                      <!--<input id="Paciente_Nombre" type="text" class="form-control" name="Persona_Nombre" placeholder="nombre de Persona" style="margin-bottom:10px;"> -->
                         
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
                             <thead>

@@ -1,4 +1,4 @@
-<div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">
+                    <div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">
                             <label for="idPersona" class="col-md-4 control-label">Identificacion</label>
 
                             <div class="col-md-6">

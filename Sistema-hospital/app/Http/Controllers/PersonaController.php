@@ -16,11 +16,19 @@ use App\Persona;
 class PersonaController extends Controller
 {
     //
-    public function home()
+    public function home(Request $request)
     {
-        $Personas = Persona::all()->take(10);
-        //dd($Personas);
-    	return view('personas.index')->with('Personas', $Personas);
+        if(request()->input('NombrePersona') != null)
+        {
+            $Personas = Persona::nombre(request()->input('NombrePersona'))->paginate(15);
+            return view('personas.index')->with('Personas', $Personas);
+        }
+        else
+        {
+            $Personas = Persona::paginate(15);
+    	   return view('personas.index')->with('Personas', $Personas);
+            
+        }
     }
 
     public function mostrarFormCrear()
@@ -32,9 +40,9 @@ class PersonaController extends Controller
     {
 	    $data = request()->all();
 	    Persona::create($data);
-	    return Redirect::to('/home');
-	} 
-   
+	    return Redirect::to('personas.index');
+
+	}
     
     public function editar($id){
         
@@ -43,6 +51,17 @@ class PersonaController extends Controller
 
     }
     
+<<<<<<< HEAD
+    public function update(Request $request){
+       // echo "aqui estoy";
+        
+        $persona = Persona::findOrFail($request->idPersona);
+        dd($persona);
+        $persona->fill(Request()::all());
+        $persona->save();
+        
+        return Redirect::to('personas.index');
+=======
     public function update(LocalFormRequest $request, $id){
        // echo "aqui estoy";
        
@@ -53,9 +72,7 @@ class PersonaController extends Controller
             return Redirect::to('personas.index');  
 
       
+>>>>>>> 99ca699b4c131eb6083a9c95b2395487251b9fd2
     }
-    
-    
-  
     
 }
