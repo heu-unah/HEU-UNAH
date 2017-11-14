@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Collective\Html\Eloquent\FormAccessible;
 
 class Persona extends Model
 {
+    use FormAccessible;
+
     //se ingresan los datos necesarios 
     protected $table = 'personas';
     protected $primaryKey = 'idPersona';

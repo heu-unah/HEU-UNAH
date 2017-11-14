@@ -11,23 +11,10 @@
                 <div class="panel-body">
 
                    
-                    {!! Form::model($persona, ['route' =>['personas.update',$persona->idPersona], 'method' => 'PUT']) !!}
+                    {!! Form::model($persona, ['route' =>['personas.update',$persona->idPersona], 'method' => 'PUT', 'class' => "form-horizontal"] ) !!}
                  
-                        @include('personas.campos')
-                    <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Actualizar
-                                </button>
-                            </div>
-                        </div>
+                        <!--@include('personas.campos')-->
 
-                    {!! Form::close() !!} 
-                    
-                    
-                    
-                    <form class="form-horizontal" method="PUT" action="{{ route('personas.update',$persona->idPersona) }}">
-                        {{ csrf_field() }}
                     
                     <div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">
                             <label for="idPersona" class="col-md-4 control-label">Identificacion</label>
@@ -184,17 +171,19 @@
                             </div>
                         </div>
                         
-                         
-                       
-                        <div class="form-group">
+                    
+                    
+                    <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                     Actualizar
                                 </button>
                             </div>
                         </div>
-                    </form>
-                   
+
+                    {!! Form::close() !!} 
+                    
+                    
                 </div>
             </div>
         </div>
