@@ -41,6 +41,14 @@ Route::post('/habitaciones/crear', 'HabitacionController@crear');
 Route::get('personas/home', 'PersonaController@home');
 Route::get('personas/crear', 'PersonaController@mostrarFormCrear');
 Route::post('personas/crear', 'PersonaController@crear');
+Route::get('personas/editar/{id}','PersonaController@editar');
+
+//Route::put('personas/actualizar/{id}', 'PersonaController@update');
+
+Route::put('personas/actualizar/{id}', function(){
+    echo 'veamos';  
+});
+
 
 Route::get('empleados/home', 'EmpleadoController@home');
 Route::get('empleados/crear', 'EmpleadoController@mostrarFormCrear');
@@ -59,3 +67,4 @@ Route::post('movimientos/crear', 'MovimientoController@crear');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+

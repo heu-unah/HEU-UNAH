@@ -25,6 +25,8 @@ class CreateMovimientosTable extends Migration
             $table->timestamps();
             
             $table->primary(['idMovimiento','idFicha','idPaciente']);
+            
+           // $table->foreign(['idFicha','idPaciente'])->references(['idFicha','idPaciente'])->on('fichas');
         });
     }
 

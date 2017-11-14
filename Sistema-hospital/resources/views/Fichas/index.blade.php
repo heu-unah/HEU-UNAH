@@ -15,6 +15,8 @@
                 <div class="h2 text-center panel-heading text-primary">Listado de fichas</div>
                 <div class="panel-body">
                     <div class="table-responsive">
+
+                      <input id="Paciente_Nombre" type="text" class="form-control" name="Persona_Nombre" placeholder="nombre de Persona" style="margin-bottom:10px;">
                         
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
                             <thead>
@@ -23,6 +25,7 @@
                                 <th>Id empleado</th>
                                 <th>Fecha</th>
                                 <th>Estado del paciente</th>
+                                <th>Acciones</th>
                             </thead>
                             <tbody>
                             @foreach($Fichas as $Ficha)
@@ -32,6 +35,7 @@
                                     <td>{{$Ficha->idEmpleado}}</td>
                                     <td>{{$Ficha->Ficha_Fecha}}</td>
                                     <td>{{$Ficha->Estado_Paciente}}</td>
+                                    <td><a href="#">Actualizar</a><a href="#">Eliminar</a></td>
                                 </tr>
                             @endforeach
                             </tbody>

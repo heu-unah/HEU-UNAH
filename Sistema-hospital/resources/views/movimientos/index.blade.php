@@ -15,6 +15,8 @@
                 <div class="h2 text-center panel-heading text-primary">Listado de movimientos</div>
                 <div class="panel-body">
                     <div class="table-responsive">
+
+                      <input id="idFicha" type="text" class="form-control" name="idFicha" placeholder="Numero de ficha" style="margin-bottom:10px;">
                         
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
                             <thead>
@@ -26,6 +28,7 @@
                                 <th>Id Paciente</th>
                                 <th>Fecha</th>
                                 <th>Descripción</th>
+                                <th>Acciones</th>
                             </thead>
                             <tbody>
                             @foreach($Movimientos as $Movimiento)
@@ -37,6 +40,7 @@
                                     <td>{{$Movimiento->idHabitacion}}</td>
                                     <td>{{$Movimiento->Movimiento_Fecha}}</td>
                                     <td>{{$Movimiento->Movimiento_Descripcion}}</td>
+                                    <td><a href="#">Actualizar</a><a href="#">Eliminar</a></td>
                                 </tr>
                             @endforeach
                             </tbody>

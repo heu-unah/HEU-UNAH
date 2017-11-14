@@ -16,12 +16,16 @@
                 <div class="panel-body">
                     <div class="table-responsive">
                         
+                        <input id="idPersona" type="text" class="form-control" name="idPersona" placeholder="nombre de Empleado" style="margin-bottom:10px;">
+                        
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
+                            
                             <thead>
                                 <th>Identificación</th>
                                 <th>Nombre</th>
                                 <th>Apellido</th>
                                 <th>Cargo</th>
+                                <th>Acciones</th>
                             </thead>
                             <tbody>
                             @foreach($Empleados as $Empleado)
@@ -30,6 +34,7 @@
                                     <td>{{$Empleado->Persona_Nombre}}</td>
                                     <td>{{$Empleado->Persona_Apellido}}</td>
                                     <td>{{$Empleado->Empleado_cargo}}</td>
+                                    <td><a href="#">Actualizar</a><a href="#">Eliminar</a></td>
                                 </tr>
                             @endforeach
                             </tbody>

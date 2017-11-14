@@ -15,8 +15,11 @@
                 <div class="h2 text-center panel-heading text-primary">Listado de personas</div>
                 <div class="panel-body">
                     <div class="table-responsive">
+                        <input id="idPersona" type="text" class="form-control" name="idPersona" placeholder="nombre de persona" style="margin-bottom:10px;">
                         
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
+                            
+                            <tr></tr>
                             <thead>
                                 <th>Id</th>
                                 <th>Nombre</th>
@@ -28,6 +31,7 @@
                                 <th>Tes</th>
                                 <th>Tipo de sangre</th>
                                 <th>Observaciones</th>
+                                <th>Acciones</th>
                             </thead>
                             <tbody>
                             @foreach($Personas as $Persona)
@@ -42,6 +46,10 @@
                                     <td>{{$Persona->Persona_Tes}}</td>
                                     <td>{{$Persona->Tipo_Sangre}}</td>
                                     <td>{{$Persona->Observaciones}}</td>
+                                    <td>
+                                        <a href="{{url('personas/editar',$Persona)}}">editar</a>
+                                        <a href="">eliminar</a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
