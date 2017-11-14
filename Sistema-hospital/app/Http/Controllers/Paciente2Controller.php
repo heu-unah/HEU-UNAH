@@ -96,6 +96,8 @@ class Paciente2Controller extends Controller
                   ->join('personas as pe', 'pa.idPersona', '=', 'pe.idPersona')->get();
                // dd($datosPaciente);
                 //return View::make('pacientes.editar')->with('paciente',$paciente);
+               // $info = json_decode($datosPaciente);
+               // dd($info);
                return view('pacientes.editar',['datosPaciente'=>$datosPaciente, 'paciente' => $paciente]);
             }
            

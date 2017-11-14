@@ -67,21 +67,14 @@ Route::get('personas/actualizar/{id}', function($id){
 
 //Route::post('personas/actualizar/{id}', 'PersonaController@update');
 
-<<<<<<< HEAD
+
 Route::resource('personas','Persona3Controller');
 
 Route::resource('pacientes','Paciente2Controller');
-=======
-Route::resource('personas','Persona3Controller' /*['only'=> ['index','create','store','edit']]*/);
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
+Route::resource('personas','Persona3Controller' /*['only'=> ['index','create','store','edit']]*/);
+
 Route::resource('pacientes','Paciente2Controller');
-=======
->>>>>>> 99ca699b4c131eb6083a9c95b2395487251b9fd2
->>>>>>> ab95b382a51f080fc289114602a97f198be613fe
->>>>>>> 414ba93ade117d286e59db7e79290bdcb22785b9
 
 
 Route::get('empleados/home', 'EmpleadoController@home');
