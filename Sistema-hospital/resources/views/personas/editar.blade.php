@@ -6,12 +6,12 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Informacion de persona: {{$persona->idPersona}} </div>
+                <div class="panel-heading">Informacion de persona: {{$persona->idPersona}}</div>
                  
                 <div class="panel-body">
 
-                 <!--   
-                    {!! Form::model($persona, ['url' =>['personas/update',$persona->idPersona], 'method' => 'PUT']) !!}
+                   
+                    {!! Form::model($persona, ['route' =>['personas.update',$persona->idPersona], 'method' => 'PUT']) !!}
                  
                         @include('personas.campos')
                     <div class="form-group">
@@ -23,9 +23,10 @@
                         </div>
 
                     {!! Form::close() !!} 
-                    -->
                     
-                    <form class="form-horizontal" method="POST"action="{{ url('personas/crear') }}">
+                    
+                    
+                    <form class="form-horizontal" method="PUT" action="{{ route('personas.update',$persona->idPersona) }}">
                         {{ csrf_field() }}
                     
                     <div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">
@@ -193,7 +194,7 @@
                             </div>
                         </div>
                     </form>
-                    
+                   
                 </div>
             </div>
         </div>

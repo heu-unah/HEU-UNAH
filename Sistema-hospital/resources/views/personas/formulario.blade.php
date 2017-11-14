@@ -10,8 +10,8 @@
 
                 <div class="panel-body">
                    
-                    <form class="form-horizontal" method="POST" action="{{ url('personas/crear') }}">
-                        {{ csrf_field() }}
+                    <form class="form-horizontal" method="POST" action="{{ route('personas.store') }}">
+                    
 
                         @include('personas.campos')
 

@@ -90,11 +90,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-5">
-                                    <a href="{{url('personas/home')}}" class="h2">Página de inicio</a>
+                                    <a href="{{route('personas.index')}}" class="h2">Página de inicio</a>
                                     <p class="h4">Acceder a la página de inicio de las personas</p>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="{{url('personas/crear')}}" class="h2">Agregar personas</a>
+                                    <a href="{{route('personas.create')}}" class="h2">Agregar personas</a>
                                     <p class="h4">Acceder al formulario de registro de nuevas personas</p>
                                 </div>
                             </div>

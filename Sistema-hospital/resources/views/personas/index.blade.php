@@ -3,7 +3,7 @@
 @section('titulo',"Personas")
 
 @section('navegacion')
-    <a href="{{ url('personas/crear') }}" class="navbar-brand">Agregar Persona</a>
+    <a href="{{ route('personas.create') }}" class="navbar-brand">Agregar Persona</a>
 @endsection
 
 @section('content')
@@ -47,7 +47,7 @@
                                     <td>{{$Persona->Tipo_Sangre}}</td>
                                     <td>{{$Persona->Observaciones}}</td>
                                     <td>
-                                        <a href="{{url('personas/editar',$Persona)}}">editar</a>
+                                        <a href="{{route('personas.edit',$Persona->idPersona)}}">editar</a>
                                         <a href="">eliminar</a>
                                     </td>
                                 </tr>
