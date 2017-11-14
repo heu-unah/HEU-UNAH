@@ -11,7 +11,7 @@
                 <div class="panel-body">
                    
                     <form class="form-horizontal" method="POST" action="{{ route('personas.store') }}">
-                    
+                    {{ csrf_field() }}
 
                         @include('personas.campos')
 

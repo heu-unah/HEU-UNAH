@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Paciente extends Model
 {
     protected $table = 'pacientes';
-    protected $primary_key = 'idPaciente';
+    protected $primaryKey = 'idPaciente';
     /*
     protected $fillable = [
         'nombre', 'tes', 'domicilio',
     ];*/
     protected $fillable = [
-        'Condicion_Llegada','Ubicacion'
+     'idPersona','Condicion_Llegada','Ubicacion'
     ];
     
     //protected $hidden = ['idEmpleado' ,'createt_at'];

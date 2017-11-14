@@ -15,8 +15,8 @@ class CreatePacientesTable extends Migration
     {
         Schema::create('pacientes', function (Blueprint $table) {
             $table->engine = 'InnoDB';
+            
             $table->increments('idPaciente');
-            //$table->string('idPersona',20)->unique();
             $table->string('idPersona',20);
             $table->string('condicion_llegada',100)->nullable();
             $table->string('ubicacion',50)->nullable();
