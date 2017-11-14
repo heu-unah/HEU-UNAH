@@ -25,12 +25,12 @@
                     {!! Form::close() !!} 
                     -->
                     
-                    <form class="form-horizontal" method="POST"action="{{ url('personas/crear') }}">
-                        {{ csrf_field() }}
-                    
-                    <div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">
-                            <label for="idPersona" class="col-md-4 control-label">Identificacion</label>
+                    <form class="form-horizontal" method="POST" action="{{ url('personas/update') }}" accept-charset="UTF-8">
+                        <input type="hidden" name="_method" value="PUT">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
+                        <div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">
+                            <label for="idPersona" class="col-md-4 control-label">Identificacion</label>
                             <div class="col-md-6">
                                 <input id="idPersona" type="text" class="form-control" name="idPersona" value = {{$persona->idPersona}} required autofocus disabled>
 
@@ -41,10 +41,9 @@
                                 @endif
                             </div>
                         </div>
-                        
+                            
                         <div class="form-group{{ $errors->has('Persona_Nombre') ? ' has-error' : '' }}">
                             <label for="Persona_Nombre" class="col-md-4 control-label">Nombre</label>
-
                             <div class="col-md-6">
                                 <input id="Persona_Nombre" type="text" class="form-control" name="Persona_Nombre" value= {{$persona->Persona_Nombre}} required autofocus>
 
@@ -55,9 +54,9 @@
                                 @endif
                             </div>
                         </div>
-                        
-                        
-                         <div class="form-group{{ $errors->has('Persona_Apellido') ? ' has-error' : '' }}">
+                            
+                            
+                        <div class="form-group{{ $errors->has('Persona_Apellido') ? ' has-error' : '' }}">
                             <label for="Persona_Apellido" class="col-md-4 control-label">Apellido</label>
 
                             <div class="col-md-6">
@@ -70,8 +69,8 @@
                                 @endif
                             </div>
                         </div>
-                        
-                         <div class="form-group{{ $errors->has('Persona_Genero') ? ' has-error' : '' }}">
+                            
+                        <div class="form-group{{ $errors->has('Persona_Genero') ? ' has-error' : '' }}">
                             <label for="Persona_Genero" class="col-md-4 control-label">Genero</label>
 
                             <div class="col-md-6">
@@ -79,7 +78,7 @@
                                 <option value="M">Masculino</option>
                                 <option value="F">Femenino</option>
                                 </select>
-                                
+                                    
                                 @if ($errors->has('Persona_Genero'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('Persona_Apellido') }}</strong>
@@ -101,7 +100,7 @@
                                 @endif
                             </div>
                         </div>
-                        
+                            
                         <div class="form-group{{ $errors->has('Persona_Edad') ? ' has-error' : '' }}">
                             <label for="Persona_edad" class="col-md-4 control-label">Edad</label>
 
@@ -114,10 +113,10 @@
                                     </span>
                                 @endif
                             </div> 
-                            
-                            
+                                
+                                
                         </div>
-                        
+                            
                         <div class="form-group{{ $errors->has('Persona_Descripcion') ? ' has-error' : '' }}">
                             <label for="Persona_Descripcion" class="col-md-4 control-label">Descripcion</label>
 
@@ -126,14 +125,14 @@
 
                                 @if ($errors->has('Persona_Descripcion'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('Persona_Descripcion') }}</strong>
+                                    <strong>{{ $errors->first('Persona_Descripcion') }}</strong>
                                     </span>
                                 @endif
                             </div> 
-                             
+                                 
                         </div>
-                        
-                            <div class="form-group{{ $errors->has('Persona_Tes') ? ' has-error' : '' }}">
+                            
+                        <div class="form-group{{ $errors->has('Persona_Tes') ? ' has-error' : '' }}">
                             <label for="Persona_Tes" class="col-md-4 control-label">Tes</label>
 
                             <div class="col-md-6">
@@ -143,10 +142,10 @@
                                     <span class="help-block">
                                         <strong>{{ $errors->first('Persona_Tes') }}</strong>
                                     </span>
-                                @endif
+                                    @endif
                             </div>
                         </div>
-                        
+                            
                         <div class="form-group{{ $errors->has('Tipo_Sangre') ? ' has-error' : '' }}">
                             <label for="Tipo_Sangre" class="col-md-4 control-label">Tipo de Sangre</label>
 
@@ -167,9 +166,9 @@
                                 @endif
                             </div>
                         </div>
-                        
-                        
-                         <div class="form-group{{ $errors->has('Observaciones') ? ' has-error' : '' }}">
+                            
+                            
+                        <div class="form-group{{ $errors->has('Observaciones') ? ' has-error' : '' }}">
                             <label for="Observaciones" class="col-md-4 control-label">Observaciones</label>
 
                             <div class="col-md-6">
@@ -182,9 +181,7 @@
                                 @endif
                             </div>
                         </div>
-                        
-                         
-                       
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

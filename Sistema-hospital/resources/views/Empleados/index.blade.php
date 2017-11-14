@@ -15,8 +15,14 @@
                 <div class="h2 text-center panel-heading text-primary">Listado de empleados</div>
                 <div class="panel-body">
                     <div class="table-responsive">
-                        
-                        <input id="idPersona" type="text" class="form-control" name="idPersona" placeholder="nombre de Empleado" style="margin-bottom:10px;">
+                        <h4>Hay {{ $Empleados->count() }} registros</h4>
+                        <form class="navbar-form navbar-left " role="search" action="{{ url('empleados/home') }}" method="GET">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Nombre del empleadp" id="NombreEmpleado" name="NombreEmpleado">
+                            </div>
+                            <button type="submit" class="btn btn-default">Buscar</button>
+                        </form>
+
                         
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
                             
@@ -34,12 +40,13 @@
                                     <td>{{$Empleado->Persona_Nombre}}</td>
                                     <td>{{$Empleado->Persona_Apellido}}</td>
                                     <td>{{$Empleado->Empleado_cargo}}</td>
-                                    <td><a href="#">Actualizar</a><a href="#">Eliminar</a></td>
+                                    <td><a href="#">Editar</a><a href="#">Eliminar</a></td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
                     </div>
+                    {!! $Empleados->render() !!}
                 </div>
             </div>
         </div>

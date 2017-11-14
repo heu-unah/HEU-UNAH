@@ -28,8 +28,12 @@
                                     <p class="h4">Acceder al formulario de registro de nuevos pacientes</p>
                                 </div>
                                 <div class="col-md-3">
-                                    <a href="{{url('pacientes/buscar')}}" class="h2">Buscar paciente</a>
-                                    <p class="h4">Buscar paciente</p>
+                                    <form class="navbar-form navbar-left " role="search" action="{{ url('pacientes/home') }}" method="GET">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Nombre del paciente" id="NombrePaciente" name="NombrePaciente">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Buscar</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

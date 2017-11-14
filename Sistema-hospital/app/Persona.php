@@ -24,4 +24,12 @@ class Persona extends Model
     public function paciente(){
         return $this->hasOne('App\Paciente', 'idPersona');
     }
+
+    public function scopeNombre($query, $nombre)
+    {
+        if(trim($nombre) != null)
+        {
+            $query->where('Persona_Nombre', $nombre);
+        }
+    }
 }

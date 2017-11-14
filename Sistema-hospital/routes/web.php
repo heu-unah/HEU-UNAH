@@ -9,28 +9,12 @@ Route::get('/inicio', function () {
 });
 
 
-
-/*Route::get('api/pacientes', function(){
+/*Route::get('pacientes/buscarNombre', 'PacienteController@buscarNombre');
+Route::get('api/pacientes', function(){
 	return datatables()->eloquent(App\Paciente::query())->toJson();
 });*/
-Route::get('api/pacientes', 'PacienteController@getJoinData');
-Route::get('api/empleados', function(){
-	return datatables()->eloquent(App\Empleado::query())->toJson();
-});
-Route::get('api/habitaciones', function(){
-	return datatables()->eloquent(App\Habitacion::query())->toJson();
-});
-Route::get('api/personas', function(){
-	return datatables()->eloquent(App\Persona::query())->toJson();
-});
-Route::get('api/movimientos', function(){
-	return datatables()->eloquent(App\Movimiento::query())->toJson();
-});
-Route::get('api/fichas', function(){
-	return datatables()->eloquent(App\Ficha::query())->toJson();
-});
-
 Route::get('pacientes/home', 'PacienteController@home');
+Route::get('pacientes/buscar', 'PacienteController@buscar');
 Route::get('/pacientes/crear', 'PacienteController@mostrarFormCrear');
 Route::post('/pacientes/crear', 'PacienteController@crear');
 
@@ -45,9 +29,7 @@ Route::get('personas/editar/{id}','PersonaController@editar');
 
 //Route::put('personas/actualizar/{id}', 'PersonaController@update');
 
-Route::put('personas/actualizar/{id}', function(){
-    echo 'veamos';  
-});
+Route::PUT('personas/update', 'PersonaController@update');
 
 
 Route::get('empleados/home', 'EmpleadoController@home');

@@ -11,11 +11,19 @@ use App\Persona;
 class PersonaController extends Controller
 {
     //
-    public function home()
+    public function home(Request $request)
     {
-        $Personas = Persona::all()->take(10);
-        //dd($Personas);
-    	return view('personas.index')->with('Personas', $Personas);
+        if(request()->input('NombrePersona') != null)
+        {
+            $Personas = Persona::nombre(request()->input('NombrePersona'))->paginate(15);
+            return view('personas.index')->with('Personas', $Personas);
+        }
+        else
+        {
+            $Personas = Persona::paginate(15);
+    	   return view('personas.index')->with('Personas', $Personas);
+            
+        }
     }
 
     public function mostrarFormCrear()
@@ -27,36 +35,9 @@ class PersonaController extends Controller
     {
 	    $data = request()->all();
 	    Persona::create($data);
-	    return Redirect::to('/home');
-<<<<<<< HEAD
+	    return Redirect::to('personas.index');
+
 	}
-
-    /*public function actualizar(Request $request)
-    {
-        $persona = Persona::find($request->id);
-        $persona->idPersona = $request->idPersona;
-        $persona->Persona_Nombre = $request->Persona_Nombre;
-        $persona->Persona_Apellido = $request->Persona_Apellido;
-        $persona->Persona_Genero = $request->Persona_Genero;
-        $persona->Persona_Estatura = $request->Persona_Estatura;
-        $persona->Persona_Edad = $request->Persona_Edad;
-        $persona->Persona_Descripcion = $request->Persona_Descripcion;
-        $persona->Persona_Tes = $request->Persona_Tes;
-        $persona->Tipo_Sangre = $request->Tipo_Sangre;
-        $persona->Observaciones = $request->Observaciones;
-        $persona->save();
-        return Redirect::to('/home');
-    }
-
-        public function editar($id)
-    {
-        $persona = Personas::find($id);
-        return view('personas.editar', compact('persona'));
-    } 
-    */
-=======
-	} 
-   
     
     public function editar($id){
         
@@ -66,19 +47,15 @@ class PersonaController extends Controller
         //return View::make('personas/editar', compact('persona'));
     }
     
-    public function update($id){
+    public function update(Request $request){
        // echo "aqui estoy";
         
-        $persona = Persona::findOrFail($id);
-        dd(persona);
+        $persona = Persona::findOrFail($request->idPersona);
+        dd($persona);
         $persona->fill(Request()::all());
         $persona->save();
         
         return Redirect::to('personas.index');
     }
     
-    
-  
-    
->>>>>>> 8ce2413bf1ad8de9d4b1259051f5aed0bbeb8659
 }

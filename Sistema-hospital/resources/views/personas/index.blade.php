@@ -15,7 +15,14 @@
                 <div class="h2 text-center panel-heading text-primary">Listado de personas</div>
                 <div class="panel-body">
                     <div class="table-responsive">
-                        <input id="idPersona" type="text" class="form-control" name="idPersona" placeholder="nombre de persona" style="margin-bottom:10px;">
+                    <h4>Hay {{ $Personas->count() }} registros</h4>
+
+                    <form class="navbar-form navbar-left " role="search" action="{{ url('personas/home') }}" method="GET">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nombre de la persona" id="NombrePersona" name="NombrePersona">
+                        </div>
+                        <button type="submit" class="btn btn-default">Buscar</button>
+                    </form>
                         
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
                             
@@ -47,7 +54,7 @@
                                     <td>{{$Persona->Tipo_Sangre}}</td>
                                     <td>{{$Persona->Observaciones}}</td>
                                     <td>
-                                        <a href="{{url('personas/editar',$Persona)}}">editar</a>
+                                        <a href="{{url('personas/editar', $Persona)}}">editar</a>
                                         <a href="">eliminar</a>
                                     </td>
                                 </tr>

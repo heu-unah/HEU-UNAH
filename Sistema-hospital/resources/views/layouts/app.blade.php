@@ -61,6 +61,25 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
+                                        <a href="{{ url('pacientes/home') }}">Pacientes</a>
+                                    </li>
+                                    <li>
+                                    <li>
+                                        <a href="{{ url('personas/home') }}">Personas</a>
+                                    <li>
+                                        <a href="{{ url('empleados/home') }}">Empleados</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('habitaciones/home') }}">Habitaciones</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('movimientos/home') }}">Movimientos</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('fichas/home') }}">Fichas</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -71,9 +90,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
-                                    <li>
-                                        <a href="{{ url('/home') }}">Home</a>
-                                    </li>
+
                                 </ul>
                             </li>
                         @endguest

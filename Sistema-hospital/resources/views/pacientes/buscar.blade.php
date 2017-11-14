@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('titulo',"Pacientes")
+@section('titulo',"Buscar Pacientes")
 
 @section('navegacion')
-    <a href="{{ url('pacientes/crear') }}" class="navbar-brand">Agregar Paciente</a>
+
 @endsection
 
 @section('content')
@@ -19,14 +19,6 @@
                     <div class="table-responsive" id="txtHint">
                         <h4>Hay {{ $Pacientes->count() }} registros</h4>
                         
-
-                         <form class="navbar-form navbar-left " role="search" action="{{ url('personas/home') }}" method="GET">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nombre del paciente" id="NombrePaciente" name="NombrePaciente">
-                            </div>
-                            <button type="submit" class="btn btn-default">Buscar</button>
-                        </form>
-
                         
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
                             <thead>
@@ -35,7 +27,6 @@
                                 <th>Apellido</th>
                                 <th>Condición</th>
                                 <th>Ubicación</th>
-                                <th>Acciones</th>
                             </thead>
                             <tbody>
                             @foreach($Pacientes as $Paciente)
@@ -45,7 +36,6 @@
                                     <td>{{$Paciente->Persona_Apellido}}</td>
                                     <td>{{$Paciente->condicion_llegada}}</td>
                                     <td>{{$Paciente->ubicacion}}</td>
-                                    <td><a href="#">Editar</a><a href="#">Eliminar</a></td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -61,27 +51,6 @@
 
     <script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     
-    
-    <!--<script>
-    $(document).ready(function(){
-       $("#search").keyup(function(){
-           var str=  $("#search").val();
-           if(str == "") {
-                   $( "#txtHint" ).html("<b>Buscando paciente...</b>"); 
-           }else {
-                   $.get( "{{ url('pacientes/buscarNombre') }}"+str, function( data ) {
-                       $( "#txtHint" ).html( data );  
-                });
-           }
-       });  
-    }); 
-    </script> -->
-
 
 
 @endsection
-
-
-
-
-
