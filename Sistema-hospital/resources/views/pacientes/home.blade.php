@@ -17,6 +17,8 @@
                     <div class="table-responsive">
                         <h4>Hay {{ $Pacientes->count() }} registros</h4>
                         
+                         <input id="Paciente_Nombre" type="text" class="form-control" name="Persona_Nombre" placeholder="nombre de Persona" style="margin-bottom:10px;">
+                        
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
                             <thead>
                                 <th>Número de Identidad</th>
@@ -24,6 +26,7 @@
                                 <th>Apellido</th>
                                 <th>Condición</th>
                                 <th>Ubicación</th>
+                                <th>Acciones</th>
                             </thead>
                             <tbody>
                             @foreach($Pacientes as $Paciente)
@@ -33,6 +36,7 @@
                                     <td>{{$Paciente->Persona_Apellido}}</td>
                                     <td>{{$Paciente->condicion_llegada}}</td>
                                     <td>{{$Paciente->ubicacion}}</td>
+                                    <td><a href="#">Actualizar</a><a href="#">Eliminar</a></td>
                                 </tr>
                             @endforeach
                             </tbody>

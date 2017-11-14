@@ -24,8 +24,8 @@ class CreateFichasTable extends Migration
             
             $table->primary(['idFicha','idPaciente']);
             
-           // $table->foreign('idPaciente')->references('id')->on('pacientes');
-            //$table->foreign('idEmpleado')->references('id')->on('pacientes');
+            $table->foreign('idPaciente')->references('idPaciente')->on('pacientes');
+            $table->foreign('idEmpleado')->references('idEmpleado')->on('empleados');
         });
     }
 
