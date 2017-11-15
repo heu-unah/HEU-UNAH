@@ -107,6 +107,10 @@
 
     <!-- Scripts -->
 
+    <script src="{{ asset('js/functions.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
     <!-- <script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> -->
 </body>
 </html>

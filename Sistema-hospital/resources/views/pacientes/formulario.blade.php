@@ -15,9 +15,10 @@
 
                            <div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">
                             <label for="idPersona" class="col-md-4 control-label">Identificación</label>
+                            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#buscarPersona">Buscar</button>
 
                             <div class="col-md-6">
-                                <input id="idPersona" type="text" class="form-control" name="idPersona" value="{{ old('idPersona') }}" required autofocus>
+                                <input id="idPersona" type="text" class="form-control" name="." value="{{ old('idPersona') }}" required autofocus>
 
                                 @if ($errors->has('idPersona'))
                                     <span class="help-block">
@@ -104,3 +105,44 @@
     </div>
 </div>
 @endsection
+
+
+<!-- Modal -->
+<div class="modal fade" id="buscarPersona" tabindex="-1" role="dialog" aria-labelledby="buscarPersona">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="buscarPersona">Buscar Persona</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" name="code" id="code" />
+        <input type="text" name="code2" id="code2" />
+        <input type="text" name="code3" id="code3" />
+            <table id="dataTableInfo" name="dataTableInfo" class="table table-striped table-bordered table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>Identidad</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                    </tr>
+                </thead>
+                @foreach ($personas as $pe)
+                <tbody>
+                    <tr>
+                        <td>{{ $pe->idPersona }}</td>
+                        <td>{{ $pe->Persona_Nombre }}</td>
+                        <td>{{ $pe->Persona_Apellido }}</td>
+                    </tr>
+                </tbody>
+                @endforeach
+            </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <a href="#" id="btnPoblarPaciente" class="btn btn-primary">Seleccionar</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Redirect;
+
+use App\Habitacion;
+use View;
+
 class Habitacion2Controller extends Controller
 {
     /**
@@ -44,7 +49,7 @@ class Habitacion2Controller extends Controller
         //
         $data = request()->all();
         Habitacion::create($data);
-        return Redirect::to('/home');
+        return Redirect::to('/habitaciones');
     }
 
     /**
@@ -71,7 +76,7 @@ class Habitacion2Controller extends Controller
     {
         //
         $habitacion = Habitacion::findOrFail($id);
-        return view('habitaciones.editar',compact(&habitacion));
+        return View::make('habitaciones.editar')->with('habitacion', $habitacion);
     }
 
     /**

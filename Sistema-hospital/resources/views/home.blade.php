@@ -72,11 +72,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-5">
-                                    <a href="{{url('habitaciones/home')}}" class="h2">Página de inicio</a>
+                                    <a href="{{route('habitaciones.index')}}" class="h2">Página de inicio</a>
                                     <p class="h4">Acceder a la página de inicio de las habitaciones</p>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="{{url('habitaciones/crear')}}" class="h2">Agregar habitación</a>
+                                    <a href="{{route('habitaciones.create')}}" class="h2">Agregar habitación</a>
                                     <p class="h4">Acceder al formulario de registro de nuevas habitaciones</p>
                                 </div>
                             </div>

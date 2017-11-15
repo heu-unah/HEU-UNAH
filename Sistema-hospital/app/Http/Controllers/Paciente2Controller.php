@@ -19,8 +19,6 @@ class Paciente2Controller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
-    
     public function index()
     {
         //
@@ -36,7 +34,10 @@ class Paciente2Controller extends Controller
      */
     public function create()
     {
-        return view('pacientes.formulario');
+
+        $personas = DB::table('personas')->get();
+
+        return view('pacientes.formulario',['personas'=>$personas]);
     }
 
     /**

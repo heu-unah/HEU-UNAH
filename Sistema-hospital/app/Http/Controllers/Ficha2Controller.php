@@ -16,6 +16,8 @@ class Ficha2Controller extends Controller
     public function index()
     {
         //
+             $Fichas = Ficha::all()->take(10);
+    	return view('fichas.index')->with('Fichas', $Fichas);
     }
 
     /**
@@ -26,6 +28,7 @@ class Ficha2Controller extends Controller
     public function create()
     {
         //
+         return view('fichas.formulario');
     }
 
     /**
@@ -37,6 +40,9 @@ class Ficha2Controller extends Controller
     public function store(Request $request)
     {
         //
+        $data = request()->all();
+	    Ficha::create($data);
+	    return Redirect::to('/fichas');
     }
 
     /**

@@ -18,13 +18,11 @@ class FichaController extends Controller
 
     public function mostrarFormCrear()
     {
-        return view('fichas.formulario');
+       
     }
 
     public function crear()
     {
-	    $data = request()->all();
-	    Ficha::create($data);
-	    return Redirect::to('/home');
+	
 	} 
 }

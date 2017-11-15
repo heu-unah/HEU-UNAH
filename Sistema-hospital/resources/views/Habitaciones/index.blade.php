@@ -4,7 +4,7 @@
 
 @section('navegacion')
      <a href="{{ url('/home') }}" class="navbar-brand">Inicio</a>
-    <a href="{{ url('habitaciones/crear') }}" class="navbar-brand">Agregar Habitación</a>
+    <a href="{{ route('habitaciones.create') }}" class="navbar-brand">Agregar Habitación</a>
 @endsection
 
 @section('content')
@@ -32,7 +32,7 @@
                                     <td>{{$Habitacion->habitacion_numero}}</td>
                                     <td>{{$Habitacion->habitacion_area}}</td>
                                     <td>{{$Habitacion->disponible}}</td>
-                                    <td><a href="{{route('habitaciones.edit',$Habitacion->idHabitacion)}}"><button type="button" class="btn btn-info">Editar</button></a></td>
+                                    <td><a href="{{route('habitaciones.edit',$Habitacion->id)}}"><button type="button" class="btn btn-info">Editar</button></a></td>
                                 </tr>
                             @endforeach
                             </tbody>

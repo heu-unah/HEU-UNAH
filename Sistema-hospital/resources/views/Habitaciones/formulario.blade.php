@@ -11,7 +11,7 @@
 
                 <div class="panel-body">
                    
-                    <form class="form-horizontal" method="POST" action="{{ route('habitaciones.create') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('habitaciones.store') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('Habitacion_Numero') ? ' has-error' : '' }}">

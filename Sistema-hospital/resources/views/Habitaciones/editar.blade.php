@@ -11,8 +11,8 @@
 
                 <div class="panel-body">
                    
-                    
-                     {{ Form::model($habitacion, ['route' =>['habitaciones.update',$habitacion->idHabitacion], 'method' => 'PUT', 'class' => "form-horizontal"] ) }}
+          
+                         {{ Form::model($habitacion, ['route' =>['habitaciones.update',$habitacion->idHabitacion], 'method' => 'PUT', 'class' => "form-horizontal"] ) }}
                     
                          {{ csrf_field() }}
 
@@ -34,7 +34,7 @@
                             <label for="Habiracion_Area" class="col-md-4 control-label">Área de habitación</label>
 
                             <div class="col-md-6">
-                                <input id="Habitacion_Area" type="textarea" class="form-control" name="Habitacion_Area" value="{{ $habitacion->$Habitacion_Area') }}" required autofocus>
+                                <input id="Habitacion_Area" type="textarea" class="form-control" name="Habitacion_Area" value="{{ $habitacion->Habitacion_Area }}" required autofocus>
 
                                 @if ($errors->has('habitacion_Area'))
                                     <span class="help-block">

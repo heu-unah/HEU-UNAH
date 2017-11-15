@@ -33,9 +33,9 @@ Route::get('api/fichas', function(){
 
 
 
-Route::get('/habitaciones/home', 'HabitacionController@home');
-Route::get('/habitaciones/crear', 'HabitacionController@mostrarFormCrear');
-Route::post('/habitaciones/crear', 'HabitacionController@crear');
+//Route::get('/habitaciones/home', 'HabitacionController@home');
+//Route::get('/habitaciones/crear', 'HabitacionController@mostrarFormCrear');
+//Route::post('/habitaciones/crear', 'HabitacionController@crear');
 
 
 
@@ -48,6 +48,8 @@ Route::resource('pacientes','Paciente2Controller'); //rutas del crud de paciente
 Route::resource('empleados', 'Empleado3Controller');
 
 Route::get('empleados/home', 'Empleado3Controller@home');
+
+Route::resource('habitaciones', 'Habitacion2Controller');
 
 //Route::get('empleados/crear', 'EmpleadoController@mostrarFormCrear');
 //Route::post('empleados/crear', 'EmpleadoController@crear');
