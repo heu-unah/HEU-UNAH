@@ -13,6 +13,10 @@ use App\Persona;
 
 class Empleado3Controller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *

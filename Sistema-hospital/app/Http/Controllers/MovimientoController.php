@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Redirect;
 use App\Movimiento;
 class MovimientoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     //
     
     public function home()

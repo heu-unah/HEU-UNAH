@@ -3,6 +3,7 @@
 @section('titulo',"Fichas")
 
 @section('navegacion')
+    <a href="{{ url('/home') }}" class="navbar-brand">Inicio</a>
     <a href="{{ url('fichas/crear') }}" class="navbar-brand">Agregar Ficha</a>
 @endsection
 

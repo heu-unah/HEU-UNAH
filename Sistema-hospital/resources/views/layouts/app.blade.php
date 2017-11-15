@@ -16,6 +16,7 @@
     <!-- <link rel="stylesheet" href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
     
 
 </head>
@@ -73,7 +74,7 @@
                                         <a href="{{ route('empleados.index') }}">Empleados</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('habitaciones/home') }}">Habitaciones</a>
+                                        <a href="{{route('habitaciones.index')}}">Habitaciones</a>
                                     </li>
                                     <li>
                                         <a href="{{ url('movimientos/home') }}">Movimientos</a>
@@ -109,7 +110,7 @@
 
     <script src="{{ asset('js/functions.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> 
 
     <!-- <script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> -->
 </body>

@@ -3,6 +3,7 @@
 @section('titulo',"Movimientos")
 
 @section('navegacion')
+    <a href="{{ url('/home') }}" class="navbar-brand">Inicio</a>
     <a href="{{ url('movimientos/crear') }}" class="navbar-brand">Registrar Movimiento</a>
 @endsection
 
