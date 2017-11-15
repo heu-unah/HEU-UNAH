@@ -10,6 +10,10 @@ use App\Ficha;
 class FichaController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
       public function home()
     {
         $Fichas = Ficha::all()->take(10);
@@ -18,11 +22,11 @@ class FichaController extends Controller
 
     public function mostrarFormCrear()
     {
-       
+        return view('fichas.formulario');  
     }
 
     public function crear()
     {
-	
+	   
 	} 
 }
