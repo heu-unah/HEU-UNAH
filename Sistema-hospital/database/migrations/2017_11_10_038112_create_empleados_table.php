@@ -20,7 +20,7 @@ class CreateEmpleadosTable extends Migration
             $table->string('Empleado_Cargo',40)->nullable();
             $table->timestamps();
             $table->rememberToken();
-            $table->foreign('idPersona')->references('idPersona')->on('personas');
+            $table->foreign('idPersona')->references('idPersona')->on('personas')->onDelete('cascade');
             
            // $table->foreign('idPersona')->references('id')->on('personas');
         });

@@ -39,7 +39,7 @@ Route::get('api/fichas', function(){
 
 
 
-Route::get('personas/home', 'Persona3Controller@home'); //metodo de busqueda de personas por nombre
+//Route::get('personas/home', 'Persona3Controller@home'); //metodo de busqueda de personas por nombre
 Route::resource('personas','Persona3Controller'); //rutas del crud, se ven con "php artisan route:list"
 
 Route::get('/pacientes/buscar', 'Paciente2Controller@buscar');
@@ -48,9 +48,9 @@ Route::resource('pacientes','Paciente2Controller'); //rutas del crud de paciente
 //Route::get('pacientes/buscar', 'Paciente2Controller@buscar');
 
 
+Route::get('empleados/home', 'Empleado3Controller@home');
 Route::resource('empleados', 'Empleado3Controller');
 
-Route::get('empleados/home', 'Empleado3Controller@home');
 
 Route::resource('habitaciones', 'Habitacion2Controller');
 

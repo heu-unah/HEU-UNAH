@@ -36,7 +36,7 @@ class Paciente2Controller extends Controller
 
 
             //Hace el Join de la tabla Pacientes con la tabla Personas
-            $Pacientes = Paciente::Join('personas', 'pacientes.idPersona', '=', 'personas.idPersona')->select(['pacientes.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'pacientes.condicion_llegada', 'pacientes.ubicacion'])->paginate(15);
+            $Pacientes = Paciente::Join('personas', 'pacientes.idPersona', '=', 'personas.idPersona')->select(['pacientes.idPersona', 'pacientes.idPaciente', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'pacientes.condicion_llegada', 'pacientes.ubicacion'])->paginate(15);
             //Devuelve y renderiza la vista, con el resultado delJoin
             return view('pacientes.home')->with('Pacientes', $Pacientes);
         }
@@ -73,18 +73,20 @@ class Paciente2Controller extends Controller
         //Campos que obtenemos del formulario
         $Paciente->condicion_llegada = request()->input('Condicion_Llegada');
         $Paciente->ubicacion = request()->input('ubicacion');
+
         //Obtenemos el Id que el usuario ingresa(será nuestro Id para buscar a la persona)
         $idPersona = request()->input('idPersona');
         //Se instancia la nueva persona, según el resultado obtenido con el idPersona
         $Persona = Persona::find($idPersona);
 
+
         //Se crea el paciente
         if ($Persona != null){
              $Persona->paciente()->save($Paciente);
-	       return Redirect::to('/pacientes');
+             return Redirect::to('/pacientes');
         }
         else{
-            return redirect()->route('pacientes.create')->with(['message'=> 'ID de persona no existe!!']);
+            return redirect()->route('pacientes.create')->with(['message'=> '¡ID de persona no existe!']);
         }
        
     }
@@ -114,12 +116,14 @@ class Paciente2Controller extends Controller
             $paciente = Paciente::FindOrFail($id);
             if ($paciente){
               $datosPaciente = DB::table('pacientes as pa')
-                  ->select('pa.idPaciente', 'pa.idPersona','pa.Condicion_Llegada','pa.Ubicacion','pe.Persona_Nombre','pe.Persona_Apellido')
-                  ->join('personas as pe', 'pa.idPersona', '=', 'pe.idPersona')->get();
+                  ->select('pa.idPaciente', 'pa.idPersona','pa.Condicion_Llegada','pa.ubicacion','pe.Persona_Nombre','pe.Persona_Apellido')
+                  ->join('personas as pe', 'pa.idPersona', '=', 'pe.idPersona')
+                  ->where('pa.idPaciente', $id)
+                  ->get();
                // dd($datosPaciente);
                 //return View::make('pacientes.editar')->with('paciente',$paciente);
                // $info = json_decode($datosPaciente);
-               // dd($info);
+               //dd($paciente);
                return view('pacientes.editar',['datosPaciente'=>$datosPaciente, 'paciente' => $paciente]);
             }
            
@@ -141,8 +145,12 @@ class Paciente2Controller extends Controller
     public function update(Request $request, $id)
     {
         //
+
         $paciente = Paciente::findOrFail($id);
         $paciente->fill(request()->all());
+        //$paciente->condicion_llegada = request()->input('Condicion_Llegada');
+        $paciente->ubicacion = request()->input('ubicacion');
+        //dd($paciente);
         $paciente->save();
         return Redirect::to('/pacientes');  
     }
