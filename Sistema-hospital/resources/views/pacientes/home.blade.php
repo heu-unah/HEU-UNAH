@@ -14,11 +14,11 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="h2 text-center panel-heading text-primary">Listado de pacientes</div>
 
-          <h2>hay {{$pacientes->count()}} pacientes</h2>
+          <h2>hay {{$Pacientes->count()}} Pacientes</h2>
 
                     <div class="table-responsive" id="txtHint">
 
-                         <form class="navbar-form navbar-left " role="search" action="{{ url('pacientes/home') }}" method="GET">
+                         <form class="navbar-form navbar-left " role="search" action="{{route('pacientes.index')}}" method="GET">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Nombre del paciente" id="NombrePaciente" name="NombrePaciente">
                             </div>
@@ -36,7 +36,7 @@
                                 <th colspan="2">Acciones</th>
                             </thead>
                             <tbody>
-                            @foreach($pacientes as $Paciente)
+                            @foreach($Pacientes as $Paciente)
                                 <tr>
                                     <td>{{$Paciente->idPersona}}</td>
                                     <td>{{$Paciente->Persona_Nombre}}</td>
@@ -61,7 +61,7 @@
                             </tbody>
                         </table>
                     </div>
-                    {!! $pacientes->render() !!}
+                    {!! $Pacientes->render() !!}
                 </div>
             </div>
         </div>

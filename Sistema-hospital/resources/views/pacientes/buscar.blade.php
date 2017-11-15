@@ -18,8 +18,7 @@
 
                     <div class="table-responsive" id="txtHint">
                         <h4>Hay {{ $Pacientes->count() }} registros</h4>
-                        
-                        
+
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
                             <thead>
                                 <th>Número de Identidad</th>
