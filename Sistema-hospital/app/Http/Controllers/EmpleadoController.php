@@ -12,6 +12,7 @@ class EmpleadoController extends Controller
 {
     //
     
+    /*
     public function home(Request $request)
     {
         if(request()->input('NombreEmpleado') != null){
@@ -42,7 +43,8 @@ class EmpleadoController extends Controller
 
 
 	    /*$data = request()->all();
-	    Empleado::create($data);*/
+	    Empleado::create($data);
 	    return Redirect::to('/home');
 	} 
+    */
 }

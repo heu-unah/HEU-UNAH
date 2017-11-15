@@ -47,9 +47,10 @@ Route::resource('pacientes','Paciente2Controller'); //rutas del crud de paciente
 
 Route::resource('empleados', 'Empleado3Controller');
 
-Route::get('empleados/home', 'EmpleadoController@home');
-Route::get('empleados/crear', 'EmpleadoController@mostrarFormCrear');
-Route::post('empleados/crear', 'EmpleadoController@crear');
+Route::get('empleados/home', 'Empleado3Controller@home');
+
+//Route::get('empleados/crear', 'EmpleadoController@mostrarFormCrear');
+//Route::post('empleados/crear', 'EmpleadoController@crear');
 
 
 Route::get('fichas/home', 'FichaController@home');

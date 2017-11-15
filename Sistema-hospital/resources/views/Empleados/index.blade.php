@@ -3,7 +3,9 @@
 @section('titulo',"Empleados")
 
 @section('navegacion')
-    <a href="{{ url('empleados/crear') }}" class="navbar-brand">Agregar Empleado</a>
+    <a href="{{ url('/home') }}" class="navbar-brand">Inicio</a>
+    <a href="{{ route('empleados.create') }}" class="navbar-brand">Agregar Empleado</a>
+ 
 @endsection
 
 @section('content')
@@ -31,7 +33,7 @@
                                 <th>Nombre</th>
                                 <th>Apellido</th>
                                 <th>Cargo</th>
-                                <th>Acciones</th>
+                                <th colspan="2">Acciones</th>
                             </thead>
                             <tbody>
                             @foreach($Empleados as $Empleado)
@@ -40,7 +42,14 @@
                                     <td>{{$Empleado->Persona_Nombre}}</td>
                                     <td>{{$Empleado->Persona_Apellido}}</td>
                                     <td>{{$Empleado->Empleado_cargo}}</td>
-                                    <td><a href="#">Editar</a><a href="#">Eliminar</a></td>
+                                    <td><a href="{{route('empleados.edit',$Empleado->idEmpleado)}}"><button type="button" class="btn btn-info">Editar</button></a></td>
+                                    <td>
+                                        
+                                     {{ Form::open(array('url' => 'empleados/' . $Empleado->idEmpleado, 'class' => 'pull-right')) }}
+                                        {{ Form::hidden('_method', 'DELETE') }}
+                                        {{ Form::submit('Eliminar', array('class' => 'btn btn-warning')) }}
+                                        {{ Form::close() }}
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

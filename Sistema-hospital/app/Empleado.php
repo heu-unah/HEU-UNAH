@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Empleado extends Model
 {
     //
-    protected $primary_key = 'idEmpleado';
+    protected $primaryKey = 'idEmpleado';
     protected $table = 'empleados';
     protected $fillable = [
         'Empleado_Cargo', 
@@ -27,7 +28,7 @@ class Empleado extends Model
     {
         if(trim($nombre) != null)
         {
-            $query->Join('personas', 'empleados.idPersona', '=', 'personas.idPersona')->select(['empleados.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'empleados.Empleado_cargo'])->where('personas.Persona_Nombre', $nombre);
+            $query->Join('personas', 'empleados.idPersona', '=', 'personas.idPersona')->select(['empleados.idEmpleado','empleados.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'empleados.Empleado_cargo'])->where('personas.Persona_Nombre', $nombre);
         }
     }
 }

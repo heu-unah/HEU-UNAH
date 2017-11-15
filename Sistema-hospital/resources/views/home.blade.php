@@ -50,11 +50,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-5">
-                                    <a href="{{url('empleados/home')}}" class="h2">Página de inicio</a>
+                                    <a href="{{route('empleados.index')}}" class="h2">Página de inicio</a>
                                     <p class="h4">Acceder a la página de inicio de los empleados</p>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="{{url('empleados/crear')}}" class="h2">Agregar empleado</a>
+                                    <a href="{{route('empleados.create')}}" class="h2">Agregar empleado</a>
                                     <p class="h4">Acceder al formulario de registro de nuevos empleados</p>
                                 </div>
                             </div>

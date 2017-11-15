@@ -11,14 +11,16 @@
 
                 <div class="panel-body">
                    
-                    <form class="form-horizontal" method="POST" action="{{ route('habitaciones.create') }}">
-                        {{ csrf_field() }}
+                    
+                     {{ Form::model($habitacion, ['route' =>['habitaciones.update',$habitacion->idHabitacion], 'method' => 'PUT', 'class' => "form-horizontal"] ) }}
+                    
+                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('Habitacion_Numero') ? ' has-error' : '' }}">
                             <label for="Habiracion_Area" class="col-md-4 control-label">Numero de habitación</label>
 
                             <div class="col-md-6">
-                                <input id="Habitacion_numero" type="text" pattern="[0-9]+" class="form-control" name="Habitacion_Numero" value="{{ old('Habitacion_Numero') }}" required autofocus>
+                                <input id="Habitacion_numero" type="text" pattern="[0-9]+" class="form-control" name="Habitacion_Numero" value="{{ $habitacion->Habitacion_Numero }}" required autofocus disabled>
 
                                 @if ($errors->has('habitacion_Numero'))
                                     <span class="help-block">
@@ -32,7 +34,7 @@
                             <label for="Habiracion_Area" class="col-md-4 control-label">Área de habitación</label>
 
                             <div class="col-md-6">
-                                <input id="Habitacion_Area" type="textarea" class="form-control" name="Habitacion_Area" value="{{ old('Habitacion_Area') }}" required autofocus>
+                                <input id="Habitacion_Area" type="textarea" class="form-control" name="Habitacion_Area" value="{{ $habitacion->$Habitacion_Area') }}" required autofocus>
 
                                 @if ($errors->has('habitacion_Area'))
                                     <span class="help-block">
@@ -45,7 +47,7 @@
                             <label for="dom" class="col-md-4 control-label">Disponible</label>
 
                             <div class="col-md-6">
-                                <input id="Disponible" type="checkbox" class="form-control" name="Disponible" value="{{ old('Disponible') }}">
+                                <input id="Disponible" type="checkbox" class="form-control" name="Disponible" value="{{ $habitacion->Disponible }}">
 
                                 @if ($errors->has('Disponible'))
                                     <span class="help-block">
@@ -58,10 +60,18 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Registrar
+                                    Actualizar
                                 </button>
                             </div>
                         </div>
+                    
+                    {{ Form::close() }}
+                    
+                    
+                    
+                    
+                    <form class="form-horizontal" method="POST" action="{{ url('habitaciones/crear') }}">
+                       
                     </form>
                 </div>
             </div>
