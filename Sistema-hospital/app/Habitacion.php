@@ -11,4 +11,11 @@ class Habitacion extends Model
     protected $fillable = [
         'Habitacion_Numero', 'Habitacion_Area', 'Disponible',
     ];
+    
+    protected $primaryKey = 'id';
+    
+    public function movimientos(){
+        
+        return $this->hasMany('App\Movimiento','id');
+    }
 }

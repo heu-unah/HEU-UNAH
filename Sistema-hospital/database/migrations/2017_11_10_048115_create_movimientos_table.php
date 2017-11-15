@@ -26,7 +26,11 @@ class CreateMovimientosTable extends Migration
             
             $table->primary(['idMovimiento','idFicha','idPaciente']);
             
-           // $table->foreign(['idFicha','idPaciente'])->references(['idFicha','idPaciente'])->on('fichas');
+            $table->foreign('idFicha')->references('idFicha')->on('fichas');
+            //$table->foreign('idPaciente')->references('idPaciente')->('fichas');
+            
+            $table->foreign('idHabitacion')->references('id')->on('habitaciones');
+            $table->foreign('idEmpleado')->references('idEmpleado')->on('empleados');
         });
     }
 

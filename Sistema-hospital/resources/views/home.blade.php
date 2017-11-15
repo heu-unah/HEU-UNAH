@@ -138,11 +138,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-5">
-                                    <a href="{{url('fichas/home')}}" class="h2">Página de inicio</a>
+                                    <a href="{{route('fichas.index')}}" class="h2">Página de inicio</a>
                                     <p class="h4">Acceder a la página de inicio de las fichas</p>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="{{url('fichas/crear')}}" class="h2">Agregar fichas</a>
+                                    <a href="{{route('fichas.create')}}" class="h2">Agregar fichas</a>
                                     <p class="h4">Acceder al formulario de registro de nuevas fichas</p>
                                 </div>
                             </div>

@@ -15,8 +15,21 @@ class Movimiento extends Model
         'idMovimiento','idPaciente','idempleado',
         'idHabitacion', 'Movimiento_Fecha', 'Movimiento_Descripcion'
     ];
+    protected $primaryKey = ['idMovimiento','idFicha','idPaciente'];
     
     public function ficha(){
-        return $this->belongsTo('App\Ficha',['idMovimiento','idFicha','idPersona'],['idFicha','idPaciente']);
+        return $this->belongsTo('App\Ficha','movFicha');
+    }
+    
+    public function habitacion(){
+        return $this->belongsTo('App\Habitacion');
+    }
+    
+    public function empleado(){
+        return $this->belongsTo('App\Empleado');
+    }
+    
+    public function paciente(){
+        return $this->belongsTo('App\Ficha');
     }
 }

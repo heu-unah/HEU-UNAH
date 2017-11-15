@@ -22,7 +22,8 @@ class Paciente extends Model
     }
 
     public function fichas(){
-        return $this->hasMany('App\Ficha','idPaciente');
+       // return $this->hasMany('App\Ficha','idPaciente');
+        return $this->hasMany('App\Ficha');
     }
 
     public function scopeNombre($query, $nombre)

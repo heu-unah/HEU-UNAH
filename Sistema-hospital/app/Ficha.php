@@ -15,15 +15,18 @@ class Ficha extends Model
     
     
     public function paciente(){
-        return $this->belongsTo('App\Paciente',['idFicha','idPersona'],'idPaciente');
+       // return $this->belongsTo('App\Paciente',['idFicha','idPersona'],'idPaciente');
+        return $this->belongsTo('App\Paciente');
     }
     
     public function empleado(){
-        return $this->belongsTo('App\Empleado',['idFicha','idPersona'],'idEmpleado');
+        return $this->belongsTo('App\Empleado','idMov');
     }
     
-    public function movimiento(){
-        return $this->hasMany('App\Movimiento',['idFicha','idPaciente']);
+    public function movimientos(){
+        return $this->hasMany('App\Movimiento','idFicha');
     }
+    
+   
     
 }

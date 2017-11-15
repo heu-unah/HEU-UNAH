@@ -54,13 +54,11 @@ Route::get('empleados/home', 'Empleado3Controller@home');
 
 Route::resource('habitaciones', 'Habitacion2Controller');
 
-//Route::get('empleados/crear', 'EmpleadoController@mostrarFormCrear');
-//Route::post('empleados/crear', 'EmpleadoController@crear');
+Route::resource('fichas','Ficha2Controller');
 
-
-Route::get('fichas/home', 'FichaController@home');
-Route::get('fichas/crear', 'FichaController@mostrarFormCrear');
-Route::post('fichas/crear', 'FichaController@crear');
+//Route::get('fichas/home', 'FichaController@home');
+//Route::get('fichas/crear', 'FichaController@mostrarFormCrear');
+//Route::post('fichas/crear', 'FichaController@crear');
 
 
 Route::get('movimientos/home', 'MovimientoController@home');

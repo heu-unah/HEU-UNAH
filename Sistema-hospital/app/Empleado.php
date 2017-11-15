@@ -23,6 +23,10 @@ class Empleado extends Model
     public function fichas(){
         return $this->hasMany('App\Ficha','idEmpleado');
     }
+    
+    public function movimientos(){
+        return $this->hasMany('App\Movimiento');
+    }
 
     public function scopeNombre($query, $nombre)
     {
