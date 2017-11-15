@@ -42,8 +42,11 @@ Route::post('/habitaciones/crear', 'HabitacionController@crear');
 Route::get('personas/home', 'Persona3Controller@home'); //metodo de busqueda de personas por nombre
 Route::resource('personas','Persona3Controller'); //rutas del crud, se ven con "php artisan route:list"
 
+Route::get('/pacientes/buscar', 'Paciente2Controller@buscar');
 Route::get('pacientes/home', 'Paciente2Controller@home'); //metodo de busqueda de pacientes por nombre
 Route::resource('pacientes','Paciente2Controller'); //rutas del crud de pacientes
+//Route::get('pacientes/buscar', 'Paciente2Controller@buscar');
+
 
 Route::resource('empleados', 'Empleado3Controller');
 

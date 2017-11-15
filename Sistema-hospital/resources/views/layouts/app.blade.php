@@ -64,13 +64,13 @@
                                         <a href="{{ url('/home') }}">Home</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('pacientes/home') }}">Pacientes</a>
+                                        <a href="{{route('pacientes.index')}}">Pacientes</a>
                                     </li>
                                     <li>
                                     <li>
                                         <a href="{{ url('personas/home') }}">Personas</a>
                                     <li>
-                                        <a href="{{ url('empleados/home') }}">Empleados</a>
+                                        <a href="{{ route('empleados.index') }}">Empleados</a>
                                     </li>
                                     <li>
                                         <a href="{{ url('habitaciones/home') }}">Habitaciones</a>
