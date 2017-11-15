@@ -18,7 +18,7 @@
                     <div class="table-responsive">
                     <h4>Hay {{ $Personas->count() }} registros</h4>
 
-                    <form class="navbar-form navbar-left " role="search" action="{{ url('personas/home') }}" method="GET">
+                    <form class="navbar-form navbar-left " role="search" action="{{route('personas.index')}}" method="GET">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Nombre de la persona" id="NombrePersona" name="NombrePersona">
                         </div>

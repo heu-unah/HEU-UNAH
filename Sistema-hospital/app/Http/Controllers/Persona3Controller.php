@@ -27,12 +27,23 @@ class Persona3Controller extends Controller
      */
     
 
-    public function index()
+    public function index(Request $request)
     {
-        //
-        $Personas = Persona::all()->take(10);
+        if(request()->input('NombrePersona') != null)
+        {
+            $Personas = Persona::nombre(request()->input('NombrePersona'))->paginate(15);
+            return view('personas.index')->with('Personas', $Personas);
+        }
+        else
+        {
+            $Personas = Persona::paginate(15);
+           return view('personas.index')->with('Personas', $Personas);
+            
+        }
+        
+        /*$Personas = Persona::all()->take(10);
         //dd($Personas);
-    	return view('personas.index')->with('Personas', $Personas);
+    	return view('personas.index')->with('Personas', $Personas);*/
     }
 
     /**
@@ -85,7 +96,8 @@ class Persona3Controller extends Controller
          $persona = Persona::findOrFail($id);
         //return view('personas.editar', compact($persona));
        // return view('personas.editar', compact($persona));
-          return View::make('personas.editar')->with('persona',$persona);
+         //dd($persona);
+          return View::make('personas.editar')->with('persona', $persona);
        // dd($persona);
     }
 
@@ -131,7 +143,7 @@ class Persona3Controller extends Controller
     
     public function home(Request $request)
     {
-        if(request()->input('NombrePersona') != null)
+        /*if(request()->input('NombrePersona') != null)
         {
             $Personas = Persona::nombre(request()->input('NombrePersona'))->paginate(15);
             return view('personas.index')->with('Personas', $Personas);
@@ -141,7 +153,7 @@ class Persona3Controller extends Controller
             $Personas = Persona::paginate(15);
     	   return view('personas.index')->with('Personas', $Personas);
             
-        }
+        }*/
     }
     
 }
