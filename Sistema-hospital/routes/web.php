@@ -31,30 +31,21 @@ Route::get('api/fichas', function(){
 	return datatables()->eloquent(App\Ficha::query())->toJson();
 });
 
-/*
-=======
->>>>>>> 187488ab21d3eb1474a8a8634737cd77f8efd283
-Route::get('pacientes/home', 'PacienteController@home');
-Route::get('pacientes/buscar', 'PacienteController@buscar');
-Route::get('/pacientes/crear', 'PacienteController@mostrarFormCrear');
-Route::post('/pacientes/crear', 'PacienteController@crear');
-*/
+
 
 Route::get('/habitaciones/home', 'HabitacionController@home');
 Route::get('/habitaciones/crear', 'HabitacionController@mostrarFormCrear');
 Route::post('/habitaciones/crear', 'HabitacionController@crear');
 
 
-Route::get('personas/home', 'Persona3Controller@home');
-//Route::get('personas/crear', 'PersonaController@mostrarFormCrear');
-//Route::post('personas/crear', 'PersonaController@crear');
-//Route::get('personas/editar/{id}','PersonaController@editar');
 
+Route::get('personas/home', 'Persona3Controller@home'); //metodo de busqueda de personas por nombre
+Route::resource('personas','Persona3Controller'); //rutas del crud, se ven con "php artisan route:list"
 
+Route::get('pacientes/home', 'Paciente2Controller@home'); //metodo de busqueda de pacientes por nombre
+Route::resource('pacientes','Paciente2Controller'); //rutas del crud de pacientes
 
-Route::resource('personas','Persona3Controller');
-Route::resource('pacientes','Paciente2Controller');
-
+Route::resource('empleados', 'Empleado3Controller');
 
 Route::get('empleados/home', 'EmpleadoController@home');
 Route::get('empleados/crear', 'EmpleadoController@mostrarFormCrear');

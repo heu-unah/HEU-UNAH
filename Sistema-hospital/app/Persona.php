@@ -32,7 +32,7 @@ class Persona extends Model
     {
         if(trim($nombre) != null)
         {
-            $query->where('Persona_Nombre', $nombre);
+              $query->where('Persona_Nombre', 'like','%'. $nombre .'%');
         }
     }
 }

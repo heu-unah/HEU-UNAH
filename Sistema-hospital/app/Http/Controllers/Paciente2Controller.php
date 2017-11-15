@@ -22,9 +22,9 @@ class Paciente2Controller extends Controller
     public function index()
     {
         //
-        $Pacientes = Paciente::Join('personas', 'pacientes.idPersona', '=', 'personas.idPersona')->select(['pacientes.idPaciente','pacientes.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'pacientes.condicion_llegada', 'pacientes.ubicacion'])->paginate(15);
+        $pacientes = Paciente::Join('personas', 'pacientes.idPersona', '=', 'personas.idPersona')->select(['pacientes.idPaciente','pacientes.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'pacientes.condicion_llegada', 'pacientes.ubicacion'])->paginate(15);
         //dd($Pacientes);
-        return view('pacientes.home')->with('pacientes', $Pacientes);
+        return view('pacientes.home')->with('pacientes', $pacientes);
     }
 
     /**
@@ -144,6 +144,27 @@ class Paciente2Controller extends Controller
         }
     }
     
+    
+    public function home(Request $request)
+    {
+
+        if(request()->input('NombrePaciente') != null)
+        {
+
+
+            $pacientes = Paciente::nombre(request()->input('NombrePaciente'))->paginate(15);
+            return view('pacientes.home')->with('Pacientes', $pacientes);
+        }
+        else
+        {
+
+
+            //Hace el Join de la tabla Pacientes con la tabla Personas
+            $pacientes = Paciente::Join('personas', 'pacientes.idPersona', '=', 'personas.idPersona')->select(['pacientes.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'pacientes.condicion_llegada', 'pacientes.ubicacion'])->paginate(15);
+            //Devuelve y renderiza la vista, con el resultado delJoin
+            return view('pacientes.home')->with('Pacientes', $pacientes);
+        }
+    }
 
 
     
