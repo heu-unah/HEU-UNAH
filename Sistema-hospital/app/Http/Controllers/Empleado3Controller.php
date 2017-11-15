@@ -43,7 +43,9 @@ class Empleado3Controller extends Controller
     public function create()
     {
         //
-        return view('empleados.formulario');
+        $personas = DB::table('personas')->get();
+
+        return view('empleados.formulario',['personas'=>$personas]);
 
     }
 
@@ -61,12 +63,19 @@ class Empleado3Controller extends Controller
         $Empleado->Empleado_cargo = request()->input('Empleado_cargo');
         $idPersona = request()->input('idPersona');
         $Persona = Persona::find($idPersona);
-        $Persona->empleado()->save($Empleado);
+        if($Persona != null){
+
+            $Persona->empleado()->save($Empleado);
+            return Redirect::to('/empleados');
+        }
+        else{
+            return redirect()->route('empleados.create')->with(['message'=> '¡ID de persona no existe!']);
+        }
 
 
 	    /*$data = request()->all();
 	    Empleado::create($data);*/
-	    return Redirect::to('/home');
+
         
     }
 
@@ -115,8 +124,10 @@ class Empleado3Controller extends Controller
     {
         //
         $empleado = Empleado::findOrFail($id);
-      //  dd($empleado);
+        
         $empleado->fill(request()->all());
+        $empleado->Empleado_cargo = request()->input('Empleado_cargo');
+        //dd($empleado);
         $empleado->save();
         return Redirect::to('/empleados');  
         

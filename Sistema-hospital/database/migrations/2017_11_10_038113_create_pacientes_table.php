@@ -21,7 +21,7 @@ class CreatePacientesTable extends Migration
             $table->string('condicion_llegada',100)->nullable();
             $table->string('ubicacion',50)->nullable();
             $table->timestamps();
-            $table->foreign('idPersona')->references('idPersona')->on('personas');
+            $table->foreign('idPersona')->references('idPersona')->on('personas')->onDelete('cascade');
 
         });
     }

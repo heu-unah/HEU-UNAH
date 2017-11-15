@@ -15,7 +15,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="h2 text-center panel-heading text-primary">Listado de pacientes</div>
 
-          <h2>hay {{$Pacientes->count()}} Pacientes</h2>
+          <h2>Hay {{$Pacientes->count()}} Pacientes</h2>
 
                     <div class="table-responsive" id="txtHint">
 
