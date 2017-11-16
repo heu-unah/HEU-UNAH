@@ -18,7 +18,7 @@
                             <label for="Habiracion_Area" class="col-md-4 control-label">Numero de habitación</label>
 
                             <div class="col-md-6">
-                                <input id="Habitacion_numero" type="text" pattern="[0-9]+" class="form-control" name="Habitacion_Numero" value="{{ old('Habitacion_Numero') }}" required autofocus>
+                                <input id="Habitacion_numero" type="number" min="1"  class="form-control" name="Habitacion_Numero" value="{{ old('Habitacion_Numero') }}" required autofocus>
 
                                 @if ($errors->has('habitacion_Numero'))
                                     <span class="help-block">

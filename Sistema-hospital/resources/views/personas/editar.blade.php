@@ -19,7 +19,7 @@
                         <div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">
                             <label for="idPersona" class="col-md-4 control-label">Identificacion</label>
                             <div class="col-md-6">
-                                <input id="idPersona" type="text" class="form-control" name="idPersona" value = {{$persona->idPersona}} required autofocus disabled>
+                                <input id="idPersona" type="text" class="form-control" name="idPersona" value = "{{$persona->idPersona}}" required autofocus disabled>
 
                                 @if ($errors->has('idPersona'))
                                     <span class="help-block">
@@ -33,7 +33,7 @@
                         <div class="form-group{{ $errors->has('Persona_Nombre') ? ' has-error' : '' }}">
                             <label for="Persona_Nombre" class="col-md-4 control-label">Nombre</label>
                             <div class="col-md-6">
-                                <input id="Persona_Nombre" type="text" class="form-control" name="Persona_Nombre" value= "{{$persona->Persona_Nombre}}" required autofocus>
+                                <input id="Persona_Nombre" type="text" pattern="[A-Za-z]" class="form-control" name="Persona_Nombre" value= "{{$persona->Persona_Nombre}}" required autofocus>
 
                                 @if ($errors->has('Persona_Nombre'))
                                     <span class="help-block">
@@ -48,7 +48,7 @@
                             <label for="Persona_Apellido" class="col-md-4 control-label">Apellido</label>
 
                             <div class="col-md-6">
-                                <input id="Persona_Apellido" type="text" class="form-control" name="Persona_Apellido" value= {{$persona->Persona_Apellido}} required autofocus>
+                                <input id="Persona_Apellido" type="text" pattern="[A-Za-z]" class="form-control" name="Persona_Apellido" value= {{$persona->Persona_Apellido}} required autofocus>
 
                                 @if ($errors->has('Persona_Apellido'))
                                     <span class="help-block">
@@ -79,7 +79,7 @@
                             <label for="Persona_Estatura" class="col-md-4 control-label">Estatura</label>
 
                             <div class="col-md-6">
-                                <input id="Persona_Estatura" type="text" class="form-control" name="Persona_Estatura" value={{$persona->Persona_Estatura }} required autofocus>
+                                <input id="Persona_Estatura" type="number" min="1" step="0.1" max="2.5" class="form-control" name="Persona_Estatura" value={{$persona->Persona_Estatura }} required autofocus>
 
                                 @if ($errors->has('Persona_Estatura'))
                                     <span class="help-block">
@@ -93,7 +93,7 @@
                             <label for="Persona_edad" class="col-md-4 control-label">Edad</label>
 
                             <div class="col-md-6">
-                                <input id="Persona_Edad" type="text" pattern="[0-9]+" class="form-control" value= {{$persona->Persona_Edad}} }}">
+                                <input id="Persona_Edad" type="numbre" min="1" max="115" class="form-control" value= {{$persona->Persona_Edad}} }}">
 
                                 @if ($errors->has('Persona_Edad'))
                                     <span class="help-block">
@@ -124,7 +124,7 @@
                             <label for="Persona_Tes" class="col-md-4 control-label">Tes</label>
 
                             <div class="col-md-6">
-                                <input id="Persona_Tes" type="text" class="form-control" name="Persona_Tes" value= {{$persona->Persona_Tes}} >
+                                <input id="Persona_Tes" type="text" class="form-control" pattern="[A-Za-z]" name="Persona_Tes" value= {{$persona->Persona_Tes}} >
 
                                 @if ($errors->has('Persona_Tes'))
                                     <span class="help-block">

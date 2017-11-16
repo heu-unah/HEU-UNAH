@@ -18,7 +18,7 @@
                             <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#buscarPersona">Buscar</button>
 
                             <div class="col-md-6">
-                                <input id="idPersona" type="text" class="form-control" name="idPersona" value="{{ old('idPersona') }}" required autofocus>
+                                <input id="idPersona" type="text" class="form-control" name="idPersona" value="{{ old('idPersona') }}" required autofocus disabled>
 
                                 @if ($errors->has('idPersona'))
                                     <span class="help-block">
@@ -63,7 +63,7 @@
                             <label for="Empleado_cargo" class="col-md-4 control-label">Cargo</label>
 
                             <div class="col-md-6">
-                                <input id="Empleado_cargo" type="textarea" class="form-control" name="Empleado_cargo" value="{{ old('Empleado_cargo') }}" required autofocus>
+                                <input id="Empleado_cargo" type="textarea" placeholder="Cargo del empleado" pattern="[A-Za-z]" class="form-control" name="Empleado_cargo" value="{{ old('Empleado_cargo') }}" required autofocus>
 
                                 @if ($errors->has('Empleado_cargo'))
                                     <span class="help-block">
