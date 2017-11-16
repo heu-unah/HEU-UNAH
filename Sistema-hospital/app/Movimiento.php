@@ -12,10 +12,10 @@ class Movimiento extends Model
     public $auto_increment = false;
     public $incrementing = false;
     protected $fillable = [
-        'idMovimiento','idPaciente','idempleado',
-        'idHabitacion', 'Movimiento_Fecha', 'Movimiento_Descripcion'
+        'idMovimiento','idPaciente','idHabitacion', 
+        'Movimiento_Fecha', 'Movimiento_Descripcion'
     ];
-    protected $primaryKey = ['idMovimiento','idFicha','idPaciente'];
+    protected $primaryKey = ['idMovimiento','idFicha'];
     
     public function ficha(){
         return $this->belongsTo('App\Ficha','movFicha');

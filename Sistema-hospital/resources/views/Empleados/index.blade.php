@@ -29,6 +29,7 @@
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
                             
                             <thead>
+                               <th>idEmpleado</th>
                                 <th>Identificación</th>
                                 <th>Nombre</th>
                                 <th>Apellido</th>
@@ -38,6 +39,7 @@
                             <tbody>
                             @foreach($Empleados as $Empleado)
                                 <tr>
+                                   <td>{{$Empleado->idEmpleado}}</td>
                                     <td>{{$Empleado->idPersona}}</td>
                                     <td>{{$Empleado->Persona_Nombre}}</td>
                                     <td>{{$Empleado->Persona_Apellido}}</td>

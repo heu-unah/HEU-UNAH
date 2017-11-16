@@ -20,6 +20,8 @@ class Movimiento2Controller extends Controller
     public function index()
     {
         //
+        $Movimientos = Movimiento::all()->take(10);
+    	return view('movimientos.index')->with('Movimientos', $Movimientos);
     }
 
     /**
@@ -30,6 +32,7 @@ class Movimiento2Controller extends Controller
     public function create()
     {
         //
+         return view('movimientos.formulario');
     }
 
     /**
@@ -41,6 +44,9 @@ class Movimiento2Controller extends Controller
     public function store(Request $request)
     {
         //
+        $data = request()->all();
+	    Movimiento::create($data);
+	    return Redirect::to('/home');
     }
 
     /**
