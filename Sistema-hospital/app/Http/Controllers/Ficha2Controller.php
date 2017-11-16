@@ -109,4 +109,13 @@ class Ficha2Controller extends Controller
     {
         //
     }
+    
+    pubic function buscar(Request $request){
+        
+        
+        $Fichas = Ficha::busqueda($request()->input('NombrePaciente'))->paginate(15);
+        return view('fichas.paciente');
+        
+    }
+    
 }
