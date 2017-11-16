@@ -18,7 +18,6 @@ class CreateHabitacionesTable extends Migration
             $table->increments('id');
             $table->integer('habitacion_numero');
             $table->string('habitacion_area',100);
-            $table->boolean('disponible')->nullable();
             $table->timestamps();
         });
     }

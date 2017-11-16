@@ -22,7 +22,6 @@
                                 <th>Id</th>
                                 <th>Número de habitación</th>
                                 <th>Área de la habitación</th>
-                                <th>Disponible</th>
                                 <th>Acciones</th>
                             </thead>
                             <tbody>
@@ -31,7 +30,6 @@
                                     <td>{{$Habitacion->id}}</td>
                                     <td>{{$Habitacion->habitacion_numero}}</td>
                                     <td>{{$Habitacion->habitacion_area}}</td>
-                                    <td>{{$Habitacion->disponible}}</td>
                                     <td><a href="{{route('habitaciones.edit',$Habitacion->id)}}"><button type="button" class="btn btn-info">Editar</button></a></td>
                                 </tr>
                             @endforeach

@@ -41,6 +41,7 @@
                                 @endif
                             </div>
                         </div>
+<<<<<<< HEAD
                         <div class="form-group{{ $errors->has('Disponible') ? ' has-error' : '' }}">
                             <label for="dom" class="col-md-4 control-label">Disponible</label>
 
@@ -54,6 +55,8 @@
                                 @endif
                             </div>
                         </div>
+=======
+>>>>>>> c2edd94d05eb8e276ba8b187b848fb44297a210c
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

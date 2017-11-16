@@ -17,14 +17,13 @@ class CreateMovimientosTable extends Migration
             $table->engine = 'InnoDB';
             $table->integer('idMovimiento'); //como es una llave compuesta no puede ser autonumerico
             $table->integer('idFicha')->unsigned();
-            $table->integer('idPaciente')->unsigned();
             $table->integer('idEmpleado')->unsigned();
             $table->integer('idHabitacion')->unsigned();
             $table->datetime('Movimiento_Fecha');
             $table->string('Movimiento_Descripcion',100);
             $table->timestamps();
             
-            $table->primary(['idMovimiento','idFicha','idPaciente']);
+            $table->primary(['idMovimiento','idFicha']);
             
             $table->foreign('idFicha')->references('idFicha')->on('fichas');
             //$table->foreign('idPaciente')->references('idPaciente')->('fichas');
