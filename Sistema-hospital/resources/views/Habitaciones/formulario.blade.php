@@ -18,7 +18,7 @@
                             <label for="Habiracion_Area" class="col-md-4 control-label">Numero de habitación</label>
 
                             <div class="col-md-6">
-                                <input id="Habitacion_numero" type="text" pattern="[0-9]+" class="form-control" name="Habitacion_Numero" value="{{ old('Habitacion_Numero') }}" required autofocus>
+                                <input id="Habitacion_numero" type="number" min="1"  class="form-control" name="Habitacion_Numero" value="{{ old('Habitacion_Numero') }}" required autofocus>
 
                                 @if ($errors->has('habitacion_Numero'))
                                     <span class="help-block">
@@ -41,6 +41,22 @@
                                 @endif
                             </div>
                         </div>
+<<<<<<< HEAD
+                        <div class="form-group{{ $errors->has('Disponible') ? ' has-error' : '' }}">
+                            <label for="dom" class="col-md-4 control-label">Disponible</label>
+
+                            <div class="col-md-6">
+                                <input id="Disponible" type="checkbox" class="form-control" name="Disponible" value>
+
+                                @if ($errors->has('Disponible'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Disponible') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+=======
+>>>>>>> c2edd94d05eb8e276ba8b187b848fb44297a210c
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

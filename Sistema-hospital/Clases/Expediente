@@ -1,0 +1,34 @@
+import java.util.Vector;
+
+public class Expediente extends ExamenPaciente {
+
+  public Integer ExpedienteID;
+
+  public String PacienteHospital;
+
+  public Integer PersonaID;
+
+  public Integer ExpedienteDiagnostico;
+
+  public String ExpedienteFechaIngreso;
+
+  public String ExpedienteStatus;
+
+  public Integer EdificioID;
+
+  public Integer HabitacionID;
+
+    public Vector  myEdificioHabitacion;
+    public Vector  myEdificioHabitacion;
+    public Vector  myPaciente;
+
+  public void Actualizar() {
+  }
+
+  public void Agregar() {
+  }
+
+  public void Eliminar() {
+  }
+
+}
