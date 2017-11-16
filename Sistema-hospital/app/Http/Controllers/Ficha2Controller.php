@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 use App\Ficha;
-
+use App\Persona;
+use App\Paciente;
+use Illuminate\Support\Facades\DB;
 class Ficha2Controller extends Controller
 {
 	
@@ -25,7 +27,16 @@ class Ficha2Controller extends Controller
     public function index()
     {
         //
-             $Fichas = Ficha::all()->take(10);
+        
+        $Fichas = DB::table('fichas as f')->orderBy('f.Ficha_Fecha','DESC')
+            ->select('f.idFicha','f.idPaciente','pe.Persona_Nombre','pe.Persona_Apellido','f.Ficha_Fecha','f.Estado_Paciente','f.idEmpleado')
+            ->join('pacientes as pa','f.idPaciente', '=' ,'pa.idPaciente')
+            ->join('personas as pe', 'pa.idPersona','=', 'pe.idPersona')->take(10)->get();
+        
+       // $Fichas = Ficha::Join('pacientes', 'fichas.idPaciente', '=', 'pacientes.idPaciente')::Join('personas','pacientes.idPersona', '=', 'personas.idPersona')
+         //   ->select(['fichas.idFicha','fichas.idPaciente','personas.Persona_Nombre', 'personas.Persona_Apellido',
+           //          'fichas.Ficha_Fecha','Estado_Paciente','idEmpleado'])->take(10);
+            // $Fichas = Ficha::all()->take(10);
     	return view('fichas.index')->with('Fichas', $Fichas);
     }
 

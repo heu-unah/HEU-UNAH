@@ -36,14 +36,14 @@ class Paciente2Controller extends Controller
 
 
             //Hace el Join de la tabla Pacientes con la tabla Personas
-            $Pacientes = Paciente::Join('personas', 'pacientes.idPersona', '=', 'personas.idPersona')->select(['pacientes.idPersona', 'pacientes.idPaciente', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'pacientes.condicion_llegada', 'pacientes.ubicacion'])->paginate(15);
+            $Pacientes = Paciente::Join('personas', 'pacientes.idPersona', '=', 'personas.idPersona')
+                ->select(['pacientes.idPersona', 'pacientes.idPaciente', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 
+                          'pacientes.condicion_llegada', 'pacientes.ubicacion'])->paginate(15);
+            
             //Devuelve y renderiza la vista, con el resultado delJoin
             return view('pacientes.home')->with('Pacientes', $Pacientes);
         }
-        //
-        /*Pacientes = Paciente::Join('personas', 'pacientes.idPersona', '=', 'personas.idPersona')->select(['pacientes.idPaciente','pacientes.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'pacientes.condicion_llegada', 'pacientes.ubicacion'])->paginate(15);
-        //dd($Pacientes);
-        return view('pacientes.home')->with('Pacientes', $Pacientes);*/
+  
     }
 
     /**
