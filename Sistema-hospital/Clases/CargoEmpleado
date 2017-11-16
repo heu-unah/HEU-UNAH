@@ -1,0 +1,20 @@
+import java.util.Vector;
+
+public class CargoEmpleado {
+
+  public Integer CargoEmpleadoID;
+
+  public String CargoEmpleadoDescripcion;
+
+    public Vector  myEmpleado;
+
+  public void Agreagr() {
+  }
+
+  public void Eliminar() {
+  }
+
+  public void Actualizar() {
+  }
+
+}

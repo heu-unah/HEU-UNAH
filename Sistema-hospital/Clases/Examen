@@ -1,0 +1,13 @@
+public class Examen {
+
+  public Integer ExamenID;
+
+  public String ExamenDescripcion;
+
+  public void Agregar() {
+  }
+
+  public void Actualizar() {
+  }
+
+}

@@ -1,0 +1,20 @@
+public class ExamenPaciente extends Examen {
+
+  public Integer ExamenID;
+
+  public Integer Expediente;
+
+  public Integer PacienteHospitalID;
+
+  public DateTime ExamenPacienteFecha;
+
+  public DateTime ExamenPacienteHora;
+
+  public Integer EmpleadoID;
+
+  public Integer MEdicamentoID;
+
+  private void Agregar() {
+  }
+
+}

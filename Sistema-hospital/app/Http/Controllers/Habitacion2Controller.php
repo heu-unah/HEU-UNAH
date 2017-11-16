@@ -52,6 +52,11 @@ class Habitacion2Controller extends Controller
     {
         //
         $data = request()->all();
+        /*if(request()->input('Disponible')){
+            $data->Disponible = 1;
+        }*/
+
+        
         Habitacion::create($data);
         return Redirect::to('/habitaciones');
     }

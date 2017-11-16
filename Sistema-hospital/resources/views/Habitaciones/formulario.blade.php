@@ -45,7 +45,7 @@
                             <label for="dom" class="col-md-4 control-label">Disponible</label>
 
                             <div class="col-md-6">
-                                <input id="Disponible" type="checkbox" class="form-control" name="Disponible" value="{{ old('Disponible') }}">
+                                <input id="Disponible" type="checkbox" class="form-control" name="Disponible" value>
 
                                 @if ($errors->has('Disponible'))
                                     <span class="help-block">
