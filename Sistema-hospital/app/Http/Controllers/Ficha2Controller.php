@@ -12,6 +12,7 @@ use App\Ficha;
 use App\Empleado;
 use App\Paciente;
 
+
 class Ficha2Controller extends Controller
 {
 	
@@ -119,6 +120,7 @@ class Ficha2Controller extends Controller
         //
     }
     
+
     public function buscar(Request $request){
 		
          if(request()->input('NombrePaciente') != null){
@@ -140,7 +142,7 @@ class Ficha2Controller extends Controller
 			
 			foreach($Fichas as $value) {
 				$idFicha = $value->idFicha;
-			}
+			
 			 
 			 $Movimientos = DB::table('movimientos as m')
 			 ->select('m.idMovimiento','m.Movimiento_Descripcion','m.idHabitacion','m.Movimiento_Fecha')
@@ -152,9 +154,5 @@ class Ficha2Controller extends Controller
 			
 		 }
     }
-    
-	
-	
-	
-	
+
 }

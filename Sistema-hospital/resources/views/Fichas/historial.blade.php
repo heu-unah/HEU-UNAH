@@ -41,6 +41,7 @@
                                     <td>{{$Ficha->Ficha_Fecha}}</td>
                                     <td>{{$Ficha->Estado_Paciente}}</td>
                                     <td><a class="btn btn-primary" data-toggle="modal" data-target="#fichaDetalle">Ver movimientos</a></td>
+
                                 </tr>
                             @endforeach
                             </tbody>
@@ -58,7 +59,6 @@
     
 
 @endsection
-
 
 
 <!-- Modal -->
@@ -98,7 +98,6 @@
     </div>
   </div>
 </div>
-
 
 
 
