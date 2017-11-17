@@ -65,16 +65,16 @@
 
 
                         
-                        <div class="form-group{{ $errors->has('Condicion_Llegada') ? ' has-error' : '' }}">
-                            <label for="Condicion_Llegada" class="col-md-4 control-label">Condición</label>
+                        <div class="form-group{{ $errors->has('condicion_llegada') ? ' has-error' : '' }}">
+                            <label for="condicion_llegada" class="col-md-4 control-label">Condición</label>
 
                             <div class="col-md-6">
-                                <input id="Condicion_Llegada" type="textarea" class="form-control" name="Condicion_Llegada" value="{{$paciente->condicion_llegada}}" required autofocus>
+                                <input id="condicion_llegada" type="textarea" class="form-control" name="condicion_llegada" value="{{$paciente->condicion_llegada}}" required autofocus>
 
-                                @if ($errors->has('Condicion_Llegada'))
+                                @if ($errors->has('condicion_llegada'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('Condicion_Llegada') }}</strong>
-                                    </span>value= {{ $paciente->Condicion_Llegada }}
+                                        <strong>{{ $errors->first('condicion_llegada') }}</strong>
+                                    </span>value= {{ $paciente->condicion_llegada }}
                                 @endif
                             </div> 
                              

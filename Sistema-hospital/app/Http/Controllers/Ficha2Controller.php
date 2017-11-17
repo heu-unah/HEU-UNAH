@@ -136,7 +136,7 @@ class Ficha2Controller extends Controller
 			return view('fichas.historial')->with('Fichas',$Fichas);
 			
 		 }
-		 else if (request()->input('idFicha' != null){
+		 /*else if (request()->input('idFicha' != null){
 			 
 			 $fichaDetalle = $request->idFicha;
 			
@@ -152,7 +152,7 @@ class Ficha2Controller extends Controller
 			
 			return view('fichas.historial',['Fichas' => $Fichas, 'Movimientos' =>$Movimientos]);
 			
-		 }
+		 }*/
     }
 
 }
