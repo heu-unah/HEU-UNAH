@@ -33,7 +33,7 @@ Route::get('api/fichas', function(){
 
 
 
-//Route::get('/habitaciones/home', 'HabitacionController@home');
+//Route::get('/habitaciones/home', 'HabitacionController@Buscar');
 //Route::get('/habitaciones/crear', 'HabitacionController@mostrarFormCrear');
 //Route::post('/habitaciones/crear', 'HabitacionController@crear');
 
@@ -42,7 +42,7 @@ Route::get('api/fichas', function(){
 //Route::get('personas/home', 'Persona3Controller@home'); //metodo de busqueda de personas por nombre
 Route::resource('personas','Persona3Controller'); //rutas del crud, se ven con "php artisan route:list"
 
-Route::get('/pacientes/buscar', 'Paciente2Controller@buscar');
+Route::get('/pacientes/buscar', 'Ficha2Controller@buscar');
 Route::get('pacientes/home', 'Paciente2Controller@home'); //metodo de busqueda de pacientes por nombre
 Route::resource('pacientes','Paciente2Controller'); //rutas del crud de pacientes
 //Route::get('pacientes/buscar', 'Paciente2Controller@buscar');
@@ -60,11 +60,12 @@ Route::resource('fichas','Ficha2Controller');
 //Route::get('fichas/crear', 'FichaController@mostrarFormCrear');
 //Route::post('fichas/crear', 'FichaController@crear');
 
-
+Route::resource('movimientos','Movimiento2Controller');
+/*
 Route::get('movimientos/home', 'MovimientoController@home');
 Route::get('movimientos/crear', 'MovimientoController@mostrarFormCrear');
 Route::post('movimientos/crear', 'MovimientoController@crear');
-
+*/
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

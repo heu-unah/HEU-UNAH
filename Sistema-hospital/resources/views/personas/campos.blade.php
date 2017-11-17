@@ -16,7 +16,7 @@
                             <label for="Persona_Nombre" class="col-md-4 control-label">Nombre</label>
 
                             <div class="col-md-6">
-                                <input id="Persona_Nombre" type="text" pattern="[A-Za-z]" placeholder="Nombre de la persona" class="form-control" name="Persona_Nombre" value="{{ old('Persona_Nombre') }}" required autofocus>
+                                <input id="Persona_Nombre" type="text" pattern="[A-Za-z]+" placeholder="Nombre de la persona" class="form-control" name="Persona_Nombre" value="{{ old('Persona_Nombre') }}" required autofocus>
 
                                 @if ($errors->has('Persona_Nombre'))
                                     <span class="help-block">
@@ -31,7 +31,7 @@
                             <label for="Persona_Apellido" class="col-md-4 control-label">Apellido</label>
 
                             <div class="col-md-6">
-                                <input id="Persona_Apellido" type="text" pattern="[A-Za-z]" placeholder="Apellido de la persona" class="form-control" name="Persona_Apellido" value="{{ old('Persona_Apellido') }}" required autofocus>
+                                <input id="Persona_Apellido" type="text" pattern="[A-Za-z]+" placeholder="Apellido de la persona" class="form-control" name="Persona_Apellido" value="{{ old('Persona_Apellido') }}" required autofocus>
 
                                 @if ($errors->has('Persona_Apellido'))
                                     <span class="help-block">
@@ -52,7 +52,7 @@
                                 
                                 @if ($errors->has('Persona_Genero'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('Persona_Apellido') }}</strong>
+                                        <strong>{{ $errors->first('Persona_Generp') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -62,7 +62,7 @@
                             <label for="Persona_Estatura" class="col-md-4 control-label">Estatura</label>
 
                             <div class="col-md-6">
-                                <input id="Persona_Estatura" type="number" min="1" step="0.1" max="2.5" class="form-control" name="Persona_Estatura" value="{{ old('Persona_Estatura') }}" placeholder="Ingrese la estatura en metros" required autofocus>
+                                <input id="Persona_Estatura" type="number" min="1" step="1" max="200" class="form-control" name="Persona_Estatura" value="{{ old('Persona_Estatura') }}" placeholder="Ingrese la estatura en centimetros" required autofocus>
 
                                 @if ($errors->has('Persona_Estatura'))
                                     <span class="help-block">
@@ -107,7 +107,7 @@
                             <label for="Persona_Tes" class="col-md-4 control-label">Tes</label>
 
                             <div class="col-md-6">
-                                <input id="Persona_Tes" type="text" placeholder="Tes de la persona" pattern="[A-Za-z]" class="form-control" name="Persona_Tes" value="{{ old('Persona_Tes') }}" required autofocus>
+                                <input id="Persona_Tes" type="text" placeholder="Tes de la persona" pattern="[A-Za-z]+" class="form-control" name="Persona_Tes" value="{{ old('Persona_Tes') }}" required autofocus>
 
                                 @if ($errors->has('Persona_Tes'))
                                     <span class="help-block">

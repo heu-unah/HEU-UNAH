@@ -13,9 +13,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('font-awesome-4/css/font-awesome.min.css') }}" rel="stylesheet">
     <!-- <link rel="stylesheet" href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   
 
     
 
@@ -36,9 +36,37 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Inicio') }}
+                        Inicio
+                    </a>
+                    <a class="navbar-brand" href="{{ url('/home') }}">
+                        Panel Principal
                     </a>
 
+					<!--<a class="navbar-brand" href="{{ url('/') }}">
+                       Buscar Paciente
+                    </a>
+					
+					<a class="navbar-brand" href="{{ route('personas.index') }}">
+                       Personas
+                    </a>
+					
+					<a class="navbar-brand" href="{{ route('empleados.index') }}">
+                       Empleados
+                    </a>
+					
+					<a class="navbar-brand" href="{{ route('pacientes.index') }}">
+                       Pacientes
+                    </a>
+					
+					<a class="navbar-brand" href="{{ route('habitaciones.index') }}">
+                       Habitaciones
+                    </a>
+					
+					<a class="navbar-brand" href="{{ route('fichas.index') }}">
+                       Fichas
+                    </a>-->
+					
+					
                     @yield('navegacion')
                 </div>
 
@@ -62,25 +90,30 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ url('/home') }}">Home</a>
+                                        <a href="{{ url('/home') }}">Panel Principal</a>
                                     </li>
+                                    <li>
+                                        <a href="{{ url('/') }}">Inicio</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a href="{{ route('personas.index')}}">Personas</a>
+                                    <li>
                                     <li>
                                         <a href="{{route('pacientes.index')}}">Pacientes</a>
                                     </li>
                                     <li>
-                                    <li>
-                                        <a href="{{ url('personas/home') }}">Personas</a>
-                                    <li>
+                                    
                                         <a href="{{ route('empleados.index') }}">Empleados</a>
                                     </li>
                                     <li>
                                         <a href="{{route('habitaciones.index')}}">Habitaciones</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('movimientos/home') }}">Movimientos</a>
+                                        <a href="{{ route('fichas.index')}}">Fichas</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('fichas/home') }}">Fichas</a>
+                                        <a href="{{ route('movimientos.index')}}">Movimientos</a>
                                     </li>
                                     <li role="separator" class="divider"></li>
                                     <li>
@@ -107,10 +140,15 @@
     </div>
 
     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <script src="{{ asset('js/functions.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> 
+    <script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
     <!-- <script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> -->
 </body>

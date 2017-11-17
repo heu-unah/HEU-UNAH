@@ -3,7 +3,7 @@
 @section('titulo',"Pacientes")
 
 @section('navegacion')
-    <a href="{{ url('/home') }}" class="navbar-brand">Inicio</a>
+
     <a href="{{ route('pacientes.create') }}" class="navbar-brand">Agregar Paciente</a>
 @endsection
 

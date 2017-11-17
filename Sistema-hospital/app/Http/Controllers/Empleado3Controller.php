@@ -29,7 +29,7 @@ class Empleado3Controller extends Controller
         //
         
         $Empleados = Empleado::Join('personas', 'empleados.idPersona', '=', 'personas.idPersona')
-            ->select(['empleados.idEmpleado','empleados.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'empleados.Empleado_cargo'])->paginate(15);
+            ->select(['empleados.idEmpleado','empleados.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'empleados.Empleado_Cargo'])->paginate(15);
         
         return view('empleados.index')->with('Empleados', $Empleados);
         
@@ -60,18 +60,21 @@ class Empleado3Controller extends Controller
         //
         
         $Empleado = new Empleado;
-        $Empleado->Empleado_cargo = request()->input('Empleado_cargo');
+        $Empleado->Empleado_Cargo = request()->input('Empleado_Cargo');
         $idPersona = request()->input('idPersona');
         $Persona = Persona::find($idPersona);
-        if($Persona != null){
-
+		
+		
             $Persona->empleado()->save($Empleado);
             return Redirect::to('/empleados');
+			/*
+        if($Persona != null){
+
         }
         else{
             return redirect()->route('empleados.create')->with(['message'=> '¡ID de persona no existe!']);
         }
-
+*/
 
 	    /*$data = request()->all();
 	    Empleado::create($data);*/
@@ -126,7 +129,7 @@ class Empleado3Controller extends Controller
         $empleado = Empleado::findOrFail($id);
         
         $empleado->fill(request()->all());
-        $empleado->Empleado_cargo = request()->input('Empleado_cargo');
+        $empleado->Empleado_Cargo = request()->input('Empleado_Cargo');
         //dd($empleado);
         $empleado->save();
         return Redirect::to('/empleados');  
@@ -163,7 +166,7 @@ class Empleado3Controller extends Controller
         }
         else
         {
-            $Empleados = Empleado::Join('personas', 'empleados.idPersona', '=', 'personas.idPersona')->select(['empleados.idEmpleado', 'empleados.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'empleados.Empleado_cargo'])->paginate(15);
+            $Empleados = Empleado::Join('personas', 'empleados.idPersona', '=', 'personas.idPersona')->select(['empleados.idEmpleado', 'empleados.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'empleados.Empleado_Cargo'])->paginate(15);
         
             return view('empleados.index')->with('Empleados', $Empleados);
         }

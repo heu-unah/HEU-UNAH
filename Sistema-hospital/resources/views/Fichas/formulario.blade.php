@@ -10,29 +10,17 @@
 
                 <div class="panel-body">
                    
-                    <form class="form-horizontal" method="POST" action="{{ url('fichas/crear') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('fichas.store')  }}">
                         {{ csrf_field() }}
 
-                     <div class="form-group{{ $errors->has('idFicha') ? ' has-error' : '' }}">
-                            <label for="idFicha" class="col-md-4 control-label">Id Ficha</label>
-
-                            <div class="col-md-6">
-                                <input id="idFicha" type="text" pattern="[0-9]+" class="form-control" name="idFicha" value="{{ old('idFicha') }}" value="0" required autofocus>
-
-                                @if ($errors->has('idFicha'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('idFicha') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                          
+                        
                           
                            <div class="form-group{{ $errors->has('idPaciente') ? ' has-error' : '' }}">
                             <label for="idPaciente" class="col-md-4 control-label">Id Paciente</label>
+                            <button class="btn btn-primary" type="button" id="btnBuscar" data-toggle="modal" data-target="#buscarPacientes">Buscar</button>
 
                             <div class="col-md-6">
-                                <input id="idPaciente" type="text" pattern="[0-9]+" class="form-control" name="idPaciente" value="{{ old('idPaciente') }}" required autofocus>
+                                <input id="idPaciente" type="text" pattern="[0-9]+" class="form-control" name="idPaciente" value="{{ old('idPaciente') }}" required autofocus >
 
                                 @if ($errors->has('idPaciente'))
                                     <span class="help-block">
@@ -42,30 +30,30 @@
                             </div>
                         </div>
                         
-                        <div class="form-group{{ $errors->has('Persona_Nombre') ? ' has-error' : '' }}">
-                            <label for="Persona_Nombre" class="col-md-4 control-label">Nombre de la Persona</label>
+                        <div class="form-group{{ $errors->has('Paciente_Nombre') ? ' has-error' : '' }}">
+                            <label for="Paciente_Nombre" class="col-md-4 control-label">Nombre del Paciente</label>
 
                             <div class="col-md-6">
-                                <input id="Persona_Nombre" type="text" class="form-control" name="Persona_Nombre" value="{{ old('Persona_Nombre') }}" disabled>
+                                <input id="Paciente_Nombre" type="text" class="form-control" name="Paciente_Nombre" value="{{ old('Paciente_Nombre') }}" disabled>
 
-                                @if ($errors->has('Persona_Nombre'))
+                                @if ($errors->has('Paciente_Nombre'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('Persona_Nombre') }}</strong>
+                                        <strong>{{ $errors->first('Paciente_Nombre') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
                         
                         
-                         <div class="form-group{{ $errors->has('Persona_Apellido') ? ' has-error' : '' }}">
-                            <label for="Persona_Apellido" class="col-md-4 control-label">Apellido de la Persona</label>
+                         <div class="form-group{{ $errors->has('Paciente_Apellido') ? ' has-error' : '' }}">
+                            <label for="Paciente_Apellido" class="col-md-4 control-label">Apellido del Paciente</label>
 
                             <div class="col-md-6">
-                                <input id="Persona_Apellido" type="text" class="form-control" name="Persona_Apellido" value="{{ old('Persona_Apellido') }}" disabled>
+                                <input id="Paciente_Apellido" type="text" class="form-control" name="Paciente_Apellido" value="{{ old('Paciente_Apellido') }}" disabled>
 
-                                @if ($errors->has('Persona_Apellido'))
+                                @if ($errors->has('Paciente_Apellido'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('Persona_Apellido') }}</strong>
+                                        <strong>{{ $errors->first('Paciente_Apellido') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -77,10 +65,11 @@
                        
                        
                         <div class="form-group{{ $errors->has('idEmpleado') ? ' has-error' : '' }}">
-                            <label for="idPacidEmpleadoiente" class="col-md-4 control-label">Id Empleado</label>
+                            <label for="idEmpleado" class="col-md-4 control-label">Id Empleado</label>
+                            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#buscarEmpleado">Buscar</button>
 
                             <div class="col-md-6">
-                                <input id="idEmpleado" type="text" pattern="[0-9]+" class="form-control" name="idEmpleado" value="{{ old('idEmpleado') }}" required autofocus>
+                                <input id="idEmpleado" type="text" pattern="[0-9]+" class="form-control" name="idEmpleado" value="{{ old('idEmpleado') }}" required autofocus >
 
                                 @if ($errors->has('idEmpleado'))
                                     <span class="help-block">
@@ -171,4 +160,90 @@
         </div>
     </div>
 </div>
+ 
 @endsection
+
+
+<div class="modal fade" id="buscarPacientes" tabindex="-1" role="dialog" aria-labelledby="buscarPersona">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="buscarPersona">Buscar Persona</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" name="code" id="code" />
+        <input type="text" name="code2" id="code2" />
+        <input type="text" name="code3" id="code3" />
+            <table id="dataTableInfo" name="dataTableInfo" class="table table-striped table-bordered table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>Identidad</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                    </tr>
+                </thead>
+                @foreach ($pacientes as $pe)
+                <tbody>
+                    <tr>
+                        <td>{{ $pe->idPaciente }}</td>
+                        <td>{{ $pe->Persona_Nombre }}</td>
+                        <td>{{ $pe->Persona_Apellido }}</td>
+                    </tr>
+                </tbody>
+                @endforeach
+            </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <a href="#" id="btnPaciente" class="btn btn-primary">Seleccionar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="buscarEmpleado" tabindex="-1" role="dialog" aria-labelledby="buscarPersona">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="buscarPersona">Buscar Persona</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" name="code22" id="code22" />
+        <input type="text" name="code23" id="code23" />
+        <input type="text" name="code34" id="code34" />
+           
+            <table id="dataTableInfo2" name="dataTableInfo2" class="table table-striped table-bordered table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>Id Empleado</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                    </tr>
+                </thead>
+                @foreach ($empleados as $empleado)
+                <tbody>
+                    <tr>
+                        <td>{{ $empleado->idEmpleado }}</td>
+                        <td>{{ $empleado->Persona_Nombre }}</td>
+                        <td>{{ $empleado->Persona_Apellido }}</td>
+                    </tr>
+                </tbody>
+                @endforeach
+            </table>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <a href="#" id="btnEmpleado" class="btn btn-primary">Seleccionar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+

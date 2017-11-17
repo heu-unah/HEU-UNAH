@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Movimiento;
+use App\Ficha;
+use Illuminate\Support\Facades\Redirect;
+
 
 class Movimiento2Controller extends Controller
 {
@@ -44,9 +48,28 @@ class Movimiento2Controller extends Controller
     public function store(Request $request)
     {
         //
-        $data = request()->all();
-	    Movimiento::create($data);
-	    return Redirect::to('/home');
+		$movimiento = new Movimiento;
+		$idFicha = request()->input('idFicha');
+		$movimiento->idMovimiento = request()->input('idMovimiento');
+		$movimiento->idHabitacion = request()->input('idHabitacion');
+		$movimiento->idFicha = request()->input('idFicha');
+		$movimiento->Movimiento_Fecha = request()->input('Movimiento_Fecha');
+		$movimiento->Movimiento_Descripcion = request()->input('Movimiento_Descripcion');
+		$movimiento->idEmpleado = request()->input('idEmpleado');
+        $Ficha = Ficha::find($idFicha);
+        //$data = request()->all();
+		
+		if ($Ficha != null){
+			$movimiento->save();
+			//$Ficha->movimiento()->save($movimiento);
+             
+             return Redirect::to('/movimientos');
+        }
+        else{
+            return redirect()->route('movimientos.create')->with(['message'=> '¡ID de persona no existe!']);
+        }
+	    /*Movimiento::create($data);
+	    return Redirect::to('/movimientos');*/
     }
 
     /**

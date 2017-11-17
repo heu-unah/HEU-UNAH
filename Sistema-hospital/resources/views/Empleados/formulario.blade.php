@@ -18,7 +18,7 @@
                             <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#buscarPersona">Buscar</button>
 
                             <div class="col-md-6">
-                                <input id="idPersona" type="text" class="form-control" name="idPersona" value="{{ old('idPersona') }}" required autofocus disabled>
+                                <input id="idPersona" type="text" class="form-control" name="idPersona" value="{{ old('idPersona') }}" required autofocus >
 
                                 @if ($errors->has('idPersona'))
                                     <span class="help-block">
@@ -59,15 +59,15 @@
 
 
                         
-                        <div class="form-group{{ $errors->has('Empleado_cargo') ? ' has-error' : '' }}">
-                            <label for="Empleado_cargo" class="col-md-4 control-label">Cargo</label>
+                        <div class="form-group{{ $errors->has('Empleado_Cargo') ? ' has-error' : '' }}">
+                            <label for="Empleado_Cargo" class="col-md-4 control-label">Cargo</label>
 
                             <div class="col-md-6">
-                                <input id="Empleado_cargo" type="textarea" placeholder="Cargo del empleado" pattern="[A-Za-z]" class="form-control" name="Empleado_cargo" value="{{ old('Empleado_cargo') }}" required autofocus>
+                                <input id="Empleado_Cargo" type="textarea" placeholder="Cargo del empleado" pattern="[A-Za-z]+" class="form-control" name="Empleado_Cargo" value="{{ old('Empleado_Cargo') }}" required autofocus>
 
-                                @if ($errors->has('Empleado_cargo'))
+                                @if ($errors->has('Empleado_Cargo'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('Empleado_cargo') }}</strong>
+                                        <strong>{{ $errors->first('Empleado_Cargo') }}</strong>
                                     </span>
                                 @endif
                             </div> 
@@ -88,6 +88,7 @@
         </div>
     </div>
 </div>
+ 
 
 @endsection
 <div class="modal fade" id="buscarPersona" tabindex="-1" role="dialog" aria-labelledby="buscarPersona">

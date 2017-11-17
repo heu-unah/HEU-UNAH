@@ -36,14 +36,14 @@ class Paciente2Controller extends Controller
 
 
             //Hace el Join de la tabla Pacientes con la tabla Personas
-            $Pacientes = Paciente::Join('personas', 'pacientes.idPersona', '=', 'personas.idPersona')->select(['pacientes.idPersona', 'pacientes.idPaciente', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'pacientes.condicion_llegada', 'pacientes.ubicacion'])->paginate(15);
+            $Pacientes = Paciente::Join('personas', 'pacientes.idPersona', '=', 'personas.idPersona')
+                ->select(['pacientes.idPersona', 'pacientes.idPaciente', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 
+                          'pacientes.condicion_llegada', 'pacientes.ubicacion'])->paginate(15);
+            
             //Devuelve y renderiza la vista, con el resultado delJoin
             return view('pacientes.home')->with('Pacientes', $Pacientes);
         }
-        //
-        /*Pacientes = Paciente::Join('personas', 'pacientes.idPersona', '=', 'personas.idPersona')->select(['pacientes.idPaciente','pacientes.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'pacientes.condicion_llegada', 'pacientes.ubicacion'])->paginate(15);
-        //dd($Pacientes);
-        return view('pacientes.home')->with('Pacientes', $Pacientes);*/
+  
     }
 
     /**
@@ -73,16 +73,18 @@ class Paciente2Controller extends Controller
         //Campos que obtenemos del formulario
         $Paciente->condicion_llegada = request()->input('Condicion_Llegada');
         $Paciente->ubicacion = request()->input('ubicacion');
-
+		
         //Obtenemos el Id que el usuario ingresa(será nuestro Id para buscar a la persona)
         $idPersona = request()->input('idPersona');
+		//dd($idPersona);
         //Se instancia la nueva persona, según el resultado obtenido con el idPersona
         $Persona = Persona::find($idPersona);
-
-
+		//dd($Persona);
+		
         //Se crea el paciente
         if ($Persona != null){
-             $Persona->paciente()->save($Paciente);
+			$Persona->paciente()->save($Paciente);
+             
              return Redirect::to('/pacientes');
         }
         else{

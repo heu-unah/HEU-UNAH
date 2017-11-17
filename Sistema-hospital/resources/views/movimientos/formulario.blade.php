@@ -10,10 +10,10 @@
 
                 <div class="panel-body">
                    
-                    <form class="form-horizontal" method="POST" action="{{ url('movimientos/crear') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('movimientos.store') }}">
                         {{ csrf_field() }}
                         
-
+                    <!--
                     <div class="form-group{{ $errors->has('idMovimiento') ? ' has-error' : '' }}">
                         <label for="idMovimiento" class="col-md-4 control-label">Id movimiento</label>
 
@@ -26,11 +26,13 @@
                                 </span>
                             @endif
                         </div>
-                    </div>
+                    </div>-->
                         
 
                      <div class="form-group{{ $errors->has('idFicha') ? ' has-error' : '' }}">
-                            <label for="idFicha" class="col-md-4 control-label">Id Ficha</label>
+                        <label for="idFicha" class="col-md-4 control-label">Id Ficha</label>
+                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#buscarPersona">Buscar</button>
+
 
                             <div class="col-md-6">
                                 <input id="idFicha" type="text" pattern="[0-9]+" class="form-control" name="idFicha" value="{{ old('idFicha') }}" required autofocus>
@@ -43,21 +45,6 @@
                             </div>
                         </div>
                           
-                          
-                           <div class="form-group{{ $errors->has('idPaciente') ? ' has-error' : '' }}">
-                            <label for="idPaciente" class="col-md-4 control-label">Id Paciente</label>
-
-                            <div class="col-md-6">
-                                <input id="idPaciente" type="text" pattern="[0-9]+" class="form-control" name="idPaciente" value="{{ old('idPaciente') }}" required autofocus>
-
-                                @if ($errors->has('idPaciente'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('idPaciente') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        
                         <div class="form-group{{ $errors->has('Persona_Nombre') ? ' has-error' : '' }}">
                             <label for="Persona_Nombre" class="col-md-4 control-label">Nombre de la persona</label>
 
