@@ -128,7 +128,7 @@
                        <!-- informacion de la ficha -->
                         
                          <div class="form-group{{ $errors->has('idHabitacion') ? ' has-error' : '' }}">
-                        <label for="idMovimiento" class="col-md-4 control-label">Id Habitacion</label>
+                        <label for="idHabitacion" class="col-md-4 control-label">Id Habitacion</label>
 
                         <div class="col-md-6">
                             <input id="idHabitacion" type="text" pattern="[0-9]+" class="form-control" name="idHabitacion" value="{{ old('idHabitacion') }}"  required autofocus>
@@ -142,15 +142,15 @@
                     </div>
                        
                         
-                    <div class="form-group{{ $errors->has('Habitacion_Numero') ? ' has-error' : '' }}">
-                        <label for="Habitacion_Numero" class="col-md-4 control-label">Número de Habitación</label>
+                    <div class="form-group{{ $errors->has('habitacion_numero') ? ' has-error' : '' }}">
+                        <label for="habitacion_numero" class="col-md-4 control-label">Número de Habitación</label>
 
                         <div class="col-md-6">
-                            <input id="Habitacion_Numero" type="text" pattern="[0-9]+" class="form-control" name="Habitacion_Numero" value="{{ old('Habitacion_Numero') }}"  disabled>
+                            <input id="habitacion_numero" type="text" pattern="[0-9]+" class="form-control" name="habitacion_numero" value="{{ old('habitacion_numero') }}"  disabled>
 
-                            @if ($errors->has('Habitacion_Numero'))
+                            @if ($errors->has('habitacion_numero'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('Habitacion_Numero') }}</strong>
+                                    <strong>{{ $errors->first('habitacion_numero') }}</strong>
                                 </span>
                             @endif
                         </div>

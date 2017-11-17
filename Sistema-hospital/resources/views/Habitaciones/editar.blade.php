@@ -16,29 +16,29 @@
                     
                          {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('Habitacion_Numero') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('habitacion_numero') ? ' has-error' : '' }}">
                             <label for="Habiracion_Area" class="col-md-4 control-label">Numero de habitación</label>
 
                             <div class="col-md-6">
-                                <input id="Habitacion_numero" type="text" pattern="[0-9]+" class="form-control" name="Habitacion_Numero" value="{{ $habitacion->Habitacion_Numero }}" required autofocus disabled>
+                                <input id="habitacion_numero" type="text" pattern="[0-9]+" class="form-control" name="habitacion_numero" value="{{ $habitacion->habitacion_numero }}" required autofocus disabled>
 
-                                @if ($errors->has('habitacion_Numero'))
+                                @if ($errors->has('habitacion_numero'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('habitacion_Numero') }}</strong>
+                                        <strong>{{ $errors->first('habitacion_numero') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('Habitacion_Area') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('habitacion_area') ? ' has-error' : '' }}">
                             <label for="Habiracion_Area" class="col-md-4 control-label">Área de habitación</label>
 
                             <div class="col-md-6">
-                                <input id="Habitacion_Area" type="textarea" class="form-control" name="Habitacion_Area" value="{{ $habitacion->Habitacion_Area }}" required autofocus>
+                                <input id="habitacion_area" type="textarea" class="form-control" name="habitacion_area" value="{{ $habitacion->habitacion_area }}" required autofocus>
 
-                                @if ($errors->has('habitacion_Area'))
+                                @if ($errors->has('habitacion_area'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('habitacion_Area') }}</strong>
+                                        <strong>{{ $errors->first('habitacion_area') }}</strong>
                                     </span>
                                 @endif
                             </div>

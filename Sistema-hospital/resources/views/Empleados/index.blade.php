@@ -20,7 +20,7 @@
                         <h4>Hay {{ $Empleados->count() }} registros</h4>
                         <form class="navbar-form navbar-left " role="search" action="{{ url('empleados/home') }}" method="GET">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nombre del empleadp" id="NombreEmpleado" name="NombreEmpleado">
+                                <input type="text" class="form-control" placeholder="Nombre del empleado" id="NombreEmpleado" name="NombreEmpleado">
                             </div>
                             <button type="submit" class="btn btn-default">Buscar</button>
                         </form>

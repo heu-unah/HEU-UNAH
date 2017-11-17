@@ -38,7 +38,7 @@ class Ficha extends Model
                          'pe.Persona_Apellido','f.Ficha_Fecha','f.Estado_Paciente','f.idEmpleado'])
                 ->join('pacientes as pa','f.idPaciente', '=' ,'pa.idPaciente')
                 ->join('personas as pe', 'pa.idPersona','=', 'pe.idPersona')
-                 ->where('pe.Nombre_Persona','like','%'. $nombre . '%');
+                 ->where('pe.Persona_Nombre','like','%'. $nombre . '%');
         }
     }
    

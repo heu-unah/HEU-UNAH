@@ -59,15 +59,15 @@
 
 
                         
-                        <div class="form-group{{ $errors->has('Empleado_cargo') ? ' has-error' : '' }}">
-                            <label for="Empleado_cargo" class="col-md-4 control-label">Cargo</label>
+                        <div class="form-group{{ $errors->has('Empleado_Cargo') ? ' has-error' : '' }}">
+                            <label for="Empleado_Cargo" class="col-md-4 control-label">Cargo</label>
 
                             <div class="col-md-6">
-                                <input id="Empleado_cargo" type="textarea" pattern="[A-Za-z]+" class="form-control" name="Empleado_cargo" value="{{ $info[0]["Empleado_Cargo"] }}" required autofocus>
+                                <input id="Empleado_Cargo" type="textarea" pattern="[A-Za-z]+" class="form-control" name="Empleado_Cargo" value="{{ $info[0]["Empleado_Cargo"] }}" required autofocus>
 
-                                @if ($errors->has('Empleado_cargo'))
+                                @if ($errors->has('Empleado_Cargo'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('Empleado_cargo') }}</strong>
+                                        <strong>{{ $errors->first('Empleado_Cargo') }}</strong>
                                     </span>
                                 @endif
                             </div> 

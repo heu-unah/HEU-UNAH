@@ -13,9 +13,6 @@
                    
                     {!! Form::model($persona, ['route' =>['personas.update',$persona->idPersona], 'method' => 'PUT', 'class' => "form-horizontal"] ) !!}
                  
-                
-
-
                         <div class="form-group{{ $errors->has('idPersona') ? ' has-error' : '' }}">
                             <label for="idPersona" class="col-md-4 control-label">Identificacion</label>
                             <div class="col-md-6">
@@ -93,7 +90,7 @@
                             <label for="Persona_edad" class="col-md-4 control-label">Edad</label>
 
                             <div class="col-md-6">
-                                <input id="Persona_Edad" type="numbre" min="1" max="115" class="form-control" value= {{$persona->Persona_Edad}} }}">
+                                <input id="Persona_Edad" type="numbre" min="1" max="115" class="form-control" value= {{$persona->Persona_Edad }}>
 
                                 @if ($errors->has('Persona_Edad'))
                                     <span class="help-block">
@@ -168,10 +165,7 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
-
-
-                    
+                        </div>                                     
              
                     
                     
