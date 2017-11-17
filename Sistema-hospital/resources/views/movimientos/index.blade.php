@@ -3,8 +3,8 @@
 @section('titulo',"Movimientos")
 
 @section('navegacion')
-    <a href="{{ url('/home') }}" class="navbar-brand">Inicio</a>
-    <a href="{{ url('movimientos/crear') }}" class="navbar-brand">Registrar Movimiento</a>
+
+    <a href="{{ route('movimientos.create') }}" class="navbar-brand">Registrar Movimiento</a>
 @endsection
 
 @section('content')
@@ -23,25 +23,20 @@
                             <thead>
                                 <th>Id Movimiento</th>
                                 <th>Id Ficha</th>
-                                <th>Id Paciente</th>
                                 <th>Id Empleado</th>
                                 <th>Id Habitación</th>
-                                <th>Id Paciente</th>
                                 <th>Fecha</th>
-                                <th>Descripción</th>
-                                <th>Acciones</th>
+                                <th>Estado</th>
                             </thead>
                             <tbody>
                             @foreach($Movimientos as $Movimiento)
                                 <tr>
                                     <td>{{$Movimiento->idMovimiento}}</td>
                                     <td>{{$Movimiento->idFicha}}</td>
-                                    <td>{{$Movimiento->idPaciente}}</td>
                                     <td>{{$Movimiento->idEmpleado}}</td>
                                     <td>{{$Movimiento->idHabitacion}}</td>
                                     <td>{{$Movimiento->Movimiento_Fecha}}</td>
                                     <td>{{$Movimiento->Movimiento_Descripcion}}</td>
-                                    <td><a href="#">Actualizar</a><a href="#">Eliminar</a></td>
                                 </tr>
                             @endforeach
                             </tbody>

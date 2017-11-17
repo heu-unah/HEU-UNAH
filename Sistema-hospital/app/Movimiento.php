@@ -12,7 +12,7 @@ class Movimiento extends Model
     public $auto_increment = false;
     public $incrementing = false;
     protected $fillable = [
-        'idMovimiento','idPaciente','idHabitacion', 
+        'idMovimiento','idHabitacion','idEmpleado', 
         'Movimiento_Fecha', 'Movimiento_Descripcion'
     ];
     protected $primaryKey = ['idMovimiento','idFicha'];

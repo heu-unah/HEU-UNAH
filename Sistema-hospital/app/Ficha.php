@@ -3,13 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use App\Empleado;
+use App\Persona;
 
 class Ficha extends Model
 {
     //
-  //  protected primary_key(['idFicha','idPaciente']);
-    public $auto_increment = false;
-    public $incrementing = false;
+       protected $primaryKey = 'idFicha';
+    /*public $auto_increment = false;
+    public $incrementing = false;*/
     protected $table = 'fichas';
     protected $fillable = ['idPaciente','idEmpleado','Ficha_Fecha','Estado_Paciente'];
     
@@ -31,8 +34,10 @@ class Ficha extends Model
         
         if (trim($nombre) != null){
              $query = DB::table('fichas as f')->orderBy('f.Ficha_Fecha','DESC')
-                ->select('f.idFicha','f.idPaciente','pe.Persona_Nombre',
-                         'pe.Persona_Apellido','f.Ficha_Fecha','f.Estado_Paciente','f.idEmpleado')
+
+                ->select(['f.idFicha','f.idPaciente','pe.Persona_Nombre',
+                         'pe.Persona_Apellido','f.Ficha_Fecha','f.Estado_Paciente','f.idEmpleado'])
+
                 ->join('pacientes as pa','f.idPaciente', '=' ,'pa.idPaciente')
                 ->join('personas as pe', 'pa.idPersona','=', 'pe.idPersona')
                  ->where('pe.Nombre_Persona','like','%'. $nombre . '%');

@@ -18,7 +18,7 @@
                             <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#buscarPersona">Buscar</button>
 
                             <div class="col-md-6">
-                                <input id="idPersona" type="text" class="form-control" name="idPersona" value="{{ old('idPersona') }}" required autofocus disabled>
+                                <input id="idPersona" type="text" class="form-control" name="idPersona" value="{{ old('idPersona') }}" required autofocus >
 
                                 @if ($errors->has('idPersona'))
                                     <span class="help-block">
@@ -104,6 +104,8 @@
         </div>
     </div>
 </div>
+
+
 @endsection
 
 

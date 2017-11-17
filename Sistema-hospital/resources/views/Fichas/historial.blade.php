@@ -40,7 +40,8 @@
                                     <td>{{$Ficha->idEmpleado}}</td>
                                     <td>{{$Ficha->Ficha_Fecha}}</td>
                                     <td>{{$Ficha->Estado_Paciente}}</td>
-                                    <td><a href="#">Ver Movimientos</a></td>
+                                    <td><a class="btn btn-primary" data-toggle="modal" data-target="#fichaDetalle">Ver movimientos</a></td>
+
                                 </tr>
                             @endforeach
                             </tbody>
@@ -59,6 +60,44 @@
 
 @endsection
 
+
+<!-- Modal -->
+<div class="modal fade" id="fichaDetalle" tabindex="-1" role="dialog" aria-labelledby="fichaDetalle">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="fichaDetalle">Detalle de la ficha</h4>
+      </div>
+      <div class="modal-body">
+            <table id="dataTableInfo" name="dataTableInfo" class="table table-striped table-bordered table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <th>ID Movimiento</th>
+						<th>Habitacion</th>
+						<th>Descripcion</th>
+						<th>Fecha</th>
+                    </tr>
+                </thead>
+                @foreach ($Movimientos as $fd)
+                <tbody>
+                    <tr>
+                        <td>{{ $fd->idMovimiento }}</td>
+                        <td>{{ $fd->idHabitacion }}</td>
+                        <td>{{ $fd->Movimiento_Descripcion }}</td>
+						<td>{{ $fd->Movimiento_Fecha }}</td>
+                    </tr>
+                </tbody>
+                @endforeach
+            </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

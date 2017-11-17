@@ -3,7 +3,7 @@
 @section('titulo',"Fichas")
 
 @section('navegacion')
-    <a href="{{ url('/home') }}" class="navbar-brand">Inicio</a>
+
     <a href="{{ route('fichas.create') }}" class="navbar-brand">Agregar Ficha</a>
 @endsection
 
@@ -51,11 +51,7 @@
         </div>
     </div>
 
-    
-
-    <script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-
-    
+   
 
 @endsection
 

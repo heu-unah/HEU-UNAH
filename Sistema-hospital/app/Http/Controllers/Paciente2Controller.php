@@ -73,16 +73,18 @@ class Paciente2Controller extends Controller
         //Campos que obtenemos del formulario
         $Paciente->condicion_llegada = request()->input('Condicion_Llegada');
         $Paciente->ubicacion = request()->input('ubicacion');
-
+		
         //Obtenemos el Id que el usuario ingresa(será nuestro Id para buscar a la persona)
         $idPersona = request()->input('idPersona');
+		//dd($idPersona);
         //Se instancia la nueva persona, según el resultado obtenido con el idPersona
         $Persona = Persona::find($idPersona);
-
-
+		//dd($Persona);
+		
         //Se crea el paciente
         if ($Persona != null){
-             $Persona->paciente()->save($Paciente);
+			$Persona->paciente()->save($Paciente);
+             
              return Redirect::to('/pacientes');
         }
         else{

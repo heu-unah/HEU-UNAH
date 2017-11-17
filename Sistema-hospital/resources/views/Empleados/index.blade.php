@@ -3,7 +3,7 @@
 @section('titulo',"Empleados")
 
 @section('navegacion')
-    <a href="{{ url('/home') }}" class="navbar-brand">Inicio</a>
+
     <a href="{{ route('empleados.create') }}" class="navbar-brand">Agregar Empleado</a>
  
 @endsection
@@ -38,12 +38,13 @@
                             </thead>
                             <tbody>
                             @foreach($Empleados as $Empleado)
+							
                                 <tr>
                                    <td>{{$Empleado->idEmpleado}}</td>
                                     <td>{{$Empleado->idPersona}}</td>
                                     <td>{{$Empleado->Persona_Nombre}}</td>
                                     <td>{{$Empleado->Persona_Apellido}}</td>
-                                    <td>{{$Empleado->Empleado_cargo}}</td>
+                                    <td>{{$Empleado->Empleado_Cargo}}</td>
                                     <td><a href="{{route('empleados.edit',$Empleado->idEmpleado)}}"><button type="button" class="btn btn-info">Editar</button></a></td>
                                     <td>
                                         
@@ -62,11 +63,6 @@
             </div>
         </div>
     </div>
-
-    
-
-    <script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-
-   
+  
 
 @endsection
