@@ -34,8 +34,10 @@ class Ficha extends Model
         
         if (trim($nombre) != null){
              $query = DB::table('fichas as f')->orderBy('f.Ficha_Fecha','DESC')
+
                 ->select(['f.idFicha','f.idPaciente','pe.Persona_Nombre',
                          'pe.Persona_Apellido','f.Ficha_Fecha','f.Estado_Paciente','f.idEmpleado'])
+
                 ->join('pacientes as pa','f.idPaciente', '=' ,'pa.idPaciente')
                 ->join('personas as pe', 'pa.idPersona','=', 'pe.idPersona')
                  ->where('pe.Persona_Nombre','like','%'. $nombre . '%');
