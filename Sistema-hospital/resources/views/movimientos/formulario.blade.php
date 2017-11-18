@@ -13,7 +13,7 @@
                     <form class="form-horizontal" method="POST" action="{{ route('movimientos.store') }}">
                         {{ csrf_field() }}
                         
-                    <!--
+                    
                     <div class="form-group{{ $errors->has('idMovimiento') ? ' has-error' : '' }}">
                         <label for="idMovimiento" class="col-md-4 control-label">Id movimiento</label>
 
@@ -26,7 +26,7 @@
                                 </span>
                             @endif
                         </div>
-                    </div>-->
+                    </div>
                         
 
                      <div class="form-group{{ $errors->has('idFicha') ? ' has-error' : '' }}">

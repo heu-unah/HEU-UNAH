@@ -175,7 +175,11 @@
         <input type="text" name="code" id="code" />
         <input type="text" name="code2" id="code2" />
         <input type="text" name="code3" id="code3" />
-            <table id="dataTableInfo" name="dataTableInfo" class="table table-striped table-bordered table-condensed table-hover">
+        <div class="input-group" style="margin-top: 15px; margin-bottom: 15px;">
+            <span class="input-group-addon"><i class="fa fa-search fa-fw" aria-hidden="true"></i>Buscar</span>
+            <input id="kw_search" type="text" class="form-control" placeholder="Ingrese su búsqueda">
+        </div>
+            <table id="tablaM" name="tablaM" class="table table-striped table-bordered table-condensed table-hover" style="margin-top: 15px;">
                 <thead>
                     <tr>
                         <th>Identidad</th>
@@ -216,8 +220,12 @@
         <input type="text" name="code22" id="code22" />
         <input type="text" name="code23" id="code23" />
         <input type="text" name="code34" id="code34" />
+        <div class="input-group" style="margin-top: 15px; margin-bottom: 15px;">
+            <span class="input-group-addon"><i class="fa fa-search fa-fw" aria-hidden="true"></i>Buscar</span>
+            <input id="k_search" type="text" class="form-control" placeholder="Ingrese su búsqueda">
+        </div>
            
-            <table id="dataTableInfo2" name="dataTableInfo2" class="table table-striped table-bordered table-condensed table-hover">
+            <table id="tabla2" name="tabla2" class="table table-striped table-bordered table-condensed table-hover" style="margin-top: 15px;">
                 <thead>
                     <tr>
                         <th>Id Empleado</th>

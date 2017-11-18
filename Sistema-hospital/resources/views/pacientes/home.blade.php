@@ -14,41 +14,37 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="h2 text-center panel-heading text-primary">Listado de pacientes</div>
-
-          <h2>Hay {{$Pacientes->count()}} Pacientes</h2>
-
+                <div class="panel-body">  
                     <div class="table-responsive" id="txtHint">
-
-                         <form class="navbar-form navbar-left " role="search" action="{{route('pacientes.index')}}" method="GET">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nombre del paciente" id="NombrePaciente" name="NombrePaciente">
-                            </div>
-                            <button type="submit" class="btn btn-default">Buscar</button>
-                        </form>
+                    <h4>Hay {{$Pacientes->count()}} Pacientes</h4>
+                    <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search fa-fw" aria-hidden="true"></i>Buscar</span>
+                            <input id="kwd_search" type="text" class="form-control" placeholder="Ingrese su búsqueda">
+                    </div>
 
                         
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
                             <thead>
-                               <th>idPaciente</th>
-                                <th>Número de Identidad</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Condición</th>
-                                <th>Ubicación</th>
-                                <th colspan="2">Acciones</th>
+                               <th class="text-center">idPaciente</th>
+                                <th class="text-center">Número de Identidad</th>
+                                <th class="text-center">Nombre</th>
+                                <th class="text-center">Apellido</th>
+                                <th class="text-center">Condición</th>
+                                <th class="text-center">Ubicación</th>
+                                <th colspan="2" class="text-center">Acciones</th>
                             </thead>
                             <tbody>
                             @foreach($Pacientes as $Paciente)
                                 <tr>
-                                   <td>{{$Paciente->idPaciente}}</td>
-                                    <td>{{$Paciente->idPersona}}</td>
-                                    <td>{{$Paciente->Persona_Nombre}}</td>
-                                    <td>{{$Paciente->Persona_Apellido}}</td>
-                                    <td>{{$Paciente->condicion_llegada}}</td>
-                                    <td>{{$Paciente->ubicacion}}</td>
+                                   <td class="text-center">{{$Paciente->idPaciente}}</td>
+                                    <td class="text-center">{{$Paciente->idPersona}}</td>
+                                    <td class="text-center">{{$Paciente->Persona_Nombre}}</td>
+                                    <td class="text-center">{{$Paciente->Persona_Apellido}}</td>
+                                    <td class="text-center">{{$Paciente->condicion_llegada}}</td>
+                                    <td class="text-center">{{$Paciente->ubicacion}}</td>
 
-                                    <td><a href="{{route('pacientes.edit', $Paciente->idPaciente)}}"><button type="button" class="btn btn-info">Editar</button></a></td>
-                                    <td>
+                                    <td class="col-md-1"><a href="{{route('pacientes.edit', $Paciente->idPaciente)}}"><button type="button" class="btn btn-info">Editar</button></a></td>
+                                    <td class="text-center col-md-1">
                                         
                                         {{ Form::open(array('url' => 'pacientes/' . $Paciente->idPaciente, 'class' => 'pull-right')) }}
                                         {{ Form::hidden('_method', 'DELETE') }}
@@ -65,6 +61,10 @@
                         </table>
                     </div>
                     {!! $Pacientes->render() !!}
+                </div>
+
+          
+                    
                 </div>
             </div>
         </div>

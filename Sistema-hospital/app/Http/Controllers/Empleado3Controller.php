@@ -43,7 +43,8 @@ class Empleado3Controller extends Controller
     public function create()
     {
         //
-        $personas = DB::table('personas')->get();
+        $personas = DB::table('personas')->paginate(15);
+        //$personas->setPath('empleados/create');
 
         return view('empleados.formulario',['personas'=>$personas]);
 

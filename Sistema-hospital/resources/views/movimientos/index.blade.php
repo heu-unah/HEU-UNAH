@@ -16,27 +16,32 @@
                 <div class="h2 text-center panel-heading text-primary">Listado de movimientos</div>
                 <div class="panel-body">
                     <div class="table-responsive">
+                    <h4>Hay {{ $Movimientos->count() }} movimientos</h4>
+                    <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search fa-fw" aria-hidden="true"></i>Buscar</span>
+                            <input id="kwd_search" type="text" class="form-control" placeholder="Ingrese su búsqueda">
+                    </div>
 
                       <!--<input id="idFicha" type="text" class="form-control" name="idFicha" placeholder="Numero de ficha" style="margin-bottom:10px;"> -->
                         
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
                             <thead>
-                                <th>Id Movimiento</th>
-                                <th>Id Ficha</th>
-                                <th>Id Empleado</th>
-                                <th>Id Habitación</th>
-                                <th>Fecha</th>
-                                <th>Estado</th>
+                                <th class="text-center">Id Movimiento</th>
+                                <th class="text-center">Id Ficha</th>
+                                <th class="text-center">Id Empleado</th>
+                                <th class="text-center">Id Habitación</th>
+                                <th class="text-center">Fecha</th>
+                                <th class="text-center">Estado</th>
                             </thead>
                             <tbody>
                             @foreach($Movimientos as $Movimiento)
                                 <tr>
-                                    <td>{{$Movimiento->idMovimiento}}</td>
-                                    <td>{{$Movimiento->idFicha}}</td>
-                                    <td>{{$Movimiento->idEmpleado}}</td>
-                                    <td>{{$Movimiento->idHabitacion}}</td>
-                                    <td>{{$Movimiento->Movimiento_Fecha}}</td>
-                                    <td>{{$Movimiento->Movimiento_Descripcion}}</td>
+                                    <td class="text-center">{{$Movimiento->idMovimiento}}</td>
+                                    <td class="text-center">{{$Movimiento->idFicha}}</td>
+                                    <td class="text-center">{{$Movimiento->idEmpleado}}</td>
+                                    <td class="text-center">{{$Movimiento->idHabitacion}}</td>
+                                    <td class="text-center">{{$Movimiento->Movimiento_Fecha}}</td>
+                                    <td class="text-center">{{$Movimiento->Movimiento_Descripcion}}</td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -46,10 +51,6 @@
             </div>
         </div>
     </div>
-
-    
-
-    <script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
 
 
