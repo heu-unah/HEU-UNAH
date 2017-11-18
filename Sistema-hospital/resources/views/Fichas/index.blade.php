@@ -16,31 +16,34 @@
                 <div class="h2 text-center panel-heading text-primary">Listado de fichas</div>
                 <div class="panel-body">
                     <div class="table-responsive">
+                    <h4>Hay {{ $Fichas->count() }} fichas</h4>
+                    <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search fa-fw" aria-hidden="true"></i>Buscar</span>
+                            <input id="kwd_search" type="text" class="form-control" placeholder="Ingrese su búsqueda">
+                    </div>
                     
                       <!--<input id="Paciente_Nombre" type="text" class="form-control" name="Persona_Nombre" placeholder="nombre de Persona" style="margin-bottom:10px;"> -->
                         
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
                             <thead>
-                                <th>Id ficha</th>
-                                <th>Id paciente</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Id empleado</th>
-                                <th>Fecha</th>
-                                <th>Estado del paciente</th>
-                                <th>Acciones</th>
+                                <th class="text-center">Id ficha</th>
+                                <th class="text-center">Id paciente</th>
+                                <th class="text-center">Nombre</th>
+                                <th class="text-center">Apellido</th>
+                                <th class="text-center">Id empleado</th>
+                                <th class="text-center">Fecha</th>
+                                <th class="text-center">Estado del paciente</th>
                             </thead>
                             <tbody>
                             @foreach($Fichas as $Ficha)
                                 <tr>
-                                    <td>{{$Ficha->idFicha}}</td>
-                                    <td>{{$Ficha->idPaciente}}</td>
-                                    <td>{{$Ficha->Persona_Nombre}}</td>
-                                    <td>{{$Ficha->Persona_Apellido}}</td>
-                                    <td>{{$Ficha->idEmpleado}}</td>
-                                    <td>{{$Ficha->Ficha_Fecha}}</td>
-                                    <td>{{$Ficha->Estado_Paciente}}</td>
-                                    <td><a href="#">Actualizar</a><a href="#">Eliminar</a></td>
+                                    <td class="text-center">{{$Ficha->idFicha}}</td>
+                                    <td class="text-center">{{$Ficha->idPaciente}}</td>
+                                    <td class="text-center">{{$Ficha->Persona_Nombre}}</td>
+                                    <td class="text-center">{{$Ficha->Persona_Apellido}}</td>
+                                    <td class="text-center">{{$Ficha->idEmpleado}}</td>
+                                    <td class="text-center">{{$Ficha->Ficha_Fecha}}</td>
+                                    <td class="text-center">{{$Ficha->Estado_Paciente}}</td>
                                 </tr>
                             @endforeach
                             </tbody>

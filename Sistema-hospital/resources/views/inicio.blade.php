@@ -14,8 +14,8 @@
 					<form class="navbar-form " role="search" action="{{ url('pacientes/buscar') }}" method="GET">
 						<h2 class="text-center">Buscar paciente</h2>
 						<div class="input-group col-md-10">
-  							<span class="input-group-addon">Buscar paciente</span>
-  							<input type="text" class="form-control" placeholder="Nombre del paciente" id="NombrePaciente" name="NombrePaciente">
+  							<span class="input-group-addon"><i class="fa fa-search fa-fw fa-lg" aria-hidden="true"></i> Buscar paciente</span>
+  							<input type="text" class="form-control" placeholder="Nombre del paciente" id="NombrePaciente" name="NombrePaciente" required>
 						</div>
 	                    
 

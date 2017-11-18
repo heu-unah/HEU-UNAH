@@ -17,36 +17,35 @@
                 <div class="h2 text-center panel-heading text-primary">Listado de empleados</div>
                 <div class="panel-body">
                     <div class="table-responsive">
-                        <h4>Hay {{ $Empleados->count() }} registros</h4>
-                        <form class="navbar-form navbar-left " role="search" action="{{ url('empleados/home') }}" method="GET">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nombre del empleado" id="NombreEmpleado" name="NombreEmpleado">
-                            </div>
-                            <button type="submit" class="btn btn-default">Buscar</button>
-                        </form>
+                    <h4>Hay {{ $Empleados->count() }} empleados</h4>
+                    <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search fa-fw" aria-hidden="true"></i>Buscar</span>
+                            <input id="kwd_search" type="text" class="form-control" placeholder="Ingrese su búsqueda">
+                    </div>
+                        
 
                         
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
                             
                             <thead>
-                               <th>idEmpleado</th>
-                                <th>Identificación</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Cargo</th>
-                                <th colspan="2">Acciones</th>
+                               <th class="text-center">idEmpleado</th>
+                                <th class="text-center">Identificación</th>
+                                <th class="text-center">Nombre</th>
+                                <th class="text-center">Apellido</th>
+                                <th class="text-center">Cargo</th>
+                                <th colspan="2" class="text-center">Acciones</th>
                             </thead>
                             <tbody>
                             @foreach($Empleados as $Empleado)
 							
                                 <tr>
-                                   <td>{{$Empleado->idEmpleado}}</td>
-                                    <td>{{$Empleado->idPersona}}</td>
-                                    <td>{{$Empleado->Persona_Nombre}}</td>
-                                    <td>{{$Empleado->Persona_Apellido}}</td>
-                                    <td>{{$Empleado->Empleado_Cargo}}</td>
-                                    <td><a href="{{route('empleados.edit',$Empleado->idEmpleado)}}"><button type="button" class="btn btn-info">Editar</button></a></td>
-                                    <td>
+                                   <td class="text-center">{{$Empleado->idEmpleado}}</td>
+                                    <td class="text-center">{{$Empleado->idPersona}}</td>
+                                    <td class="text-center">{{$Empleado->Persona_Nombre}}</td>
+                                    <td class="text-center">{{$Empleado->Persona_Apellido}}</td>
+                                    <td class="text-center">{{$Empleado->Empleado_Cargo}}</td>
+                                    <td class="text-center col-md-1"><a href="{{route('empleados.edit',$Empleado->idEmpleado)}}"><button type="button" class="btn btn-info">Editar</button></a></td>
+                                    <td class="col-md-1">
                                         
                                      {{ Form::open(array('url' => 'empleados/' . $Empleado->idEmpleado, 'class' => 'pull-right')) }}
                                         {{ Form::hidden('_method', 'DELETE') }}

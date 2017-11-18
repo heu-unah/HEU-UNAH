@@ -16,21 +16,26 @@
                 <div class="h2 text-center panel-heading text-primary">Listado de habitaciones</div>
                 <div class="panel-body">
                     <div class="table-responsive">
+                    <h4>Hay {{ $Habitaciones->count() }} habitaciones</h4>
+                    <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search fa-fw" aria-hidden="true"></i>Buscar</span>
+                            <input id="kwd_search" type="text" class="form-control" placeholder="Ingrese su búsqueda">
+                    </div>
                         
                         <table class="table table-condensed table-striped table-bordered table-hover" id="tabla">
                             <thead>
-                                <th>Id</th>
-                                <th>Número de habitación</th>
-                                <th>Área de la habitación</th>
-                                <th>Acciones</th>
+                                <th class="text-center">Id</th>
+                                <th class="text-center">Número de habitación</th>
+                                <th class="text-center">Área de la habitación</th>
+                                <th class="text-center">Acciones</th>
                             </thead>
                             <tbody>
                             @foreach($Habitaciones as $Habitacion)
                                 <tr>
-                                    <td>{{$Habitacion->id}}</td>
-                                    <td>{{$Habitacion->habitacion_numero}}</td>
-                                    <td>{{$Habitacion->habitacion_area}}</td>
-                                    <td><a href="{{route('habitaciones.edit',$Habitacion->id)}}"><button type="button" class="btn btn-info">Editar</button></a></td>
+                                    <td class="text-center">{{$Habitacion->id}}</td>
+                                    <td class="text-center">{{$Habitacion->habitacion_numero}}</td>
+                                    <td class="text-center">{{$Habitacion->habitacion_area}}</td>
+                                    <td class="text-center col-md-1"><a href="{{route('habitaciones.edit',$Habitacion->id)}}"><button type="button" class="btn btn-info">Editar</button></a></td>
                                 </tr>
                             @endforeach
                             </tbody>

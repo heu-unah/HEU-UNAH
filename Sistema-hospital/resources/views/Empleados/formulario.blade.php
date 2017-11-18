@@ -102,7 +102,11 @@
         <input type="text" name="code" id="code" />
         <input type="text" name="code2" id="code2" />
         <input type="text" name="code3" id="code3" />
-            <table id="dataTableInfo" name="dataTableInfo" class="table table-striped table-bordered table-condensed table-hover">
+        <div class="input-group" style="margin-top: 15px; margin-bottom: 15px;">
+            <span class="input-group-addon"><i class="fa fa-search fa-fw" aria-hidden="true"></i>Buscar</span>
+            <input id="kw_search" type="text" class="form-control" placeholder="Ingrese su búsqueda">
+        </div>
+            <table id="tablaM" name="tablaM" class="table table-striped table-bordered table-condensed table-hover" style="margin-top: 15px;">
                 <thead>
                     <tr>
                         <th>Identidad</th>
@@ -126,6 +130,7 @@
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
         <a href="#" id="btnPoblarPaciente" class="btn btn-primary">Seleccionar</a>
       </div>
+
     </div>
   </div>
 </div>

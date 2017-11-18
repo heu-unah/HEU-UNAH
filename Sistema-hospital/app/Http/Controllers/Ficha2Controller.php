@@ -133,9 +133,28 @@ class Ficha2Controller extends Controller
             ->join('personas as pe', 'pa.idPersona','=', 'pe.idPersona')
                  ->where('pe.Persona_Nombre','like','%'. $nombre . '%')->get();
 			//dd($Fichas);
-			return view('fichas.historial')->with('Fichas',$Fichas);
-			
-		 }
+
+
+            $fichaDetalle = $request->idFicha;
+            
+            foreach($Fichas as $value) {
+                $idFicha = $value->idFicha;
+            
+             
+                $Movimientos = DB::table('movimientos as m')
+                ->select('m.idMovimiento','m.Movimiento_Descripcion','m.idHabitacion','m.Movimiento_Fecha')
+                ->where('m.idFicha','=',$idFicha)
+                ->orderBy('m.Movimiento_Fecha', 'DESC')->get();
+                return view('fichas.historial',['Fichas' => $Fichas, 'Movimientos' =>$Movimientos]);
+            }
+
+
+
+
+
+			//return view('fichas.historial')->with('Fichas',$Fichas);
+		
+		 
 		 /*else if (request()->input('idFicha' != null){
 			 
 			 $fichaDetalle = $request->idFicha;
@@ -155,4 +174,5 @@ class Ficha2Controller extends Controller
 		 }*/
     }
 
+}
 }
