@@ -31,7 +31,7 @@
 
                      <div class="form-group{{ $errors->has('idFicha') ? ' has-error' : '' }}">
                         <label for="idFicha" class="col-md-4 control-label">Id Ficha</label>
-                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#buscarPersona">Buscar</button>
+                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#buscarFicha">Buscar</button>
 
 
                             <div class="col-md-6">
@@ -81,6 +81,7 @@
                        
                         <div class="form-group{{ $errors->has('idEmpleado') ? ' has-error' : '' }}">
                             <label for="idPacidEmpleadoiente" class="col-md-4 control-label">Id Empleado</label>
+                            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#buscarEmpleado">Buscar</button>
 
                             <div class="col-md-6">
                                 <input id="idEmpleado" type="text" pattern="[0-9]+" class="form-control" name="idEmpleado" value="{{ old('idEmpleado') }}" required autofocus>
@@ -129,6 +130,7 @@
                         
                          <div class="form-group{{ $errors->has('idHabitacion') ? ' has-error' : '' }}">
                         <label for="idHabitacion" class="col-md-4 control-label">Id Habitacion</label>
+                        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#buscarhabitacion">Buscar</button>
 
                         <div class="col-md-6">
                             <input id="idHabitacion" type="text" pattern="[0-9]+" class="form-control" name="idHabitacion" value="{{ old('idHabitacion') }}"  required autofocus>
@@ -204,4 +206,138 @@
         </div>
     </div>
 </div>
+
+
+
 @endsection
+
+<div class="modal fade" id="buscarFicha" tabindex="-1" role="dialog" aria-labelledby="buscarFicha">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="buscarFicha">Buscar Ficha</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" name="code" id="code" />
+        <input type="text" name="code2" id="code2" />
+        <input type="text" name="code3" id="code3" />
+        <div class="input-group" style="margin-top: 15px; margin-bottom: 15px;">
+            <span class="input-group-addon"><i class="fa fa-search fa-fw" aria-hidden="true"></i>Buscar</span>
+            <input id="kw_search" type="text" class="form-control" placeholder="Ingrese su búsqueda">
+        </div>
+            <table id="tablaM" name="tablaM" class="table table-striped table-bordered table-condensed table-hover" style="margin-top: 15px;">
+                <thead>
+                    <tr>
+                        <th>Id Ficha</th>
+                        <th>Nombre del paciente</th>
+                        <th>Apellido del paciente</th>
+                    </tr>
+                </thead>
+                @foreach ($Fichas as $ficha)
+                <tbody>
+                    <tr>
+                        <td>{{ $ficha->idFicha }}</td>
+                        <td>{{ $ficha->Persona_Nombre }}</td>
+                        <td>{{ $ficha->Persona_Apellido }}</td>
+                    </tr>
+                </tbody>
+                @endforeach
+            </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <a href="#" id="Ficha" class="btn btn-primary">Seleccionar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="buscarEmpleado" tabindex="-1" role="dialog" aria-labelledby="buscarPersona">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="buscarPersona">Buscar Persona</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" name="code22" id="code22" />
+        <input type="text" name="code23" id="code23" />
+        <input type="text" name="code34" id="code34" />
+        <div class="input-group" style="margin-top: 15px; margin-bottom: 15px;">
+            <span class="input-group-addon"><i class="fa fa-search fa-fw" aria-hidden="true"></i>Buscar</span>
+            <input id="k_search" type="text" class="form-control" placeholder="Ingrese su búsqueda">
+        </div>
+           
+            <table id="tabla2" name="tabla2" class="table table-striped table-bordered table-condensed table-hover" style="margin-top: 15px;">
+                <thead>
+                    <tr>
+                        <th>Id Empleado</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                    </tr>
+                </thead>
+                @foreach ($empleados as $empleado)
+                <tbody>
+                    <tr>
+                        <td>{{ $empleado->idEmpleado }}</td>
+                        <td>{{ $empleado->Persona_Nombre }}</td>
+                        <td>{{ $empleado->Persona_Apellido }}</td>
+                    </tr>
+                </tbody>
+                @endforeach
+            </table>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <a href="#" id="btnEmpleado" class="btn btn-primary">Seleccionar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="buscarhabitacion" tabindex="-1" role="dialog" aria-labelledby="buscarhabitacion">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="buscarhabitacion">Buscar Habitación</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" name="hab" id="hab" />
+        <input type="text" name="hab1" id="hab1" />
+        <div class="input-group" style="margin-top: 15px; margin-bottom: 15px;">
+            <span class="input-group-addon"><i class="fa fa-search fa-fw" aria-hidden="true"></i>Buscar</span>
+            <input id="hab_search" type="text" class="form-control" placeholder="Ingrese su búsqueda">
+        </div>
+            <table id="tablaHab" name="tablaH" class="table table-striped table-bordered table-condensed table-hover" style="margin-top: 15px;">
+                <thead>
+                    <tr>
+                        <th>Id Habitación</th>
+                        <th>Número de Habitación</th>
+                    </tr>
+                </thead>
+                @foreach ($habitaciones as $habitacion)
+                <tbody>
+                    <tr>
+                        <td>{{ $habitacion->id }}</td>
+                        <td>{{ $habitacion->habitacion_numero }}</td>
+                    </tr>
+                </tbody>
+                @endforeach
+            </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <a href="#" id="Hab" class="btn btn-primary">Seleccionar</a>
+      </div>
+    </div>
+  </div>
+</div>

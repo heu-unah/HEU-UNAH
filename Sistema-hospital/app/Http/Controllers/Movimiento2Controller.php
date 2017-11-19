@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Movimiento;
 use App\Ficha;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB; 
+use App\Empleado;
+use App\Habitacion;
 
 
 class Movimiento2Controller extends Controller
@@ -24,7 +27,7 @@ class Movimiento2Controller extends Controller
     public function index()
     {
         //
-        $Movimientos = Movimiento::all()->take(10);
+        $Movimientos = Movimiento::paginate(15);
     	return view('movimientos.index')->with('Movimientos', $Movimientos);
     }
 
@@ -36,7 +39,16 @@ class Movimiento2Controller extends Controller
     public function create()
     {
         //
-         return view('movimientos.formulario');
+        $Fichas = DB::table('fichas as f')->orderBy('f.Ficha_Fecha','DESC')
+            ->select('f.idFicha','f.idPaciente','pe.Persona_Nombre','pe.Persona_Apellido','f.Ficha_Fecha','f.Estado_Paciente','f.idEmpleado')
+            ->join('pacientes as pa','f.idPaciente', '=' ,'pa.idPaciente')
+            ->join('personas as pe', 'pa.idPersona','=', 'pe.idPersona')->get();
+        
+        $empleados = Empleado::Join('personas', 'empleados.idPersona', '=', 'personas.idPersona')
+            ->select(['empleados.idEmpleado','empleados.idPersona', 'personas.Persona_Nombre', 'personas.Persona_Apellido', 'empleados.Empleado_Cargo'])->get();
+        $habitaciones = Habitacion::all();
+        //dd($habitaciones);
+         return view('movimientos.formulario',['Fichas'=>$Fichas, 'empleados'=>$empleados, "habitaciones"=>$habitaciones]);
     }
 
     /**
