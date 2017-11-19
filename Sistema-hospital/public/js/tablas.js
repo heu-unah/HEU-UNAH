@@ -1,8 +1,5 @@
 $(document).ready(function(){
-
-
-
-    $('#tablaM').DataTable({
+$('#tablaM').DataTable({
         searching: false,
         paging: true,
         info:false,
@@ -32,6 +29,8 @@ $(document).ready(function(){
         }
     });
 
+
+
     $('#tabla2 tbody').on( 'click', 'tr', function () {
 
         // Con este código se obtiene el valor de la primer columna de la tabla,
@@ -53,6 +52,8 @@ $(document).ready(function(){
             $(this).addClass('selected');
         }
     });
+
+
 
     $('#tablaM tbody').on( 'click', 'tr', function () {
 
@@ -98,6 +99,8 @@ $(document).ready(function(){
     
         }
     }
+
+
 
     var btnPaciente = document.getElementById("btnPaciente");
     if(btnPaciente) {
@@ -149,5 +152,8 @@ $(document).ready(function(){
     
     }
 
-
 });
+
+
+
+    
